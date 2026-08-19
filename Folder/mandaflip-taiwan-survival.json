@@ -1,0 +1,2713 @@
+{
+ "version": 2,
+ "folders": [
+  {
+   "name": "🇹🇼 Kerja Part-time",
+   "desc": "Cari kerja, shift, gaji, komunikasi dengan bos & rekan kerja.",
+   "icon": "💼",
+   "cards": [
+    {
+     "hanzi": "打工",
+     "trad": "打工",
+     "pinyin": "dǎgōng",
+     "arti": "kerja paruh waktu",
+     "en": "part-time work",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "工读生",
+     "trad": "工讀生",
+     "pinyin": "gōngdúshēng",
+     "arti": "mahasiswa yang kerja part-time",
+     "en": "student part-timer",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "时薪",
+     "trad": "時薪",
+     "pinyin": "shíxīn",
+     "arti": "gaji per jam",
+     "en": "hourly wage",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "薪水",
+     "trad": "薪水",
+     "pinyin": "xīnshuǐ",
+     "arti": "gaji",
+     "en": "salary",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "排班",
+     "trad": "排班",
+     "pinyin": "páibān",
+     "arti": "jadwal shift",
+     "en": "shift schedule",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "班表",
+     "trad": "班表",
+     "pinyin": "bānbiǎo",
+     "arti": "tabel jadwal shift",
+     "en": "shift roster",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "早班",
+     "trad": "早班",
+     "pinyin": "zǎobān",
+     "arti": "shift pagi",
+     "en": "morning shift",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "晚班",
+     "trad": "晚班",
+     "pinyin": "wǎnbān",
+     "arti": "shift malam",
+     "en": "evening shift",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "大夜班",
+     "trad": "大夜班",
+     "pinyin": "dàyèbān",
+     "arti": "shift tengah malam",
+     "en": "graveyard shift",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "上班",
+     "trad": "上班",
+     "pinyin": "shàngbān",
+     "arti": "masuk kerja",
+     "en": "to start work",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "下班",
+     "trad": "下班",
+     "pinyin": "xiàbān",
+     "arti": "pulang kerja",
+     "en": "to get off work",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "打卡",
+     "trad": "打卡",
+     "pinyin": "dǎkǎ",
+     "arti": "absen (clock in/out)",
+     "en": "to clock in/out",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "加班",
+     "trad": "加班",
+     "pinyin": "jiābān",
+     "arti": "lembur",
+     "en": "overtime",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请假",
+     "trad": "請假",
+     "pinyin": "qǐngjià",
+     "arti": "izin/cuti",
+     "en": "to ask for leave",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "调班",
+     "trad": "調班",
+     "pinyin": "diàobān",
+     "arti": "tukar shift",
+     "en": "to swap shifts",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "休假",
+     "trad": "休假",
+     "pinyin": "xiūjià",
+     "arti": "libur",
+     "en": "day off",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "面试",
+     "trad": "面試",
+     "pinyin": "miànshì",
+     "arti": "wawancara kerja",
+     "en": "job interview",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "履历",
+     "trad": "履歷",
+     "pinyin": "lǚlì",
+     "arti": "CV / resume",
+     "en": "resume",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "老板",
+     "trad": "老闆",
+     "pinyin": "lǎobǎn",
+     "arti": "bos",
+     "en": "boss",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "店长",
+     "trad": "店長",
+     "pinyin": "diànzhǎng",
+     "arti": "manajer toko",
+     "en": "store manager",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "同事",
+     "trad": "同事",
+     "pinyin": "tóngshì",
+     "arti": "rekan kerja",
+     "en": "coworker",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "客人",
+     "trad": "客人",
+     "pinyin": "kèrén",
+     "arti": "tamu / pelanggan",
+     "en": "customer; guest",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "工作证",
+     "trad": "工作證",
+     "pinyin": "gōngzuòzhèng",
+     "arti": "izin kerja",
+     "en": "work permit",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "居留证",
+     "trad": "居留證",
+     "pinyin": "jūliúzhèng",
+     "arti": "ARC (kartu izin tinggal)",
+     "en": "ARC (residence permit)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "劳保",
+     "trad": "勞保",
+     "pinyin": "láobǎo",
+     "arti": "asuransi tenaga kerja",
+     "en": "labor insurance",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "健保",
+     "trad": "健保",
+     "pinyin": "jiànbǎo",
+     "arti": "asuransi kesehatan (NHI)",
+     "en": "national health insurance",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "领薪水",
+     "trad": "領薪水",
+     "pinyin": "lǐng xīnshuǐ",
+     "arti": "terima gaji",
+     "en": "to get paid",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "汇款",
+     "trad": "匯款",
+     "pinyin": "huìkuǎn",
+     "arti": "transfer uang",
+     "en": "bank transfer",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "辛苦了",
+     "trad": "辛苦了",
+     "pinyin": "xīnkǔ le",
+     "arti": "terima kasih atas kerja kerasnya",
+     "en": "thanks for your hard work",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "没问题",
+     "trad": "沒問題",
+     "pinyin": "méi wèntí",
+     "arti": "tidak masalah",
+     "en": "no problem",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "马上",
+     "trad": "馬上",
+     "pinyin": "mǎshàng",
+     "arti": "segera",
+     "en": "right away",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "稍等",
+     "trad": "稍等",
+     "pinyin": "shāo děng",
+     "arti": "tunggu sebentar",
+     "en": "one moment",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "不好意思",
+     "trad": "不好意思",
+     "pinyin": "bù hǎoyìsi",
+     "arti": "maaf; permisi",
+     "en": "excuse me; sorry",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "麻烦你",
+     "trad": "麻煩你",
+     "pinyin": "máfan nǐ",
+     "arti": "tolong ya (merepotkan)",
+     "en": "sorry to trouble you",
+     "tag": "kerja"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "请问你们还有缺人吗？",
+     "trad": "請問你們還有缺人嗎？",
+     "pinyin": "Qǐngwèn nǐmen hái yǒu quē rén ma?",
+     "seg": "请问 你们 还 有 缺 人 吗",
+     "arti": "Permisi, apakah kalian masih butuh orang?",
+     "en": "Excuse me, are you still hiring?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我是外籍学生，可以打工吗？",
+     "trad": "我是外籍學生，可以打工嗎？",
+     "pinyin": "Wǒ shì wàijí xuéshēng, kěyǐ dǎgōng ma?",
+     "seg": "我 是 外籍 学生 可以 打工 吗",
+     "arti": "Saya mahasiswa asing, boleh kerja part-time?",
+     "en": "I am a foreign student, can I work part-time?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我有工作证。",
+     "trad": "我有工作證。",
+     "pinyin": "Wǒ yǒu gōngzuòzhèng.",
+     "seg": "我 有 工作证",
+     "arti": "Saya punya izin kerja.",
+     "en": "I have a work permit.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "时薪多少？",
+     "trad": "時薪多少？",
+     "pinyin": "Shíxīn duōshǎo?",
+     "seg": "时薪 多少",
+     "arti": "Gaji per jamnya berapa?",
+     "en": "How much is the hourly wage?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "一个星期可以排几天班？",
+     "trad": "一個星期可以排幾天班？",
+     "pinyin": "Yí ge xīngqī kěyǐ pái jǐ tiān bān?",
+     "seg": "一个 星期 可以 排 几 天 班",
+     "arti": "Seminggu bisa dapat berapa hari shift?",
+     "en": "How many shifts a week can I get?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我平日晚上和周末都可以上班。",
+     "trad": "我平日晚上和週末都可以上班。",
+     "pinyin": "Wǒ píngrì wǎnshàng hé zhōumò dōu kěyǐ shàngbān.",
+     "seg": "我 平日 晚上 和 周末 都 可以 上班",
+     "arti": "Saya bisa kerja hari biasa malam dan akhir pekan.",
+     "en": "I can work weekday evenings and weekends.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我下午有课，晚上才有空。",
+     "trad": "我下午有課，晚上才有空。",
+     "pinyin": "Wǒ xiàwǔ yǒu kè, wǎnshàng cái yǒu kòng.",
+     "seg": "我 下午 有 课 晚上 才 有 空",
+     "arti": "Sore saya ada kelas, baru malam kosong.",
+     "en": "I have class in the afternoon, only free at night.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我明天可以来上班。",
+     "trad": "我明天可以來上班。",
+     "pinyin": "Wǒ míngtiān kěyǐ lái shàngbān.",
+     "seg": "我 明天 可以 来 上班",
+     "arti": "Saya bisa mulai kerja besok.",
+     "en": "I can come to work tomorrow.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "这个怎么做？可以教我一次吗？",
+     "trad": "這個怎麼做？可以教我一次嗎？",
+     "pinyin": "Zhège zěnme zuò? Kěyǐ jiāo wǒ yí cì ma?",
+     "seg": "这个 怎么 做 可以 教 我 一 次 吗",
+     "arti": "Ini cara buatnya gimana? Bisa ajarin sekali?",
+     "en": "How do I do this? Can you show me once?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我听不太懂，可以再说一次吗？",
+     "trad": "我聽不太懂，可以再說一次嗎？",
+     "pinyin": "Wǒ tīng bú tài dǒng, kěyǐ zài shuō yí cì ma?",
+     "seg": "我 听 不 太 懂 可以 再 说 一 次 吗",
+     "arti": "Saya kurang paham, bisa diulang sekali lagi?",
+     "en": "I do not quite understand, could you say it again?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请说慢一点。",
+     "trad": "請說慢一點。",
+     "pinyin": "Qǐng shuō màn yìdiǎn.",
+     "seg": "请 说 慢 一点",
+     "arti": "Tolong bicara lebih pelan.",
+     "en": "Please speak a bit slower.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我知道了，马上做。",
+     "trad": "我知道了，馬上做。",
+     "pinyin": "Wǒ zhīdào le, mǎshàng zuò.",
+     "seg": "我 知道 了 马上 做",
+     "arti": "Baik, saya kerjakan sekarang.",
+     "en": "Got it, I will do it right away.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "老板，我下星期三想请假。",
+     "trad": "老闆，我下星期三想請假。",
+     "pinyin": "Lǎobǎn, wǒ xià xīngqīsān xiǎng qǐngjià.",
+     "seg": "老板 我 下 星期三 想 请假",
+     "arti": "Bos, Rabu depan saya mau izin.",
+     "en": "Boss, I would like to take next Wednesday off.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我可以跟你调班吗？",
+     "trad": "我可以跟你調班嗎？",
+     "pinyin": "Wǒ kěyǐ gēn nǐ diàobān ma?",
+     "seg": "我 可以 跟 你 调班 吗",
+     "arti": "Boleh tukar shift sama kamu?",
+     "en": "Can I swap shifts with you?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我下班了，先走了，辛苦了！",
+     "trad": "我下班了，先走了，辛苦了！",
+     "pinyin": "Wǒ xiàbān le, xiān zǒu le, xīnkǔ le!",
+     "seg": "我 下班 了 先 走 了 辛苦 了",
+     "arti": "Saya udah selesai, duluan ya, semangat!",
+     "en": "I am off, leaving first, good work everyone!",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "薪水什么时候发？",
+     "trad": "薪水什麼時候發？",
+     "pinyin": "Xīnshuǐ shénme shíhòu fā?",
+     "seg": "薪水 什么 时候 发",
+     "arti": "Gajinya kapan dibayar?",
+     "en": "When is payday?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "薪水是现金还是汇款？",
+     "trad": "薪水是現金還是匯款？",
+     "pinyin": "Xīnshuǐ shì xiànjīn háishì huìkuǎn?",
+     "seg": "薪水 是 现金 还是 汇款",
+     "arti": "Gajinya tunai atau transfer?",
+     "en": "Is the salary cash or bank transfer?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "对不起，我今天会晚一点到。",
+     "trad": "對不起，我今天會晚一點到。",
+     "pinyin": "Duìbùqǐ, wǒ jīntiān huì wǎn yìdiǎn dào.",
+     "seg": "对不起 我 今天 会 晚 一点 到",
+     "arti": "Maaf, hari ini saya akan sedikit terlambat.",
+     "en": "Sorry, I will be a little late today.",
+     "tag": "kerja"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Restoran & Kedai Minuman",
+   "desc": "Kosakata & kalimat pelayan/kasir: pesan, gula-es, struk, bersih-bersih.",
+   "icon": "🧋",
+   "cards": [
+    {
+     "hanzi": "餐厅",
+     "trad": "餐廳",
+     "pinyin": "cāntīng",
+     "arti": "restoran",
+     "en": "restaurant",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "饮料店",
+     "trad": "飲料店",
+     "pinyin": "yǐnliàodiàn",
+     "arti": "kedai minuman",
+     "en": "drink shop",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "早餐店",
+     "trad": "早餐店",
+     "pinyin": "zǎocāndiàn",
+     "arti": "kedai sarapan",
+     "en": "breakfast shop",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "外送",
+     "trad": "外送",
+     "pinyin": "wàisòng",
+     "arti": "delivery",
+     "en": "food delivery",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "外带",
+     "trad": "外帶",
+     "pinyin": "wàidài",
+     "arti": "bungkus / takeaway",
+     "en": "takeout",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "内用",
+     "trad": "內用",
+     "pinyin": "nèiyòng",
+     "arti": "makan di tempat",
+     "en": "dine in",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "点餐",
+     "trad": "點餐",
+     "pinyin": "diǎncān",
+     "arti": "memesan makanan",
+     "en": "to order food",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "菜单",
+     "trad": "菜單",
+     "pinyin": "càidān",
+     "arti": "menu",
+     "en": "menu",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "招牌",
+     "trad": "招牌",
+     "pinyin": "zhāopái",
+     "arti": "menu andalan",
+     "en": "signature dish",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "餐具",
+     "trad": "餐具",
+     "pinyin": "cānjù",
+     "arti": "alat makan",
+     "en": "tableware; cutlery",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "筷子",
+     "trad": "筷子",
+     "pinyin": "kuàizi",
+     "arti": "sumpit",
+     "en": "chopsticks",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "杯子",
+     "trad": "杯子",
+     "pinyin": "bēizi",
+     "arti": "gelas",
+     "en": "cup",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "托盘",
+     "trad": "托盤",
+     "pinyin": "tuōpán",
+     "arti": "nampan",
+     "en": "tray",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "厨房",
+     "trad": "廚房",
+     "pinyin": "chúfáng",
+     "arti": "dapur",
+     "en": "kitchen",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "洗碗",
+     "trad": "洗碗",
+     "pinyin": "xǐwǎn",
+     "arti": "cuci piring",
+     "en": "to wash dishes",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "擦桌子",
+     "trad": "擦桌子",
+     "pinyin": "cā zhuōzi",
+     "arti": "lap meja",
+     "en": "to wipe tables",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "收桌子",
+     "trad": "收桌子",
+     "pinyin": "shōu zhuōzi",
+     "arti": "beresin meja",
+     "en": "to clear tables",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "拖地",
+     "trad": "拖地",
+     "pinyin": "tuōdì",
+     "arti": "ngepel",
+     "en": "to mop",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "扫地",
+     "trad": "掃地",
+     "pinyin": "sǎodì",
+     "arti": "nyapu",
+     "en": "to sweep",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "倒垃圾",
+     "trad": "倒垃圾",
+     "pinyin": "dào lājī",
+     "arti": "buang sampah",
+     "en": "to take out the trash",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "补货",
+     "trad": "補貨",
+     "pinyin": "bǔhuò",
+     "arti": "restock barang",
+     "en": "to restock",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "结帐",
+     "trad": "結帳",
+     "pinyin": "jiézhàng",
+     "arti": "bayar / kasir",
+     "en": "to check out; pay bill",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "收银",
+     "trad": "收銀",
+     "pinyin": "shōuyín",
+     "arti": "kasir",
+     "en": "cashier",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "找钱",
+     "trad": "找錢",
+     "pinyin": "zhǎoqián",
+     "arti": "uang kembalian",
+     "en": "to give change",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "发票",
+     "trad": "發票",
+     "pinyin": "fāpiào",
+     "arti": "struk / bon resmi (uniform invoice)",
+     "en": "receipt (uniform invoice)",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "统编",
+     "trad": "統編",
+     "pinyin": "tǒngbiān",
+     "arti": "nomor pajak perusahaan (di struk)",
+     "en": "company tax ID",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "载具",
+     "trad": "載具",
+     "pinyin": "zàijù",
+     "arti": "pembawa e-invoice (barcode HP)",
+     "en": "e-invoice carrier",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "半糖",
+     "trad": "半糖",
+     "pinyin": "bàntáng",
+     "arti": "setengah gula",
+     "en": "half sugar",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "微糖",
+     "trad": "微糖",
+     "pinyin": "wēitáng",
+     "arti": "sedikit gula",
+     "en": "light sugar",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "无糖",
+     "trad": "無糖",
+     "pinyin": "wútáng",
+     "arti": "tanpa gula",
+     "en": "no sugar",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "去冰",
+     "trad": "去冰",
+     "pinyin": "qùbīng",
+     "arti": "tanpa es",
+     "en": "no ice",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "少冰",
+     "trad": "少冰",
+     "pinyin": "shǎobīng",
+     "arti": "sedikit es",
+     "en": "less ice",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "热的",
+     "trad": "熱的",
+     "pinyin": "rè de",
+     "arti": "panas (minuman)",
+     "en": "hot (drink)",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "珍珠",
+     "trad": "珍珠",
+     "pinyin": "zhēnzhū",
+     "arti": "boba / mutiara",
+     "en": "tapioca pearls",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "大杯",
+     "trad": "大杯",
+     "pinyin": "dàbēi",
+     "arti": "ukuran besar",
+     "en": "large size",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "中杯",
+     "trad": "中杯",
+     "pinyin": "zhōngbēi",
+     "arti": "ukuran sedang",
+     "en": "medium size",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "加辣",
+     "trad": "加辣",
+     "pinyin": "jiā là",
+     "arti": "tambah pedas",
+     "en": "extra spicy",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "不要香菜",
+     "trad": "不要香菜",
+     "pinyin": "búyào xiāngcài",
+     "arti": "tanpa ketumbar",
+     "en": "no cilantro",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "素食",
+     "trad": "素食",
+     "pinyin": "sùshí",
+     "arti": "vegetarian",
+     "en": "vegetarian food",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "清真",
+     "trad": "清真",
+     "pinyin": "qīngzhēn",
+     "arti": "halal",
+     "en": "halal",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "猪肉",
+     "trad": "豬肉",
+     "pinyin": "zhūròu",
+     "arti": "daging babi",
+     "en": "pork",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "牛肉",
+     "trad": "牛肉",
+     "pinyin": "niúròu",
+     "arti": "daging sapi",
+     "en": "beef",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "鸡肉",
+     "trad": "雞肉",
+     "pinyin": "jīròu",
+     "arti": "daging ayam",
+     "en": "chicken",
+     "tag": "resto"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "欢迎光临！",
+     "trad": "歡迎光臨！",
+     "pinyin": "Huānyíng guānglín!",
+     "seg": "欢迎 光临",
+     "arti": "Selamat datang!",
+     "en": "Welcome!",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "请问几位？",
+     "trad": "請問幾位？",
+     "pinyin": "Qǐngwèn jǐ wèi?",
+     "seg": "请问 几 位",
+     "arti": "Untuk berapa orang?",
+     "en": "How many people?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "内用还是外带？",
+     "trad": "內用還是外帶？",
+     "pinyin": "Nèiyòng háishì wàidài?",
+     "seg": "内用 还是 外带",
+     "arti": "Makan di sini atau dibungkus?",
+     "en": "Dine in or takeout?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "请问要点什么？",
+     "trad": "請問要點什麼？",
+     "pinyin": "Qǐngwèn yào diǎn shénme?",
+     "seg": "请问 要 点 什么",
+     "arti": "Mau pesan apa?",
+     "en": "What would you like to order?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "甜度冰块要怎么调？",
+     "trad": "甜度冰塊要怎麼調？",
+     "pinyin": "Tiándù bīngkuài yào zěnme tiáo?",
+     "seg": "甜度 冰块 要 怎么 调",
+     "arti": "Gula dan esnya mau gimana?",
+     "en": "How would you like the sugar and ice?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "半糖少冰。",
+     "trad": "半糖少冰。",
+     "pinyin": "Bàntáng shǎobīng.",
+     "seg": "半糖 少冰",
+     "arti": "Setengah gula, sedikit es.",
+     "en": "Half sugar, less ice.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "要加珍珠吗？",
+     "trad": "要加珍珠嗎？",
+     "pinyin": "Yào jiā zhēnzhū ma?",
+     "seg": "要 加 珍珠 吗",
+     "arti": "Mau tambah boba?",
+     "en": "Would you like to add pearls?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "总共一百二十元。",
+     "trad": "總共一百二十元。",
+     "pinyin": "Zǒnggòng yìbǎi èrshí yuán.",
+     "seg": "总共 一百 二十 元",
+     "arti": "Totalnya 120 dolar.",
+     "en": "That is 120 dollars in total.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "要发票吗？统编吗？",
+     "trad": "要發票嗎？統編嗎？",
+     "pinyin": "Yào fāpiào ma? Tǒngbiān ma?",
+     "seg": "要 发票 吗 统编 吗",
+     "arti": "Mau struk? Ada nomor pajak?",
+     "en": "Would you like a receipt? Company tax ID?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "有载具吗？",
+     "trad": "有載具嗎？",
+     "pinyin": "Yǒu zàijù ma?",
+     "seg": "有 载具 吗",
+     "arti": "Ada e-invoice carrier (barcode)?",
+     "en": "Do you have an e-invoice carrier?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "找您三十元。",
+     "trad": "找您三十元。",
+     "pinyin": "Zhǎo nín sānshí yuán.",
+     "seg": "找 您 三十 元",
+     "arti": "Kembaliannya 30 dolar.",
+     "en": "Here is your 30 dollars change.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "请稍等一下，马上好。",
+     "trad": "請稍等一下，馬上好。",
+     "pinyin": "Qǐng shāo děng yíxià, mǎshàng hǎo.",
+     "seg": "请 稍 等 一下 马上 好",
+     "arti": "Mohon tunggu sebentar, segera jadi.",
+     "en": "Please wait a moment, almost ready.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "这是您的餐点，请慢用。",
+     "trad": "這是您的餐點，請慢用。",
+     "pinyin": "Zhè shì nín de cāndiǎn, qǐng màn yòng.",
+     "seg": "这 是 您 的 餐点 请 慢用",
+     "arti": "Ini pesanan Anda, selamat menikmati.",
+     "en": "Here is your order, enjoy your meal.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "不好意思，这个卖完了。",
+     "trad": "不好意思，這個賣完了。",
+     "pinyin": "Bù hǎoyìsi, zhège mài wán le.",
+     "seg": "不好意思 这个 卖 完 了",
+     "arti": "Maaf, yang ini sudah habis.",
+     "en": "Sorry, this one is sold out.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "这个有猪肉吗？我不吃猪肉。",
+     "trad": "這個有豬肉嗎？我不吃豬肉。",
+     "pinyin": "Zhège yǒu zhūròu ma? Wǒ bù chī zhūròu.",
+     "seg": "这个 有 猪肉 吗 我 不 吃 猪肉",
+     "arti": "Ini ada babinya? Saya tidak makan babi.",
+     "en": "Does this have pork? I do not eat pork.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "可以帮我把桌子收一下吗？",
+     "trad": "可以幫我把桌子收一下嗎？",
+     "pinyin": "Kěyǐ bāng wǒ bǎ zhuōzi shōu yíxià ma?",
+     "seg": "可以 帮 我 把 桌子 收 一下 吗",
+     "arti": "Bisa tolong beresin mejanya?",
+     "en": "Could you clear the table for me?",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "餐具在那边自己拿。",
+     "trad": "餐具在那邊自己拿。",
+     "pinyin": "Cānjù zài nàbiān zìjǐ ná.",
+     "seg": "餐具 在 那边 自己 拿",
+     "arti": "Alat makan ambil sendiri di sana.",
+     "en": "Cutlery is over there, help yourself.",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "外送订单来了！",
+     "trad": "外送訂單來了！",
+     "pinyin": "Wàisòng dìngdān lái le!",
+     "seg": "外送 订单 来 了",
+     "arti": "Pesanan delivery masuk!",
+     "en": "A delivery order just came in!",
+     "tag": "resto"
+    },
+    {
+     "hanzi": "谢谢光临，再见！",
+     "trad": "謝謝光臨，再見！",
+     "pinyin": "Xièxie guānglín, zàijiàn!",
+     "seg": "谢谢 光临 再见",
+     "arti": "Terima kasih, sampai jumpa!",
+     "en": "Thanks for coming, goodbye!",
+     "tag": "resto"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Belanja, Uang & Administrasi",
+   "desc": "Minimarket, pasar malam, bank, SIM card, kantor pos.",
+   "icon": "🛒",
+   "cards": [
+    {
+     "hanzi": "便利商店",
+     "trad": "便利商店",
+     "pinyin": "biànlì shāngdiàn",
+     "arti": "minimarket (7-11, FamilyMart)",
+     "en": "convenience store",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "全联",
+     "trad": "全聯",
+     "pinyin": "Quánlián",
+     "arti": "PX Mart (supermarket murah)",
+     "en": "PX Mart",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "夜市",
+     "trad": "夜市",
+     "pinyin": "yèshì",
+     "arti": "pasar malam",
+     "en": "night market",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "多少钱",
+     "trad": "多少錢",
+     "pinyin": "duōshǎo qián",
+     "arti": "berapa harganya",
+     "en": "how much",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "太贵了",
+     "trad": "太貴了",
+     "pinyin": "tài guì le",
+     "arti": "terlalu mahal",
+     "en": "too expensive",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "便宜一点",
+     "trad": "便宜一點",
+     "pinyin": "piányí yìdiǎn",
+     "arti": "lebih murah dikit",
+     "en": "a bit cheaper",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "打折",
+     "trad": "打折",
+     "pinyin": "dǎzhé",
+     "arti": "diskon",
+     "en": "discount",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "特价",
+     "trad": "特價",
+     "pinyin": "tèjià",
+     "arti": "harga spesial",
+     "en": "special price",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "买一送一",
+     "trad": "買一送一",
+     "pinyin": "mǎi yī sòng yī",
+     "arti": "beli 1 gratis 1",
+     "en": "buy one get one",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "第二件六折",
+     "trad": "第二件六折",
+     "pinyin": "dì-èr jiàn liù zhé",
+     "arti": "item kedua diskon 40%",
+     "en": "second item 40% off",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "刷卡",
+     "trad": "刷卡",
+     "pinyin": "shuākǎ",
+     "arti": "bayar pakai kartu",
+     "en": "pay by card",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "现金",
+     "trad": "現金",
+     "pinyin": "xiànjīn",
+     "arti": "tunai",
+     "en": "cash",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "零钱",
+     "trad": "零錢",
+     "pinyin": "língqián",
+     "arti": "uang receh",
+     "en": "small change",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "悠游卡",
+     "trad": "悠遊卡",
+     "pinyin": "Yōuyóukǎ",
+     "arti": "EasyCard",
+     "en": "EasyCard",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "加值",
+     "trad": "加值",
+     "pinyin": "jiāzhí",
+     "arti": "top up",
+     "en": "to top up",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "袋子",
+     "trad": "袋子",
+     "pinyin": "dàizi",
+     "arti": "kantong plastik",
+     "en": "bag",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "会员",
+     "trad": "會員",
+     "pinyin": "huìyuán",
+     "arti": "member",
+     "en": "member",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "集点",
+     "trad": "集點",
+     "pinyin": "jídiǎn",
+     "arti": "kumpulin poin",
+     "en": "collect points",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "银行",
+     "trad": "銀行",
+     "pinyin": "yínháng",
+     "arti": "bank",
+     "en": "bank",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "开户",
+     "trad": "開戶",
+     "pinyin": "kāihù",
+     "arti": "buka rekening",
+     "en": "open a bank account",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "提款机",
+     "trad": "提款機",
+     "pinyin": "tíkuǎnjī",
+     "arti": "ATM",
+     "en": "ATM",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "领钱",
+     "trad": "領錢",
+     "pinyin": "lǐngqián",
+     "arti": "tarik tunai",
+     "en": "withdraw money",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "存款",
+     "trad": "存款",
+     "pinyin": "cúnkuǎn",
+     "arti": "setor / tabungan",
+     "en": "deposit",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "护照",
+     "trad": "護照",
+     "pinyin": "hùzhào",
+     "arti": "paspor",
+     "en": "passport",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "学生证",
+     "trad": "學生證",
+     "pinyin": "xuéshēngzhèng",
+     "arti": "kartu mahasiswa",
+     "en": "student ID",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "印章",
+     "trad": "印章",
+     "pinyin": "yìnzhāng",
+     "arti": "stempel nama (dipakai untuk dokumen)",
+     "en": "name seal",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "签名",
+     "trad": "簽名",
+     "pinyin": "qiānmíng",
+     "arti": "tanda tangan",
+     "en": "signature",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "填表",
+     "trad": "填表",
+     "pinyin": "tiánbiǎo",
+     "arti": "isi formulir",
+     "en": "fill in a form",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "邮局",
+     "trad": "郵局",
+     "pinyin": "yóujú",
+     "arti": "kantor pos",
+     "en": "post office",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "寄包裹",
+     "trad": "寄包裹",
+     "pinyin": "jì bāoguǒ",
+     "arti": "kirim paket",
+     "en": "send a parcel",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "手机号码",
+     "trad": "手機號碼",
+     "pinyin": "shǒujī hàomǎ",
+     "arti": "nomor HP",
+     "en": "phone number",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "门号",
+     "trad": "門號",
+     "pinyin": "ménhào",
+     "arti": "nomor SIM card",
+     "en": "SIM number",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "网路",
+     "trad": "網路",
+     "pinyin": "wǎnglù",
+     "arti": "internet (istilah TW)",
+     "en": "internet",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "吃到饱",
+     "trad": "吃到飽",
+     "pinyin": "chīdàobǎo",
+     "arti": "unlimited (data / buffet)",
+     "en": "unlimited (data plan / buffet)",
+     "tag": "belanja"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "这个多少钱？",
+     "trad": "這個多少錢？",
+     "pinyin": "Zhège duōshǎo qián?",
+     "seg": "这个 多少 钱",
+     "arti": "Ini berapa harganya?",
+     "en": "How much is this?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "可以算便宜一点吗？",
+     "trad": "可以算便宜一點嗎？",
+     "pinyin": "Kěyǐ suàn piányí yìdiǎn ma?",
+     "seg": "可以 算 便宜 一点 吗",
+     "arti": "Bisa dikasih lebih murah?",
+     "en": "Can you give me a better price?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "可以刷卡吗？",
+     "trad": "可以刷卡嗎？",
+     "pinyin": "Kěyǐ shuākǎ ma?",
+     "seg": "可以 刷卡 吗",
+     "arti": "Bisa bayar pakai kartu?",
+     "en": "Can I pay by card?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "要袋子吗？",
+     "trad": "要袋子嗎？",
+     "pinyin": "Yào dàizi ma?",
+     "seg": "要 袋子 吗",
+     "arti": "Mau kantong?",
+     "en": "Do you need a bag?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "不用，谢谢。",
+     "trad": "不用，謝謝。",
+     "pinyin": "Búyòng, xièxie.",
+     "seg": "不用 谢谢",
+     "arti": "Tidak usah, terima kasih.",
+     "en": "No need, thanks.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "我要加值悠游卡，五百块。",
+     "trad": "我要加值悠遊卡，五百塊。",
+     "pinyin": "Wǒ yào jiāzhí Yōuyóukǎ, wǔbǎi kuài.",
+     "seg": "我 要 加值 悠游卡 五百 块",
+     "arti": "Saya mau top up EasyCard 500.",
+     "en": "I want to top up my EasyCard, 500 dollars.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "有会员吗？要集点吗？",
+     "trad": "有會員嗎？要集點嗎？",
+     "pinyin": "Yǒu huìyuán ma? Yào jídiǎn ma?",
+     "seg": "有 会员 吗 要 集点 吗",
+     "arti": "Ada member? Mau kumpulin poin?",
+     "en": "Are you a member? Collect points?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "我想开户，我是留学生。",
+     "trad": "我想開戶，我是留學生。",
+     "pinyin": "Wǒ xiǎng kāihù, wǒ shì liúxuéshēng.",
+     "seg": "我 想 开户 我 是 留学生",
+     "arti": "Saya mau buka rekening, saya mahasiswa asing.",
+     "en": "I want to open an account, I am an international student.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "需要带什么证件？",
+     "trad": "需要帶什麼證件？",
+     "pinyin": "Xūyào dài shénme zhèngjiàn?",
+     "seg": "需要 带 什么 证件",
+     "arti": "Perlu bawa dokumen apa?",
+     "en": "What documents do I need to bring?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "请带护照、居留证和印章。",
+     "trad": "請帶護照、居留證和印章。",
+     "pinyin": "Qǐng dài hùzhào, jūliúzhèng hé yìnzhāng.",
+     "seg": "请 带 护照 居留证 和 印章",
+     "arti": "Bawa paspor, ARC, dan stempel nama.",
+     "en": "Please bring your passport, ARC and seal.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "这里签名，谢谢。",
+     "trad": "這裡簽名，謝謝。",
+     "pinyin": "Zhèlǐ qiānmíng, xièxie.",
+     "seg": "这里 签名 谢谢",
+     "arti": "Tanda tangan di sini, terima kasih.",
+     "en": "Sign here, thank you.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "我要办门号，有吃到饱的方案吗？",
+     "trad": "我要辦門號，有吃到飽的方案嗎？",
+     "pinyin": "Wǒ yào bàn ménhào, yǒu chīdàobǎo de fāng'àn ma?",
+     "seg": "我 要 办 门号 有 吃到饱 的 方案 吗",
+     "arti": "Saya mau bikin nomor, ada paket unlimited?",
+     "en": "I want a SIM plan, is there an unlimited data plan?",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "我要寄包裹到印尼。",
+     "trad": "我要寄包裹到印尼。",
+     "pinyin": "Wǒ yào jì bāoguǒ dào Yìnní.",
+     "seg": "我 要 寄 包裹 到 印尼",
+     "arti": "Saya mau kirim paket ke Indonesia.",
+     "en": "I want to send a parcel to Indonesia.",
+     "tag": "belanja"
+    },
+    {
+     "hanzi": "提款机在哪里？",
+     "trad": "提款機在哪裡？",
+     "pinyin": "Tíkuǎnjī zài nǎlǐ?",
+     "seg": "提款机 在 哪里",
+     "arti": "ATM di mana?",
+     "en": "Where is the ATM?",
+     "tag": "belanja"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Transportasi & Tanya Arah",
+   "desc": "MRT, bus, kereta, taksi, tanya jalan.",
+   "icon": "🚇",
+   "cards": [
+    {
+     "hanzi": "捷运",
+     "trad": "捷運",
+     "pinyin": "jiéyùn",
+     "arti": "MRT",
+     "en": "MRT",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "公车",
+     "trad": "公車",
+     "pinyin": "gōngchē",
+     "arti": "bus (istilah TW)",
+     "en": "bus",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "火车",
+     "trad": "火車",
+     "pinyin": "huǒchē",
+     "arti": "kereta api (TRA)",
+     "en": "train",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "高铁",
+     "trad": "高鐵",
+     "pinyin": "gāotiě",
+     "arti": "kereta cepat (HSR)",
+     "en": "high speed rail",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "客运",
+     "trad": "客運",
+     "pinyin": "kèyùn",
+     "arti": "bus antar kota",
+     "en": "intercity bus",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "计程车",
+     "trad": "計程車",
+     "pinyin": "jìchéngchē",
+     "arti": "taksi",
+     "en": "taxi",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "机车",
+     "trad": "機車",
+     "pinyin": "jīchē",
+     "arti": "motor / skuter",
+     "en": "scooter",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "YouBike",
+     "trad": "YouBike",
+     "pinyin": "YouBike",
+     "arti": "sepeda sewa umum",
+     "en": "public bike share",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "站",
+     "trad": "站",
+     "pinyin": "zhàn",
+     "arti": "stasiun / halte",
+     "en": "station; stop",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "出口",
+     "trad": "出口",
+     "pinyin": "chūkǒu",
+     "arti": "pintu keluar",
+     "en": "exit",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "转乘",
+     "trad": "轉乘",
+     "pinyin": "zhuǎnchéng",
+     "arti": "ganti jalur / transit",
+     "en": "transfer",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "末班车",
+     "trad": "末班車",
+     "pinyin": "mòbānchē",
+     "arti": "kereta/bus terakhir",
+     "en": "last train/bus",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "博爱座",
+     "trad": "博愛座",
+     "pinyin": "bó'àizuò",
+     "arti": "kursi prioritas",
+     "en": "priority seat",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "嗶卡",
+     "trad": "嗶卡",
+     "pinyin": "bì kǎ",
+     "arti": "tap kartu (bunyi bip)",
+     "en": "tap card",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "导航",
+     "trad": "導航",
+     "pinyin": "dǎoháng",
+     "arti": "navigasi (GPS)",
+     "en": "GPS navigation",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "迷路",
+     "trad": "迷路",
+     "pinyin": "mílù",
+     "arti": "tersesat",
+     "en": "to get lost",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "左转",
+     "trad": "左轉",
+     "pinyin": "zuǒzhuǎn",
+     "arti": "belok kiri",
+     "en": "turn left",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "右转",
+     "trad": "右轉",
+     "pinyin": "yòuzhuǎn",
+     "arti": "belok kanan",
+     "en": "turn right",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "直走",
+     "trad": "直走",
+     "pinyin": "zhí zǒu",
+     "arti": "lurus terus",
+     "en": "go straight",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "红绿灯",
+     "trad": "紅綠燈",
+     "pinyin": "hónglǜdēng",
+     "arti": "lampu merah",
+     "en": "traffic light",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "过马路",
+     "trad": "過馬路",
+     "pinyin": "guò mǎlù",
+     "arti": "menyeberang jalan",
+     "en": "cross the road",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "巷子",
+     "trad": "巷子",
+     "pinyin": "xiàngzi",
+     "arti": "gang",
+     "en": "alley",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "对面",
+     "trad": "對面",
+     "pinyin": "duìmiàn",
+     "arti": "seberang",
+     "en": "across the street",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "走路",
+     "trad": "走路",
+     "pinyin": "zǒulù",
+     "arti": "jalan kaki",
+     "en": "to walk",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "大概",
+     "trad": "大概",
+     "pinyin": "dàgài",
+     "arti": "kira-kira",
+     "en": "roughly",
+     "tag": "transport"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "请问捷运站怎么走？",
+     "trad": "請問捷運站怎麼走？",
+     "pinyin": "Qǐngwèn jiéyùn zhàn zěnme zǒu?",
+     "seg": "请问 捷运 站 怎么 走",
+     "arti": "Permisi, stasiun MRT ke arah mana?",
+     "en": "Excuse me, how do I get to the MRT station?",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "直走，然后在红绿灯右转。",
+     "trad": "直走，然後在紅綠燈右轉。",
+     "pinyin": "Zhí zǒu, ránhòu zài hónglǜdēng yòuzhuǎn.",
+     "seg": "直走 然后 在 红绿灯 右转",
+     "arti": "Lurus, lalu belok kanan di lampu merah.",
+     "en": "Go straight, then turn right at the traffic light.",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "走路大概十分钟。",
+     "trad": "走路大概十分鐘。",
+     "pinyin": "Zǒulù dàgài shí fēnzhōng.",
+     "seg": "走路 大概 十 分钟",
+     "arti": "Jalan kaki kira-kira 10 menit.",
+     "en": "About ten minutes on foot.",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "这班车有到台北车站吗？",
+     "trad": "這班車有到台北車站嗎？",
+     "pinyin": "Zhè bān chē yǒu dào Táiběi Chēzhàn ma?",
+     "seg": "这 班 车 有 到 台北 车站 吗",
+     "arti": "Bus ini sampai Taipei Main Station?",
+     "en": "Does this bus go to Taipei Main Station?",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "末班车几点？",
+     "trad": "末班車幾點？",
+     "pinyin": "Mòbānchē jǐ diǎn?",
+     "seg": "末班车 几 点",
+     "arti": "Kereta terakhir jam berapa?",
+     "en": "What time is the last train?",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "我要在下一站下车。",
+     "trad": "我要在下一站下車。",
+     "pinyin": "Wǒ yào zài xià yí zhàn xiàchē.",
+     "seg": "我 要 在 下 一 站 下车",
+     "arti": "Saya turun di halte berikutnya.",
+     "en": "I am getting off at the next stop.",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "上车要嗶卡，下车也要嗶卡。",
+     "trad": "上車要嗶卡，下車也要嗶卡。",
+     "pinyin": "Shàngchē yào bì kǎ, xiàchē yě yào bì kǎ.",
+     "seg": "上车 要 嗶卡 下车 也 要 嗶卡",
+     "arti": "Naik tap kartu, turun juga tap kartu.",
+     "en": "Tap your card when boarding and again when getting off.",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "师傅，请到这个地址。",
+     "trad": "師傅，請到這個地址。",
+     "pinyin": "Shīfu, qǐng dào zhège dìzhǐ.",
+     "seg": "师傅 请 到 这个 地址",
+     "arti": "Pak, tolong ke alamat ini.",
+     "en": "Driver, please go to this address.",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "我迷路了，可以帮我看一下地图吗？",
+     "trad": "我迷路了，可以幫我看一下地圖嗎？",
+     "pinyin": "Wǒ mílù le, kěyǐ bāng wǒ kàn yíxià dìtú ma?",
+     "seg": "我 迷路 了 可以 帮 我 看 一下 地图 吗",
+     "arti": "Saya tersesat, bisa tolong lihat peta ini?",
+     "en": "I am lost, could you help me with this map?",
+     "tag": "transport"
+    },
+    {
+     "hanzi": "高铁票在哪里买？",
+     "trad": "高鐵票在哪裡買？",
+     "pinyin": "Gāotiě piào zài nǎlǐ mǎi?",
+     "seg": "高铁 票 在 哪里 买",
+     "arti": "Tiket HSR beli di mana?",
+     "en": "Where do I buy HSR tickets?",
+     "tag": "transport"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Kos, Asrama & Hidup Sehari-hari",
+   "desc": "Sewa kamar, tagihan, sampah, cuaca, masalah di kos.",
+   "icon": "🏠",
+   "cards": [
+    {
+     "hanzi": "宿舍",
+     "trad": "宿舍",
+     "pinyin": "sùshè",
+     "arti": "asrama",
+     "en": "dormitory",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "房东",
+     "trad": "房東",
+     "pinyin": "fángdōng",
+     "arti": "pemilik kos",
+     "en": "landlord",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "房租",
+     "trad": "房租",
+     "pinyin": "fángzū",
+     "arti": "uang sewa",
+     "en": "rent",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "押金",
+     "trad": "押金",
+     "pinyin": "yājīn",
+     "arti": "deposit",
+     "en": "deposit",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "套房",
+     "trad": "套房",
+     "pinyin": "tàofáng",
+     "arti": "kamar dengan kamar mandi dalam",
+     "en": "studio with private bathroom",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "雅房",
+     "trad": "雅房",
+     "pinyin": "yǎfáng",
+     "arti": "kamar dengan kamar mandi bersama",
+     "en": "room with shared bathroom",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "水电费",
+     "trad": "水電費",
+     "pinyin": "shuǐdiànfèi",
+     "arti": "tagihan air & listrik",
+     "en": "utility bills",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "冷气",
+     "trad": "冷氣",
+     "pinyin": "lěngqì",
+     "arti": "AC",
+     "en": "air conditioner",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "洗衣机",
+     "trad": "洗衣機",
+     "pinyin": "xǐyījī",
+     "arti": "mesin cuci",
+     "en": "washing machine",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "自助洗衣",
+     "trad": "自助洗衣",
+     "pinyin": "zìzhù xǐyī",
+     "arti": "laundry koin",
+     "en": "coin laundry",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "垃圾车",
+     "trad": "垃圾車",
+     "pinyin": "lājīchē",
+     "arti": "truk sampah",
+     "en": "garbage truck",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "垃圾分类",
+     "trad": "垃圾分類",
+     "pinyin": "lājī fēnlèi",
+     "arti": "pilah sampah",
+     "en": "waste sorting",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "回收",
+     "trad": "回收",
+     "pinyin": "huíshōu",
+     "arti": "daur ulang",
+     "en": "recycling",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "厨余",
+     "trad": "廚餘",
+     "pinyin": "chúyú",
+     "arti": "sampah dapur / sisa makanan",
+     "en": "food waste",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "钥匙",
+     "trad": "鑰匙",
+     "pinyin": "yàoshi",
+     "arti": "kunci",
+     "en": "key",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "门禁",
+     "trad": "門禁",
+     "pinyin": "ménjìn",
+     "arti": "jam malam / akses pintu",
+     "en": "curfew; door access",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "停电",
+     "trad": "停電",
+     "pinyin": "tíngdiàn",
+     "arti": "mati listrik",
+     "en": "power outage",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "停水",
+     "trad": "停水",
+     "pinyin": "tíngshuǐ",
+     "arti": "mati air",
+     "en": "water outage",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "坏了",
+     "trad": "壞了",
+     "pinyin": "huài le",
+     "arti": "rusak",
+     "en": "broken",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "修理",
+     "trad": "修理",
+     "pinyin": "xiūlǐ",
+     "arti": "memperbaiki",
+     "en": "to repair",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "漏水",
+     "trad": "漏水",
+     "pinyin": "lòushuǐ",
+     "arti": "bocor",
+     "en": "leaking",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "蟑螂",
+     "trad": "蟑螂",
+     "pinyin": "zhāngláng",
+     "arti": "kecoak",
+     "en": "cockroach",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "太吵了",
+     "trad": "太吵了",
+     "pinyin": "tài chǎo le",
+     "arti": "terlalu berisik",
+     "en": "too noisy",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "室友",
+     "trad": "室友",
+     "pinyin": "shìyǒu",
+     "arti": "teman sekamar",
+     "en": "roommate",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "搬家",
+     "trad": "搬家",
+     "pinyin": "bānjiā",
+     "arti": "pindah rumah",
+     "en": "to move house",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "台风",
+     "trad": "颱風",
+     "pinyin": "táifēng",
+     "arti": "topan",
+     "en": "typhoon",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "地震",
+     "trad": "地震",
+     "pinyin": "dìzhèn",
+     "arti": "gempa",
+     "en": "earthquake",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "下雨",
+     "trad": "下雨",
+     "pinyin": "xiàyǔ",
+     "arti": "hujan",
+     "en": "to rain",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "雨伞",
+     "trad": "雨傘",
+     "pinyin": "yǔsǎn",
+     "arti": "payung",
+     "en": "umbrella",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "口罩",
+     "trad": "口罩",
+     "pinyin": "kǒuzhào",
+     "arti": "masker",
+     "en": "face mask",
+     "tag": "harian"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "房租一个月多少？含水电吗？",
+     "trad": "房租一個月多少？含水電嗎？",
+     "pinyin": "Fángzū yí ge yuè duōshǎo? Hán shuǐdiàn ma?",
+     "seg": "房租 一个 月 多少 含 水电 吗",
+     "arti": "Sewa sebulan berapa? Sudah termasuk air listrik?",
+     "en": "How much is rent per month? Are utilities included?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "押金是两个月。",
+     "trad": "押金是兩個月。",
+     "pinyin": "Yājīn shì liǎng ge yuè.",
+     "seg": "押金 是 两 个 月",
+     "arti": "Depositnya dua bulan.",
+     "en": "The deposit is two months.",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "冷气坏了，可以请人来修吗？",
+     "trad": "冷氣壞了，可以請人來修嗎？",
+     "pinyin": "Lěngqì huài le, kěyǐ qǐng rén lái xiū ma?",
+     "seg": "冷气 坏 了 可以 请 人 来 修 吗",
+     "arti": "AC-nya rusak, bisa panggil orang buat perbaiki?",
+     "en": "The AC is broken, can someone come fix it?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "垃圾车几点来？",
+     "trad": "垃圾車幾點來？",
+     "pinyin": "Lājīchē jǐ diǎn lái?",
+     "seg": "垃圾车 几 点 来",
+     "arti": "Truk sampah datang jam berapa?",
+     "en": "What time does the garbage truck come?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "这个要回收还是一般垃圾？",
+     "trad": "這個要回收還是一般垃圾？",
+     "pinyin": "Zhège yào huíshōu háishì yìbān lājī?",
+     "seg": "这个 要 回收 还是 一般 垃圾",
+     "arti": "Ini masuk daur ulang atau sampah biasa?",
+     "en": "Is this recycling or general trash?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "晚上可以小声一点吗？",
+     "trad": "晚上可以小聲一點嗎？",
+     "pinyin": "Wǎnshàng kěyǐ xiǎoshēng yìdiǎn ma?",
+     "seg": "晚上 可以 小声 一点 吗",
+     "arti": "Malam-malam bisa lebih pelan?",
+     "en": "Could you keep it down at night?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "明天有台风，学校停课。",
+     "trad": "明天有颱風，學校停課。",
+     "pinyin": "Míngtiān yǒu táifēng, xuéxiào tíngkè.",
+     "seg": "明天 有 台风 学校 停课",
+     "arti": "Besok ada topan, sekolah libur.",
+     "en": "There is a typhoon tomorrow, school is cancelled.",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "刚才有地震，你有感觉到吗？",
+     "trad": "剛才有地震，你有感覺到嗎？",
+     "pinyin": "Gāngcái yǒu dìzhèn, nǐ yǒu gǎnjué dào ma?",
+     "seg": "刚才 有 地震 你 有 感觉 到 吗",
+     "arti": "Barusan ada gempa, kamu kerasa?",
+     "en": "There was an earthquake just now, did you feel it?",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "我的钥匙不见了。",
+     "trad": "我的鑰匙不見了。",
+     "pinyin": "Wǒ de yàoshi bújiàn le.",
+     "seg": "我 的 钥匙 不见 了",
+     "arti": "Kunci saya hilang.",
+     "en": "I lost my key.",
+     "tag": "harian"
+    },
+    {
+     "hanzi": "哪里有自助洗衣店？",
+     "trad": "哪裡有自助洗衣店？",
+     "pinyin": "Nǎlǐ yǒu zìzhù xǐyīdiàn?",
+     "seg": "哪里 有 自助 洗衣店",
+     "arti": "Di mana ada laundry koin?",
+     "en": "Where is there a coin laundry?",
+     "tag": "harian"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Kesehatan & Darurat",
+   "desc": "Klinik, obat, kecelakaan kerja, kehilangan barang, imigrasi.",
+   "icon": "🏥",
+   "cards": [
+    {
+     "hanzi": "医院",
+     "trad": "醫院",
+     "pinyin": "yīyuàn",
+     "arti": "rumah sakit",
+     "en": "hospital",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "诊所",
+     "trad": "診所",
+     "pinyin": "zhěnsuǒ",
+     "arti": "klinik",
+     "en": "clinic",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "药局",
+     "trad": "藥局",
+     "pinyin": "yàojú",
+     "arti": "apotek",
+     "en": "pharmacy",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "挂号",
+     "trad": "掛號",
+     "pinyin": "guàhào",
+     "arti": "daftar berobat",
+     "en": "register (at clinic)",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "健保卡",
+     "trad": "健保卡",
+     "pinyin": "jiànbǎokǎ",
+     "arti": "kartu NHI",
+     "en": "NHI card",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "感冒",
+     "trad": "感冒",
+     "pinyin": "gǎnmào",
+     "arti": "flu / pilek",
+     "en": "cold",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "发烧",
+     "trad": "發燒",
+     "pinyin": "fāshāo",
+     "arti": "demam",
+     "en": "fever",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "咳嗽",
+     "trad": "咳嗽",
+     "pinyin": "késòu",
+     "arti": "batuk",
+     "en": "cough",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "头痛",
+     "trad": "頭痛",
+     "pinyin": "tóutòng",
+     "arti": "sakit kepala",
+     "en": "headache",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "肚子痛",
+     "trad": "肚子痛",
+     "pinyin": "dùzi tòng",
+     "arti": "sakit perut",
+     "en": "stomachache",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "拉肚子",
+     "trad": "拉肚子",
+     "pinyin": "lā dùzi",
+     "arti": "diare",
+     "en": "diarrhea",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "过敏",
+     "trad": "過敏",
+     "pinyin": "guòmǐn",
+     "arti": "alergi",
+     "en": "allergy",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "受伤",
+     "trad": "受傷",
+     "pinyin": "shòushāng",
+     "arti": "terluka",
+     "en": "injured",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "流血",
+     "trad": "流血",
+     "pinyin": "liúxiě",
+     "arti": "berdarah",
+     "en": "bleeding",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "烫伤",
+     "trad": "燙傷",
+     "pinyin": "tàngshāng",
+     "arti": "luka bakar (air panas/minyak)",
+     "en": "scald",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "药",
+     "trad": "藥",
+     "pinyin": "yào",
+     "arti": "obat",
+     "en": "medicine",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "饭后吃",
+     "trad": "飯後吃",
+     "pinyin": "fàn hòu chī",
+     "arti": "minum setelah makan",
+     "en": "take after meals",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "一天三次",
+     "trad": "一天三次",
+     "pinyin": "yì tiān sān cì",
+     "arti": "3 kali sehari",
+     "en": "three times a day",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "救护车",
+     "trad": "救護車",
+     "pinyin": "jiùhùchē",
+     "arti": "ambulans",
+     "en": "ambulance",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "警察",
+     "trad": "警察",
+     "pinyin": "jǐngchá",
+     "arti": "polisi",
+     "en": "police",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "报警",
+     "trad": "報警",
+     "pinyin": "bàojǐng",
+     "arti": "lapor polisi",
+     "en": "call the police",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "救命",
+     "trad": "救命",
+     "pinyin": "jiùmìng",
+     "arti": "tolong! (darurat)",
+     "en": "help! (emergency)",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "小心",
+     "trad": "小心",
+     "pinyin": "xiǎoxīn",
+     "arti": "hati-hati",
+     "en": "be careful",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "危险",
+     "trad": "危險",
+     "pinyin": "wēixiǎn",
+     "arti": "bahaya",
+     "en": "dangerous",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "失火",
+     "trad": "失火",
+     "pinyin": "shīhuǒ",
+     "arti": "kebakaran",
+     "en": "fire (accident)",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "钱包",
+     "trad": "錢包",
+     "pinyin": "qiánbāo",
+     "arti": "dompet",
+     "en": "wallet",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "掉了",
+     "trad": "掉了",
+     "pinyin": "diào le",
+     "arti": "jatuh / hilang",
+     "en": "dropped; lost",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "偷",
+     "trad": "偷",
+     "pinyin": "tōu",
+     "arti": "mencuri",
+     "en": "to steal",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "移民署",
+     "trad": "移民署",
+     "pinyin": "yímínshǔ",
+     "arti": "kantor imigrasi",
+     "en": "immigration agency",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "延签",
+     "trad": "延簽",
+     "pinyin": "yánqiān",
+     "arti": "perpanjang visa/ARC",
+     "en": "extend visa",
+     "tag": "darurat"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "我不舒服，想去看医生。",
+     "trad": "我不舒服，想去看醫生。",
+     "pinyin": "Wǒ bù shūfu, xiǎng qù kàn yīshēng.",
+     "seg": "我 不 舒服 想 去 看 医生",
+     "arti": "Saya tidak enak badan, mau ke dokter.",
+     "en": "I do not feel well, I want to see a doctor.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我要挂号，这是我的健保卡。",
+     "trad": "我要掛號，這是我的健保卡。",
+     "pinyin": "Wǒ yào guàhào, zhè shì wǒ de jiànbǎokǎ.",
+     "seg": "我 要 挂号 这 是 我 的 健保卡",
+     "arti": "Saya mau daftar, ini kartu NHI saya.",
+     "en": "I want to register, here is my NHI card.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我从昨天开始发烧、咳嗽。",
+     "trad": "我從昨天開始發燒、咳嗽。",
+     "pinyin": "Wǒ cóng zuótiān kāishǐ fāshāo, késòu.",
+     "seg": "我 从 昨天 开始 发烧 咳嗽",
+     "arti": "Saya demam dan batuk sejak kemarin.",
+     "en": "I have had a fever and cough since yesterday.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我对海鲜过敏。",
+     "trad": "我對海鮮過敏。",
+     "pinyin": "Wǒ duì hǎixiān guòmǐn.",
+     "seg": "我 对 海鲜 过敏",
+     "arti": "Saya alergi seafood.",
+     "en": "I am allergic to seafood.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "这个药一天吃几次？",
+     "trad": "這個藥一天吃幾次？",
+     "pinyin": "Zhège yào yì tiān chī jǐ cì?",
+     "seg": "这个 药 一天 吃 几 次",
+     "arti": "Obat ini diminum berapa kali sehari?",
+     "en": "How many times a day do I take this medicine?",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "饭后吃，一天三次。",
+     "trad": "飯後吃，一天三次。",
+     "pinyin": "Fàn hòu chī, yì tiān sān cì.",
+     "seg": "饭后 吃 一天 三 次",
+     "arti": "Diminum setelah makan, tiga kali sehari.",
+     "en": "Take after meals, three times a day.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我在厨房被烫到了。",
+     "trad": "我在廚房被燙到了。",
+     "pinyin": "Wǒ zài chúfáng bèi tàng dào le.",
+     "seg": "我 在 厨房 被 烫 到 了",
+     "arti": "Saya kena panas di dapur.",
+     "en": "I got scalded in the kitchen.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "请帮我叫救护车！",
+     "trad": "請幫我叫救護車！",
+     "pinyin": "Qǐng bāng wǒ jiào jiùhùchē!",
+     "seg": "请 帮 我 叫 救护车",
+     "arti": "Tolong panggilkan ambulans!",
+     "en": "Please call an ambulance!",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我的钱包掉了，里面有居留证。",
+     "trad": "我的錢包掉了，裡面有居留證。",
+     "pinyin": "Wǒ de qiánbāo diào le, lǐmiàn yǒu jūliúzhèng.",
+     "seg": "我 的 钱包 掉 了 里面 有 居留证",
+     "arti": "Dompet saya hilang, ada ARC di dalamnya.",
+     "en": "I lost my wallet, my ARC was inside.",
+     "tag": "darurat"
+    },
+    {
+     "hanzi": "我要去移民署延签。",
+     "trad": "我要去移民署延簽。",
+     "pinyin": "Wǒ yào qù yímínshǔ yánqiān.",
+     "seg": "我 要 去 移民署 延签",
+     "arti": "Saya mau ke imigrasi perpanjang ARC.",
+     "en": "I need to go to immigration to extend my visa.",
+     "tag": "darurat"
+    }
+   ]
+  },
+  {
+   "name": "🇹🇼 Sosial, Kampus & Basa-basi",
+   "desc": "Perkenalan, sapaan gaya Taiwan, kampus, identitas Indonesia/Muslim.",
+   "icon": "🤝",
+   "cards": [
+    {
+     "hanzi": "你好",
+     "trad": "你好",
+     "pinyin": "nǐ hǎo",
+     "arti": "halo",
+     "en": "hello",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "早安",
+     "trad": "早安",
+     "pinyin": "zǎo'ān",
+     "arti": "selamat pagi (TW)",
+     "en": "good morning",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "晚安",
+     "trad": "晚安",
+     "pinyin": "wǎn'ān",
+     "arti": "selamat malam / tidur",
+     "en": "good night",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "拜拜",
+     "trad": "拜拜",
+     "pinyin": "bāibāi",
+     "arti": "dadah",
+     "en": "bye bye",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "吃饱了吗",
+     "trad": "吃飽了嗎",
+     "pinyin": "chī bǎo le ma",
+     "arti": "udah makan? (sapaan)",
+     "en": "have you eaten? (greeting)",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "还好",
+     "trad": "還好",
+     "pinyin": "hái hǎo",
+     "arti": "lumayan / biasa aja",
+     "en": "so-so; okay",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "真的假的",
+     "trad": "真的假的",
+     "pinyin": "zhēn de jiǎ de",
+     "arti": "serius? beneran?",
+     "en": "really? seriously?",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "对啊",
+     "trad": "對啊",
+     "pinyin": "duì a",
+     "arti": "iya betul",
+     "en": "yeah, right",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "好啊",
+     "trad": "好啊",
+     "pinyin": "hǎo a",
+     "arti": "boleh / oke",
+     "en": "sure, okay",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "没关系",
+     "trad": "沒關係",
+     "pinyin": "méi guānxi",
+     "arti": "tidak apa-apa",
+     "en": "it is fine",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "不会",
+     "trad": "不會",
+     "pinyin": "bú huì",
+     "arti": "sama-sama (respon xiexie di TW)",
+     "en": "you are welcome (TW)",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "随便",
+     "trad": "隨便",
+     "pinyin": "suíbiàn",
+     "arti": "terserah",
+     "en": "whatever; anything",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "等一下",
+     "trad": "等一下",
+     "pinyin": "děng yíxià",
+     "arti": "tunggu sebentar",
+     "en": "wait a moment",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "加油",
+     "trad": "加油",
+     "pinyin": "jiāyóu",
+     "arti": "semangat!",
+     "en": "go! keep it up!",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "恭喜",
+     "trad": "恭喜",
+     "pinyin": "gōngxǐ",
+     "arti": "selamat!",
+     "en": "congratulations",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "生日快乐",
+     "trad": "生日快樂",
+     "pinyin": "shēngrì kuàilè",
+     "arti": "selamat ulang tahun",
+     "en": "happy birthday",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "新年快乐",
+     "trad": "新年快樂",
+     "pinyin": "xīnnián kuàilè",
+     "arti": "selamat tahun baru",
+     "en": "happy new year",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "印尼",
+     "trad": "印尼",
+     "pinyin": "Yìnní",
+     "arti": "Indonesia",
+     "en": "Indonesia",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "印尼人",
+     "trad": "印尼人",
+     "pinyin": "Yìnní rén",
+     "arti": "orang Indonesia",
+     "en": "Indonesian (person)",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "穆斯林",
+     "trad": "穆斯林",
+     "pinyin": "Mùsīlín",
+     "arti": "Muslim",
+     "en": "Muslim",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "祈祷",
+     "trad": "祈禱",
+     "pinyin": "qídǎo",
+     "arti": "berdoa / sholat",
+     "en": "to pray",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "清真寺",
+     "trad": "清真寺",
+     "pinyin": "qīngzhēnsì",
+     "arti": "masjid",
+     "en": "mosque",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "斋戒月",
+     "trad": "齋戒月",
+     "pinyin": "zhāijièyuè",
+     "arti": "bulan Ramadan",
+     "en": "Ramadan",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "国际处",
+     "trad": "國際處",
+     "pinyin": "guójìchù",
+     "arti": "Office of International Affairs (OIA)",
+     "en": "international office",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "系办",
+     "trad": "系辦",
+     "pinyin": "xìbàn",
+     "arti": "kantor jurusan",
+     "en": "department office",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "教授",
+     "trad": "教授",
+     "pinyin": "jiàoshòu",
+     "arti": "profesor",
+     "en": "professor",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "学长",
+     "trad": "學長",
+     "pinyin": "xuézhǎng",
+     "arti": "senior laki-laki",
+     "en": "male senior",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "学姐",
+     "trad": "學姐",
+     "pinyin": "xuéjiě",
+     "arti": "senior perempuan",
+     "en": "female senior",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "社团",
+     "trad": "社團",
+     "pinyin": "shètuán",
+     "arti": "klub / UKM",
+     "en": "student club",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "LINE",
+     "trad": "LINE",
+     "pinyin": "LINE",
+     "arti": "aplikasi LINE (chat utama di TW)",
+     "en": "LINE messenger",
+     "tag": "sosial"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "我叫Thomas，来自印尼。",
+     "trad": "我叫Thomas，來自印尼。",
+     "pinyin": "Wǒ jiào Thomas, láizì Yìnní.",
+     "seg": "我 叫 Thomas 来自 印尼",
+     "arti": "Nama saya Thomas, dari Indonesia.",
+     "en": "My name is Thomas, from Indonesia.",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "我在中原大学念国贸系。",
+     "trad": "我在中原大學念國貿系。",
+     "pinyin": "Wǒ zài Zhōngyuán Dàxué niàn guómào xì.",
+     "seg": "我 在 中原 大学 念 国贸 系",
+     "arti": "Saya kuliah di CYCU jurusan Perdagangan Internasional.",
+     "en": "I study International Trade at CYCU.",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "我来台湾一年多了。",
+     "trad": "我來台灣一年多了。",
+     "pinyin": "Wǒ lái Táiwān yì nián duō le.",
+     "seg": "我 来 台湾 一 年 多 了",
+     "arti": "Saya di Taiwan sudah setahun lebih.",
+     "en": "I have been in Taiwan for over a year.",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "我的中文还不太好，请多多包涵。",
+     "trad": "我的中文還不太好，請多多包涵。",
+     "pinyin": "Wǒ de Zhōngwén hái bú tài hǎo, qǐng duōduō bāohán.",
+     "seg": "我 的 中文 还 不 太 好 请 多多 包涵",
+     "arti": "Mandarin saya belum bagus, mohon dimaklumi.",
+     "en": "My Chinese is not great yet, please bear with me.",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "可以加你的LINE吗？",
+     "trad": "可以加你的LINE嗎？",
+     "pinyin": "Kěyǐ jiā nǐ de LINE ma?",
+     "seg": "可以 加 你 的 LINE 吗",
+     "arti": "Boleh add LINE kamu?",
+     "en": "Can I add your LINE?",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "我是穆斯林，不吃猪肉，不喝酒。",
+     "trad": "我是穆斯林，不吃豬肉，不喝酒。",
+     "pinyin": "Wǒ shì Mùsīlín, bù chī zhūròu, bù hē jiǔ.",
+     "seg": "我 是 穆斯林 不 吃 猪肉 不 喝 酒",
+     "arti": "Saya Muslim, tidak makan babi, tidak minum alkohol.",
+     "en": "I am Muslim, I do not eat pork or drink alcohol.",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "这附近有清真餐厅吗？",
+     "trad": "這附近有清真餐廳嗎？",
+     "pinyin": "Zhè fùjìn yǒu qīngzhēn cāntīng ma?",
+     "seg": "这 附近 有 清真 餐厅 吗",
+     "arti": "Di sekitar sini ada restoran halal?",
+     "en": "Is there a halal restaurant nearby?",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "你吃饱了吗？",
+     "trad": "你吃飽了嗎？",
+     "pinyin": "Nǐ chī bǎo le ma?",
+     "seg": "你 吃 饱 了 吗",
+     "arti": "Udah makan? (basa-basi)",
+     "en": "Have you eaten? (greeting)",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "谢谢！— 不会。",
+     "trad": "謝謝！— 不會。",
+     "pinyin": "Xièxie! — Bú huì.",
+     "seg": "谢谢 不会",
+     "arti": "Terima kasih! — Sama-sama (gaya Taiwan).",
+     "en": "Thanks! — You are welcome (Taiwan style).",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "周末要不要一起去夜市？",
+     "trad": "週末要不要一起去夜市？",
+     "pinyin": "Zhōumò yào bú yào yìqǐ qù yèshì?",
+     "seg": "周末 要 不 要 一起 去 夜市",
+     "arti": "Akhir pekan mau ke pasar malam bareng?",
+     "en": "Want to go to the night market together this weekend?",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "真的假的？太厉害了！",
+     "trad": "真的假的？太厲害了！",
+     "pinyin": "Zhēn de jiǎ de? Tài lìhài le!",
+     "seg": "真的 假的 太 厉害 了",
+     "arti": "Serius? Keren banget!",
+     "en": "Really? That is awesome!",
+     "tag": "sosial"
+    },
+    {
+     "hanzi": "不好意思，我先走了，明天见。",
+     "trad": "不好意思，我先走了，明天見。",
+     "pinyin": "Bù hǎoyìsi, wǒ xiān zǒu le, míngtiān jiàn.",
+     "seg": "不好意思 我 先 走 了 明天 见",
+     "arti": "Maaf, saya duluan ya, sampai besok.",
+     "en": "Sorry, I have to go, see you tomorrow.",
+     "tag": "sosial"
+    }
+   ]
+  }
+ ]
+}

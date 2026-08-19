@@ -1,0 +1,2686 @@
+{
+ "version": 2,
+ "cards": [
+  {
+   "id": "msui6prd9svhzf",
+   "hanzi": "爱",
+   "trad": "愛",
+   "pinyin": "ài",
+   "arti": "cinta; mencintai",
+   "en": "to love",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdxkitau",
+   "hanzi": "八",
+   "trad": "八",
+   "pinyin": "bā",
+   "arti": "delapan",
+   "en": "eight",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdwk43ak",
+   "hanzi": "爸爸",
+   "trad": "爸爸",
+   "pinyin": "bàba",
+   "arti": "ayah",
+   "en": "dad",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prddapyxk",
+   "hanzi": "杯子",
+   "trad": "杯子",
+   "pinyin": "bēizi",
+   "arti": "gelas; cangkir",
+   "en": "cup; glass",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prddlsrt8",
+   "hanzi": "北京",
+   "trad": "北京",
+   "pinyin": "Běijīng",
+   "arti": "Beijing",
+   "en": "Beijing",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdwdm17m",
+   "hanzi": "本",
+   "trad": "本",
+   "pinyin": "běn",
+   "arti": "kata bantu untuk buku",
+   "en": "measure word for books",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdcr7r7g",
+   "hanzi": "不",
+   "trad": "不",
+   "pinyin": "bù",
+   "arti": "tidak; bukan",
+   "en": "not; no",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdctyyxq",
+   "hanzi": "不客气",
+   "trad": "不客氣",
+   "pinyin": "bú kèqi",
+   "arti": "sama-sama",
+   "en": "you are welcome",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd6dsjl8",
+   "hanzi": "菜",
+   "trad": "菜",
+   "pinyin": "cài",
+   "arti": "sayur; masakan",
+   "en": "dish; vegetable",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd4dc2v4",
+   "hanzi": "茶",
+   "trad": "茶",
+   "pinyin": "chá",
+   "arti": "teh",
+   "en": "tea",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdf610iw",
+   "hanzi": "吃",
+   "trad": "吃",
+   "pinyin": "chī",
+   "arti": "makan",
+   "en": "to eat",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdqdjh35",
+   "hanzi": "出租车",
+   "trad": "出租車",
+   "pinyin": "chūzūchē",
+   "arti": "taksi",
+   "en": "taxi",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdcn66gl",
+   "hanzi": "打电话",
+   "trad": "打電話",
+   "pinyin": "dǎ diànhuà",
+   "arti": "menelepon",
+   "en": "to make a phone call",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd7fww6m",
+   "hanzi": "大",
+   "trad": "大",
+   "pinyin": "dà",
+   "arti": "besar",
+   "en": "big",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd89e24k",
+   "hanzi": "的",
+   "trad": "的",
+   "pinyin": "de",
+   "arti": "partikel kepemilikan",
+   "en": "possessive particle",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdo4ju0o",
+   "hanzi": "点",
+   "trad": "點",
+   "pinyin": "diǎn",
+   "arti": "jam; titik",
+   "en": "o'clock; dot",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdjy3ku4",
+   "hanzi": "电脑",
+   "trad": "電腦",
+   "pinyin": "diànnǎo",
+   "arti": "komputer",
+   "en": "computer",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdsrzvbj",
+   "hanzi": "电视",
+   "trad": "電視",
+   "pinyin": "diànshì",
+   "arti": "televisi",
+   "en": "television",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdv04xg5",
+   "hanzi": "电影",
+   "trad": "電影",
+   "pinyin": "diànyǐng",
+   "arti": "film",
+   "en": "movie",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdfs5fbl",
+   "hanzi": "东西",
+   "trad": "東西",
+   "pinyin": "dōngxi",
+   "arti": "barang; benda",
+   "en": "thing",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prds6p5iu",
+   "hanzi": "都",
+   "trad": "都",
+   "pinyin": "dōu",
+   "arti": "semua",
+   "en": "all; both",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdigzlt8",
+   "hanzi": "读",
+   "trad": "讀",
+   "pinyin": "dú",
+   "arti": "membaca",
+   "en": "to read",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd9zl3qy",
+   "hanzi": "对不起",
+   "trad": "對不起",
+   "pinyin": "duìbuqǐ",
+   "arti": "maaf",
+   "en": "sorry",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdmcuy8a",
+   "hanzi": "多",
+   "trad": "多",
+   "pinyin": "duō",
+   "arti": "banyak",
+   "en": "many; much",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdxoddoi",
+   "hanzi": "多少",
+   "trad": "多少",
+   "pinyin": "duōshao",
+   "arti": "berapa",
+   "en": "how many; how much",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdyy705b",
+   "hanzi": "儿子",
+   "trad": "兒子",
+   "pinyin": "érzi",
+   "arti": "anak laki-laki",
+   "en": "son",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdh8bxij",
+   "hanzi": "二",
+   "trad": "二",
+   "pinyin": "èr",
+   "arti": "dua",
+   "en": "two",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdhl21af",
+   "hanzi": "饭店",
+   "trad": "飯店",
+   "pinyin": "fàndiàn",
+   "arti": "restoran; hotel",
+   "en": "restaurant; hotel",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd81k3i2",
+   "hanzi": "飞机",
+   "trad": "飛機",
+   "pinyin": "fēijī",
+   "arti": "pesawat terbang",
+   "en": "airplane",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdmuaiz7",
+   "hanzi": "分钟",
+   "trad": "分鐘",
+   "pinyin": "fēnzhōng",
+   "arti": "menit",
+   "en": "minute",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd5fkq03",
+   "hanzi": "高兴",
+   "trad": "高興",
+   "pinyin": "gāoxìng",
+   "arti": "senang; gembira",
+   "en": "happy; glad",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prdpyzs3w",
+   "hanzi": "个",
+   "trad": "個",
+   "pinyin": "gè",
+   "arti": "kata bantu umum",
+   "en": "general measure word",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prd7f93u5",
+   "hanzi": "工作",
+   "trad": "工作",
+   "pinyin": "gōngzuò",
+   "arti": "bekerja; pekerjaan",
+   "en": "work; job",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prehak0e5",
+   "hanzi": "狗",
+   "trad": "狗",
+   "pinyin": "gǒu",
+   "arti": "anjing",
+   "en": "dog",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prec1hbpv",
+   "hanzi": "汉语",
+   "trad": "漢語",
+   "pinyin": "Hànyǔ",
+   "arti": "bahasa Mandarin",
+   "en": "Chinese language",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prewwnl63",
+   "hanzi": "好",
+   "trad": "好",
+   "pinyin": "hǎo",
+   "arti": "baik; bagus",
+   "en": "good; fine",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre0o3235",
+   "hanzi": "号",
+   "trad": "號",
+   "pinyin": "hào",
+   "arti": "tanggal; nomor",
+   "en": "date; number",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prehbhw80",
+   "hanzi": "喝",
+   "trad": "喝",
+   "pinyin": "hē",
+   "arti": "minum",
+   "en": "to drink",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre4fhaoz",
+   "hanzi": "和",
+   "trad": "和",
+   "pinyin": "hé",
+   "arti": "dan; dengan",
+   "en": "and; with",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preu8dobm",
+   "hanzi": "很",
+   "trad": "很",
+   "pinyin": "hěn",
+   "arti": "sangat",
+   "en": "very",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prelqnpsx",
+   "hanzi": "后面",
+   "trad": "後面",
+   "pinyin": "hòumiàn",
+   "arti": "belakang",
+   "en": "behind; back",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6presrhf3o",
+   "hanzi": "回",
+   "trad": "回",
+   "pinyin": "huí",
+   "arti": "kembali; pulang",
+   "en": "to return",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preqb5dno",
+   "hanzi": "会",
+   "trad": "會",
+   "pinyin": "huì",
+   "arti": "bisa; dapat",
+   "en": "can; to be able to",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preee6aif",
+   "hanzi": "火车站",
+   "trad": "火車站",
+   "pinyin": "huǒchēzhàn",
+   "arti": "stasiun kereta api",
+   "en": "train station",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6presvul25",
+   "hanzi": "几",
+   "trad": "幾",
+   "pinyin": "jǐ",
+   "arti": "berapa (kecil)",
+   "en": "how many (small number)",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preqvf74g",
+   "hanzi": "家",
+   "trad": "家",
+   "pinyin": "jiā",
+   "arti": "rumah; keluarga",
+   "en": "home; family",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prej55lwb",
+   "hanzi": "叫",
+   "trad": "叫",
+   "pinyin": "jiào",
+   "arti": "bernama; memanggil",
+   "en": "to be called; to call",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prekz9ah5",
+   "hanzi": "今天",
+   "trad": "今天",
+   "pinyin": "jīntiān",
+   "arti": "hari ini",
+   "en": "today",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6predvabll",
+   "hanzi": "九",
+   "trad": "九",
+   "pinyin": "jiǔ",
+   "arti": "sembilan",
+   "en": "nine",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prec1pttj",
+   "hanzi": "开",
+   "trad": "開",
+   "pinyin": "kāi",
+   "arti": "membuka; menyetir",
+   "en": "to open; to drive",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre10xqut",
+   "hanzi": "看",
+   "trad": "看",
+   "pinyin": "kàn",
+   "arti": "melihat; menonton",
+   "en": "to look; to watch",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prenufco4",
+   "hanzi": "看见",
+   "trad": "看見",
+   "pinyin": "kànjiàn",
+   "arti": "melihat (terlihat)",
+   "en": "to see",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pregdg5cx",
+   "hanzi": "块",
+   "trad": "塊",
+   "pinyin": "kuài",
+   "arti": "yuan (uang); potong",
+   "en": "yuan; piece",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre6qnj73",
+   "hanzi": "来",
+   "trad": "來",
+   "pinyin": "lái",
+   "arti": "datang",
+   "en": "to come",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre057oki",
+   "hanzi": "老师",
+   "trad": "老師",
+   "pinyin": "lǎoshī",
+   "arti": "guru",
+   "en": "teacher",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre9xh7v7",
+   "hanzi": "了",
+   "trad": "了",
+   "pinyin": "le",
+   "arti": "partikel selesai/perubahan",
+   "en": "completed action particle",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre09tirh",
+   "hanzi": "冷",
+   "trad": "冷",
+   "pinyin": "lěng",
+   "arti": "dingin",
+   "en": "cold",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre4jvk9r",
+   "hanzi": "里",
+   "trad": "裡",
+   "pinyin": "lǐ",
+   "arti": "dalam",
+   "en": "inside",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preaibukt",
+   "hanzi": "六",
+   "trad": "六",
+   "pinyin": "liù",
+   "arti": "enam",
+   "en": "six",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prev0ogbo",
+   "hanzi": "妈妈",
+   "trad": "媽媽",
+   "pinyin": "māma",
+   "arti": "ibu",
+   "en": "mom",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prega1lrb",
+   "hanzi": "吗",
+   "trad": "嗎",
+   "pinyin": "ma",
+   "arti": "partikel tanya",
+   "en": "question particle",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preb82gkw",
+   "hanzi": "买",
+   "trad": "買",
+   "pinyin": "mǎi",
+   "arti": "membeli",
+   "en": "to buy",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prei4rz88",
+   "hanzi": "猫",
+   "trad": "貓",
+   "pinyin": "māo",
+   "arti": "kucing",
+   "en": "cat",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pregy21td",
+   "hanzi": "没关系",
+   "trad": "沒關係",
+   "pinyin": "méi guānxi",
+   "arti": "tidak apa-apa",
+   "en": "it does not matter",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre8gilu6",
+   "hanzi": "没有",
+   "trad": "沒有",
+   "pinyin": "méiyǒu",
+   "arti": "tidak ada; tidak punya",
+   "en": "to not have",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prenmb31d",
+   "hanzi": "米饭",
+   "trad": "米飯",
+   "pinyin": "mǐfàn",
+   "arti": "nasi",
+   "en": "cooked rice",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre59r4x0",
+   "hanzi": "明天",
+   "trad": "明天",
+   "pinyin": "míngtiān",
+   "arti": "besok",
+   "en": "tomorrow",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre7lez3j",
+   "hanzi": "名字",
+   "trad": "名字",
+   "pinyin": "míngzi",
+   "arti": "nama",
+   "en": "name",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preb1zpp0",
+   "hanzi": "哪",
+   "trad": "哪",
+   "pinyin": "nǎ",
+   "arti": "mana; yang mana",
+   "en": "which",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6predqvx7u",
+   "hanzi": "那",
+   "trad": "那",
+   "pinyin": "nà",
+   "arti": "itu",
+   "en": "that",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prec1jkhi",
+   "hanzi": "呢",
+   "trad": "呢",
+   "pinyin": "ne",
+   "arti": "partikel tanya balik",
+   "en": "question particle",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6premk47o3",
+   "hanzi": "能",
+   "trad": "能",
+   "pinyin": "néng",
+   "arti": "bisa; mampu",
+   "en": "can; to be able to",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preywm2m5",
+   "hanzi": "你",
+   "trad": "你",
+   "pinyin": "nǐ",
+   "arti": "kamu",
+   "en": "you",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pregvi4xv",
+   "hanzi": "年",
+   "trad": "年",
+   "pinyin": "nián",
+   "arti": "tahun",
+   "en": "year",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prehrnqnp",
+   "hanzi": "女儿",
+   "trad": "女兒",
+   "pinyin": "nǚ'ér",
+   "arti": "anak perempuan",
+   "en": "daughter",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prebrpv77",
+   "hanzi": "朋友",
+   "trad": "朋友",
+   "pinyin": "péngyou",
+   "arti": "teman",
+   "en": "friend",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre42fomm",
+   "hanzi": "漂亮",
+   "trad": "漂亮",
+   "pinyin": "piàoliang",
+   "arti": "cantik; indah",
+   "en": "pretty; beautiful",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prehzie70",
+   "hanzi": "苹果",
+   "trad": "蘋果",
+   "pinyin": "píngguǒ",
+   "arti": "apel",
+   "en": "apple",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prej4wih7",
+   "hanzi": "七",
+   "trad": "七",
+   "pinyin": "qī",
+   "arti": "tujuh",
+   "en": "seven",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prehc3b61",
+   "hanzi": "前面",
+   "trad": "前面",
+   "pinyin": "qiánmiàn",
+   "arti": "depan",
+   "en": "front; ahead",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prejjaxat",
+   "hanzi": "钱",
+   "trad": "錢",
+   "pinyin": "qián",
+   "arti": "uang",
+   "en": "money",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prelpsjjs",
+   "hanzi": "请",
+   "trad": "請",
+   "pinyin": "qǐng",
+   "arti": "silakan; mohon",
+   "en": "please",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre8uzyzf",
+   "hanzi": "去",
+   "trad": "去",
+   "pinyin": "qù",
+   "arti": "pergi",
+   "en": "to go",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre8l9mo8",
+   "hanzi": "热",
+   "trad": "熱",
+   "pinyin": "rè",
+   "arti": "panas",
+   "en": "hot",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prej1fwm7",
+   "hanzi": "人",
+   "trad": "人",
+   "pinyin": "rén",
+   "arti": "orang",
+   "en": "person",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre450zr5",
+   "hanzi": "认识",
+   "trad": "認識",
+   "pinyin": "rènshi",
+   "arti": "kenal; mengenal",
+   "en": "to know (someone)",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre596y17",
+   "hanzi": "三",
+   "trad": "三",
+   "pinyin": "sān",
+   "arti": "tiga",
+   "en": "three",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preqiwezr",
+   "hanzi": "商店",
+   "trad": "商店",
+   "pinyin": "shāngdiàn",
+   "arti": "toko",
+   "en": "shop; store",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre0hf0a9",
+   "hanzi": "上",
+   "trad": "上",
+   "pinyin": "shàng",
+   "arti": "atas; naik",
+   "en": "up; on",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prec90rfw",
+   "hanzi": "上午",
+   "trad": "上午",
+   "pinyin": "shàngwǔ",
+   "arti": "pagi (sebelum siang)",
+   "en": "morning",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pregaasgu",
+   "hanzi": "少",
+   "trad": "少",
+   "pinyin": "shǎo",
+   "arti": "sedikit",
+   "en": "few; little",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre65swyp",
+   "hanzi": "谁",
+   "trad": "誰",
+   "pinyin": "shéi",
+   "arti": "siapa",
+   "en": "who",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prexkn2f6",
+   "hanzi": "什么",
+   "trad": "什麼",
+   "pinyin": "shénme",
+   "arti": "apa",
+   "en": "what",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prewjvqgz",
+   "hanzi": "十",
+   "trad": "十",
+   "pinyin": "shí",
+   "arti": "sepuluh",
+   "en": "ten",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre9ldks6",
+   "hanzi": "时候",
+   "trad": "時候",
+   "pinyin": "shíhou",
+   "arti": "waktu; saat",
+   "en": "time; moment",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prev38uf2",
+   "hanzi": "是",
+   "trad": "是",
+   "pinyin": "shì",
+   "arti": "adalah; ya",
+   "en": "to be; yes",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prenwutim",
+   "hanzi": "书",
+   "trad": "書",
+   "pinyin": "shū",
+   "arti": "buku",
+   "en": "book",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prelve3ks",
+   "hanzi": "水",
+   "trad": "水",
+   "pinyin": "shuǐ",
+   "arti": "air",
+   "en": "water",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preuwc8az",
+   "hanzi": "水果",
+   "trad": "水果",
+   "pinyin": "shuǐguǒ",
+   "arti": "buah-buahan",
+   "en": "fruit",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prevgqttp",
+   "hanzi": "睡觉",
+   "trad": "睡覺",
+   "pinyin": "shuìjiào",
+   "arti": "tidur",
+   "en": "to sleep",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prexbfqmq",
+   "hanzi": "说",
+   "trad": "說",
+   "pinyin": "shuō",
+   "arti": "berbicara; berkata",
+   "en": "to speak; to say",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6predpbhvb",
+   "hanzi": "四",
+   "trad": "四",
+   "pinyin": "sì",
+   "arti": "empat",
+   "en": "four",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preak3ga8",
+   "hanzi": "岁",
+   "trad": "歲",
+   "pinyin": "suì",
+   "arti": "umur (tahun)",
+   "en": "years old",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre9ni4un",
+   "hanzi": "他",
+   "trad": "他",
+   "pinyin": "tā",
+   "arti": "dia (laki-laki)",
+   "en": "he",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre15vqsh",
+   "hanzi": "她",
+   "trad": "她",
+   "pinyin": "tā",
+   "arti": "dia (perempuan)",
+   "en": "she",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prea9359z",
+   "hanzi": "太",
+   "trad": "太",
+   "pinyin": "tài",
+   "arti": "terlalu",
+   "en": "too (excessively)",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pree0l6hl",
+   "hanzi": "天气",
+   "trad": "天氣",
+   "pinyin": "tiānqì",
+   "arti": "cuaca",
+   "en": "weather",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preyp3lf6",
+   "hanzi": "听",
+   "trad": "聽",
+   "pinyin": "tīng",
+   "arti": "mendengar",
+   "en": "to listen",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre20gtca",
+   "hanzi": "同学",
+   "trad": "同學",
+   "pinyin": "tóngxué",
+   "arti": "teman sekelas",
+   "en": "classmate",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre7vgdls",
+   "hanzi": "喂",
+   "trad": "喂",
+   "pinyin": "wéi",
+   "arti": "halo (di telepon)",
+   "en": "hello (on the phone)",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre7smkup",
+   "hanzi": "我",
+   "trad": "我",
+   "pinyin": "wǒ",
+   "arti": "saya; aku",
+   "en": "I; me",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pretybm7y",
+   "hanzi": "我们",
+   "trad": "我們",
+   "pinyin": "wǒmen",
+   "arti": "kami; kita",
+   "en": "we; us",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prevkhihj",
+   "hanzi": "五",
+   "trad": "五",
+   "pinyin": "wǔ",
+   "arti": "lima",
+   "en": "five",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre9gqzhl",
+   "hanzi": "喜欢",
+   "trad": "喜歡",
+   "pinyin": "xǐhuan",
+   "arti": "suka; menyukai",
+   "en": "to like",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6premtmt6z",
+   "hanzi": "下",
+   "trad": "下",
+   "pinyin": "xià",
+   "arti": "bawah; turun",
+   "en": "down; under",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pree2ut5w",
+   "hanzi": "下午",
+   "trad": "下午",
+   "pinyin": "xiàwǔ",
+   "arti": "sore",
+   "en": "afternoon",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pretffk20",
+   "hanzi": "下雨",
+   "trad": "下雨",
+   "pinyin": "xiàyǔ",
+   "arti": "hujan",
+   "en": "to rain",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre1cmw05",
+   "hanzi": "先生",
+   "trad": "先生",
+   "pinyin": "xiānsheng",
+   "arti": "tuan; suami",
+   "en": "Mr.; sir",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre0qtbpo",
+   "hanzi": "现在",
+   "trad": "現在",
+   "pinyin": "xiànzài",
+   "arti": "sekarang",
+   "en": "now",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pref0fhqe",
+   "hanzi": "想",
+   "trad": "想",
+   "pinyin": "xiǎng",
+   "arti": "ingin; berpikir; rindu",
+   "en": "to want; to think",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prezyc83i",
+   "hanzi": "小",
+   "trad": "小",
+   "pinyin": "xiǎo",
+   "arti": "kecil",
+   "en": "small",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preq638rl",
+   "hanzi": "小姐",
+   "trad": "小姐",
+   "pinyin": "xiǎojiě",
+   "arti": "nona",
+   "en": "Miss",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre3phai4",
+   "hanzi": "些",
+   "trad": "些",
+   "pinyin": "xiē",
+   "arti": "beberapa",
+   "en": "some; several",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preoyujbr",
+   "hanzi": "写",
+   "trad": "寫",
+   "pinyin": "xiě",
+   "arti": "menulis",
+   "en": "to write",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre9234pl",
+   "hanzi": "谢谢",
+   "trad": "謝謝",
+   "pinyin": "xièxie",
+   "arti": "terima kasih",
+   "en": "thanks",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pres7btla",
+   "hanzi": "星期",
+   "trad": "星期",
+   "pinyin": "xīngqī",
+   "arti": "minggu (pekan)",
+   "en": "week",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre46wdam",
+   "hanzi": "学生",
+   "trad": "學生",
+   "pinyin": "xuésheng",
+   "arti": "murid; pelajar",
+   "en": "student",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preqkxsud",
+   "hanzi": "学习",
+   "trad": "學習",
+   "pinyin": "xuéxí",
+   "arti": "belajar",
+   "en": "to study; to learn",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preh5lkqb",
+   "hanzi": "学校",
+   "trad": "學校",
+   "pinyin": "xuéxiào",
+   "arti": "sekolah",
+   "en": "school",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preew7v2d",
+   "hanzi": "一",
+   "trad": "一",
+   "pinyin": "yī",
+   "arti": "satu",
+   "en": "one",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre17uzv1",
+   "hanzi": "一点儿",
+   "trad": "一點兒",
+   "pinyin": "yìdiǎnr",
+   "arti": "sedikit",
+   "en": "a little",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prey6soa4",
+   "hanzi": "衣服",
+   "trad": "衣服",
+   "pinyin": "yīfu",
+   "arti": "baju; pakaian",
+   "en": "clothes",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre5qen50",
+   "hanzi": "医生",
+   "trad": "醫生",
+   "pinyin": "yīshēng",
+   "arti": "dokter",
+   "en": "doctor",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre0dzfq0",
+   "hanzi": "医院",
+   "trad": "醫院",
+   "pinyin": "yīyuàn",
+   "arti": "rumah sakit",
+   "en": "hospital",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6preqv075v",
+   "hanzi": "椅子",
+   "trad": "椅子",
+   "pinyin": "yǐzi",
+   "arti": "kursi",
+   "en": "chair",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prebs59hq",
+   "hanzi": "有",
+   "trad": "有",
+   "pinyin": "yǒu",
+   "arti": "punya; ada",
+   "en": "to have; there is",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6premw8x5t",
+   "hanzi": "月",
+   "trad": "月",
+   "pinyin": "yuè",
+   "arti": "bulan",
+   "en": "month; moon",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prerzlphx",
+   "hanzi": "再见",
+   "trad": "再見",
+   "pinyin": "zàijiàn",
+   "arti": "sampai jumpa",
+   "en": "goodbye",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prebya6vp",
+   "hanzi": "在",
+   "trad": "在",
+   "pinyin": "zài",
+   "arti": "di; berada di",
+   "en": "at; in; to be at",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre7mz8ao",
+   "hanzi": "怎么",
+   "trad": "怎麼",
+   "pinyin": "zěnme",
+   "arti": "bagaimana",
+   "en": "how",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre8scv66",
+   "hanzi": "怎么样",
+   "trad": "怎麼樣",
+   "pinyin": "zěnmeyàng",
+   "arti": "bagaimana (menurutmu)",
+   "en": "how about; how is it",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6presb94zp",
+   "hanzi": "这",
+   "trad": "這",
+   "pinyin": "zhè",
+   "arti": "ini",
+   "en": "this",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6precql8jv",
+   "hanzi": "中国",
+   "trad": "中國",
+   "pinyin": "Zhōngguó",
+   "arti": "Tiongkok",
+   "en": "China",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre5o99dg",
+   "hanzi": "中午",
+   "trad": "中午",
+   "pinyin": "zhōngwǔ",
+   "arti": "siang (tengah hari)",
+   "en": "noon",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pres297jz",
+   "hanzi": "住",
+   "trad": "住",
+   "pinyin": "zhù",
+   "arti": "tinggal; menginap",
+   "en": "to live; to stay",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prenuw080",
+   "hanzi": "桌子",
+   "trad": "桌子",
+   "pinyin": "zhuōzi",
+   "arti": "meja",
+   "en": "table; desk",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre6nv3th",
+   "hanzi": "字",
+   "trad": "字",
+   "pinyin": "zì",
+   "arti": "huruf; karakter",
+   "en": "character; word",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prec8zssx",
+   "hanzi": "昨天",
+   "trad": "昨天",
+   "pinyin": "zuótiān",
+   "arti": "kemarin",
+   "en": "yesterday",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6pre7b3c4v",
+   "hanzi": "坐",
+   "trad": "坐",
+   "pinyin": "zuò",
+   "arti": "duduk; naik (kendaraan)",
+   "en": "to sit; to take (transport)",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  },
+  {
+   "id": "msui6prejeu0ei",
+   "hanzi": "做",
+   "trad": "做",
+   "pinyin": "zuò",
+   "arti": "melakukan; membuat",
+   "en": "to do; to make",
+   "tag": "hsk1",
+   "status": null,
+   "stats": {
+    "good": 0,
+    "again": 0
+   },
+   "lastReview": null,
+   "nextDue": null
+  }
+ ],
+ "sents": [
+  {
+   "id": "msui6prpiya57y",
+   "hanzi": "我是学生。",
+   "trad": "我是學生。",
+   "pinyin": "Wǒ shì xuésheng.",
+   "seg": "我 是 学生",
+   "arti": "Saya seorang pelajar.",
+   "en": "I am a student.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpia1kzn",
+   "hanzi": "你叫什么名字？",
+   "trad": "你叫什麼名字？",
+   "pinyin": "Nǐ jiào shénme míngzi?",
+   "seg": "你 叫 什么 名字",
+   "arti": "Siapa namamu?",
+   "en": "What is your name?",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpeuu1j7",
+   "hanzi": "他是我的老师。",
+   "trad": "他是我的老師。",
+   "pinyin": "Tā shì wǒ de lǎoshī.",
+   "seg": "他 是 我 的 老师",
+   "arti": "Dia adalah guru saya.",
+   "en": "He is my teacher.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpf69wfb",
+   "hanzi": "我喜欢喝茶。",
+   "trad": "我喜歡喝茶。",
+   "pinyin": "Wǒ xǐhuan hē chá.",
+   "seg": "我 喜欢 喝 茶",
+   "arti": "Saya suka minum teh.",
+   "en": "I like drinking tea.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp9g7ud6",
+   "hanzi": "今天天气很好。",
+   "trad": "今天天氣很好。",
+   "pinyin": "Jīntiān tiānqì hěn hǎo.",
+   "seg": "今天 天气 很 好",
+   "arti": "Cuaca hari ini sangat bagus.",
+   "en": "The weather is very nice today.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp6sf2hh",
+   "hanzi": "我们去商店买东西。",
+   "trad": "我們去商店買東西。",
+   "pinyin": "Wǒmen qù shāngdiàn mǎi dōngxi.",
+   "seg": "我们 去 商店 买 东西",
+   "arti": "Kami pergi ke toko membeli barang.",
+   "en": "We go to the shop to buy things.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp9br1bp",
+   "hanzi": "她有一个女儿。",
+   "trad": "她有一個女兒。",
+   "pinyin": "Tā yǒu yí gè nǚ'ér.",
+   "seg": "她 有 一 个 女儿",
+   "arti": "Dia punya seorang anak perempuan.",
+   "en": "She has a daughter.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp06ln87",
+   "hanzi": "现在几点？",
+   "trad": "現在幾點？",
+   "pinyin": "Xiànzài jǐ diǎn?",
+   "seg": "现在 几 点",
+   "arti": "Sekarang jam berapa?",
+   "en": "What time is it now?",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp0n2o9p",
+   "hanzi": "我不会说汉语。",
+   "trad": "我不會說漢語。",
+   "pinyin": "Wǒ bú huì shuō Hànyǔ.",
+   "seg": "我 不 会 说 汉语",
+   "arti": "Saya tidak bisa berbahasa Mandarin.",
+   "en": "I cannot speak Chinese.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prp3ez2yl",
+   "hanzi": "这是我的书。",
+   "trad": "這是我的書。",
+   "pinyin": "Zhè shì wǒ de shū.",
+   "seg": "这 是 我 的 书",
+   "arti": "Ini buku saya.",
+   "en": "This is my book.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpb00i0d",
+   "hanzi": "猫在椅子下面。",
+   "trad": "貓在椅子下面。",
+   "pinyin": "Māo zài yǐzi xiàmiàn.",
+   "seg": "猫 在 椅子 下面",
+   "arti": "Kucing ada di bawah kursi.",
+   "en": "The cat is under the chair.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpb0kfvq",
+   "hanzi": "我明天去北京。",
+   "trad": "我明天去北京。",
+   "pinyin": "Wǒ míngtiān qù Běijīng.",
+   "seg": "我 明天 去 北京",
+   "arti": "Besok saya pergi ke Beijing.",
+   "en": "I am going to Beijing tomorrow.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prprtduu9",
+   "hanzi": "你想吃什么？",
+   "trad": "你想吃什麼？",
+   "pinyin": "Nǐ xiǎng chī shénme?",
+   "seg": "你 想 吃 什么",
+   "arti": "Kamu mau makan apa?",
+   "en": "What do you want to eat?",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpv0z95o",
+   "hanzi": "老师在学校工作。",
+   "trad": "老師在學校工作。",
+   "pinyin": "Lǎoshī zài xuéxiào gōngzuò.",
+   "seg": "老师 在 学校 工作",
+   "arti": "Guru bekerja di sekolah.",
+   "en": "The teacher works at school.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpnjh0zu",
+   "hanzi": "我爸爸是医生。",
+   "trad": "我爸爸是醫生。",
+   "pinyin": "Wǒ bàba shì yīshēng.",
+   "seg": "我 爸爸 是 医生",
+   "arti": "Ayah saya seorang dokter.",
+   "en": "My dad is a doctor.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prphrvxzc",
+   "hanzi": "请喝一点儿水。",
+   "trad": "請喝一點兒水。",
+   "pinyin": "Qǐng hē yìdiǎnr shuǐ.",
+   "seg": "请 喝 一点儿 水",
+   "arti": "Silakan minum sedikit air.",
+   "en": "Please drink some water.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpouoert",
+   "hanzi": "昨天我看了一个电影。",
+   "trad": "昨天我看了一個電影。",
+   "pinyin": "Zuótiān wǒ kàn le yí gè diànyǐng.",
+   "seg": "昨天 我 看 了 一 个 电影",
+   "arti": "Kemarin saya menonton sebuah film.",
+   "en": "I watched a movie yesterday.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpmc3v1a",
+   "hanzi": "我的电脑很小。",
+   "trad": "我的電腦很小。",
+   "pinyin": "Wǒ de diànnǎo hěn xiǎo.",
+   "seg": "我 的 电脑 很 小",
+   "arti": "Komputer saya kecil.",
+   "en": "My computer is small.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpq1v8dr",
+   "hanzi": "我在饭店吃米饭。",
+   "trad": "我在飯店吃米飯。",
+   "pinyin": "Wǒ zài fàndiàn chī mǐfàn.",
+   "seg": "我 在 饭店 吃 米饭",
+   "arti": "Saya makan nasi di restoran.",
+   "en": "I eat rice at the restaurant.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpfe76mm",
+   "hanzi": "星期天我不工作。",
+   "trad": "星期天我不工作。",
+   "pinyin": "Xīngqītiān wǒ bù gōngzuò.",
+   "seg": "星期天 我 不 工作",
+   "arti": "Hari Minggu saya tidak bekerja.",
+   "en": "I do not work on Sundays.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpbwxqjg",
+   "hanzi": "你家有几个人？",
+   "trad": "你家有幾個人？",
+   "pinyin": "Nǐ jiā yǒu jǐ gè rén?",
+   "seg": "你 家 有 几 个 人",
+   "arti": "Keluargamu ada berapa orang?",
+   "en": "How many people are in your family?",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpm5xwpj",
+   "hanzi": "苹果多少钱？",
+   "trad": "蘋果多少錢？",
+   "pinyin": "Píngguǒ duōshao qián?",
+   "seg": "苹果 多少 钱",
+   "arti": "Berapa harga apelnya?",
+   "en": "How much are the apples?",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpjhvxna",
+   "hanzi": "对不起，我不能去。",
+   "trad": "對不起，我不能去。",
+   "pinyin": "Duìbuqǐ, wǒ bù néng qù.",
+   "seg": "对不起 我 不 能 去",
+   "arti": "Maaf, saya tidak bisa pergi.",
+   "en": "Sorry, I cannot go.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpb8apbu",
+   "hanzi": "我下午三点回家。",
+   "trad": "我下午三點回家。",
+   "pinyin": "Wǒ xiàwǔ sān diǎn huí jiā.",
+   "seg": "我 下午 三 点 回 家",
+   "arti": "Saya pulang jam tiga sore.",
+   "en": "I go home at three in the afternoon.",
+   "tag": "hsk1"
+  },
+  {
+   "id": "msui6prpdm7c3y",
+   "hanzi": "很高兴认识你。",
+   "trad": "很高興認識你。",
+   "pinyin": "Hěn gāoxìng rènshi nǐ.",
+   "seg": "很 高兴 认识 你",
+   "arti": "Senang berkenalan denganmu.",
+   "en": "Nice to meet you.",
+   "tag": "hsk1"
+  }
+ ],
+ "account": {
+  "name": "Pelajar",
+  "desc": "加油！",
+  "pfp": "👤",
+  "xp": 0,
+  "level": 1,
+  "stats": {
+   "cardsStudied": 0,
+   "goodAnswers": 0,
+   "againAnswers": 0,
+   "totalQuizzes": 0,
+   "quizCorrect": 0,
+   "quizWrong": 0,
+   "gamesPlayed": 0,
+   "highScore": 0,
+   "bestStreak": 0,
+   "readCorrect": 0,
+   "listenCorrect": 0,
+   "typeCorrect": 0
+  }
+ },
+ "settings": {
+  "lang": "id",
+  "charset": "simp",
+  "anim": true,
+  "dur": 300,
+  "sound": true,
+  "showPinyin": true
+ }
+}
