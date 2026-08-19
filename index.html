@@ -173,6 +173,12 @@ td .sub{color:var(--muted);font-size:.85rem}
 .tpl-badge{position:absolute;top:10px;right:10px}
 /* ---------- account ---------- */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.chart-h{margin:0 0 6px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.chart-box{width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.chart-box svg{width:100%;height:100%;font-family:inherit}
+.chart-box .mut{font-size:.85rem;text-align:center}
+.stat .sub{display:block;margin-top:4px;font-size:.72rem;color:var(--muted);font-weight:600}
+.stat p.sm{font-size:1rem}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
 .stat h4{margin:0 0 6px;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .stat p{margin:0;font-size:1.45rem;font-weight:700}
@@ -244,6 +250,7 @@ td .sub{color:var(--muted);font-size:.85rem}
     <button class="tab" data-view="v-read" data-i18n="nav_read">Baca</button>
     <button class="tab" data-view="v-listen" data-i18n="nav_listen">Dengar</button>
     <button class="tab" data-view="v-type" data-i18n="nav_type">Tulis</button>
+    <button class="tab" data-view="v-goals" data-i18n="nav_goals">Target</button>
     <button class="tab" data-view="v-lib" data-i18n="nav_lib">Pustaka</button>
     <button class="tab" data-view="v-manage" data-i18n="nav_manage">Kelola</button>
     <button class="tab" data-view="v-account" data-i18n="nav_account">Akun</button>
@@ -290,6 +297,11 @@ td .sub{color:var(--muted);font-size:.85rem}
     <div class="panel">
       <h2 data-i18n="hm_today_title">Hari Ini</h2>
       <p class="mut" id="hmToday" style="margin:0"></p>
+      <div class="row" style="margin-top:12px">
+        <span class="mut" id="hmDailyLbl">—</span>
+        <div class="progress"><div id="hmDailyBar"></div></div>
+        <button class="btn sm" id="hmGoals" data-i18n="nav_goals">Target</button>
+      </div>
     </div>
   </section>
 
@@ -309,6 +321,7 @@ td .sub{color:var(--muted);font-size:.85rem}
           <button class="btn sm" data-filter="new" data-i18n="f_new">Belum</button>
           <button class="btn sm" data-filter="good">Good</button>
           <button class="btn sm" data-filter="due"><span data-i18n="f_due">Due</span> <span class="mut" id="stDueCount"></span></button>
+          <button class="btn sm" data-filter="today">🎯 <span data-i18n="f_today">Hari Ini</span> <span class="mut" id="stTodayCount"></span></button>
         </div>
       </div>
       <div class="row" style="margin-top:10px">
@@ -639,6 +652,206 @@ td .sub{color:var(--muted);font-size:.85rem}
     </div>
   </section>
 
+  <!-- ================= TARGET / GOALS ================= -->
+  <section id="v-goals" class="hidden">
+
+    <!-- ---- daftar target ---- -->
+    <div id="glList">
+      <div class="panel">
+        <h2 data-i18n="gl_daily_title">Kartu Baru Hari Ini</h2>
+        <div class="row" style="margin-top:6px">
+          <b id="glDailyText">0/0</b>
+          <div class="progress"><div id="glDailyBar"></div></div>
+        </div>
+        <p class="mut" id="glDailyNote" style="margin:8px 0 0"></p>
+        <div class="row" style="margin-top:12px">
+          <button class="btn primary" id="glStart" data-i18n="gl_start_learn">Mulai Belajar</button>
+          <button class="btn" id="glBatch">Tambah Batch</button>
+          <button class="btn" id="glPickOpen" data-i18n="gl_pick_open">✏️ Pilih Kartu</button>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <span class="mut" data-i18n="gl_mode">Mode</span>
+          <div class="chips" id="glModeChips">
+            <button class="btn sm active" data-gmode="auto">🎲 <span data-i18n="gl_mode_auto">Acak</span></button>
+            <button class="btn sm" data-gmode="manual">✏️ <span data-i18n="gl_mode_manual">Manual</span></button>
+          </div>
+          <span class="mut" id="glModeHint"></span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row spread">
+          <h2 style="margin:0" data-i18n="gl_title">Target &amp; Misi</h2>
+          <div class="chips" id="glFilterChips">
+            <button class="btn sm active" data-gfilter="active" data-i18n="gl_filter_active">Aktif</button>
+            <button class="btn sm" data-gfilter="done" data-i18n="gl_filter_done">Selesai</button>
+            <button class="btn sm" data-gfilter="all" data-i18n="gl_filter_all">Semua</button>
+          </div>
+        </div>
+        <div class="packs" id="glCards" style="margin-top:14px"></div>
+        <p class="mut hidden" id="glEmpty" data-i18n="gl_no_goals">Belum ada target. Buat yang pertama!</p>
+        <div class="row" style="margin-top:14px">
+          <button class="btn primary" id="glNew" data-i18n="gl_new">+ Buat Target Baru</button>
+          <button class="btn" id="glQuick" data-i18n="gl_quick">⚡ Quick Goal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- pilih kartu harian secara manual ---- -->
+    <div id="glPick" class="hidden">
+      <div class="panel">
+        <div class="row spread">
+          <h2 style="margin:0" data-i18n="gl_pick_title">Pilih Kartu Hari Ini</h2>
+          <b id="gpCount">0 / 0</b>
+        </div>
+        <div class="formgrid" style="margin-top:10px">
+          <div class="field"><label class="lbl" for="gpScope" data-i18n="gl_pick_show">Tampilkan</label>
+            <select id="gpScope">
+              <option value="new" data-i18n="gl_pick_new_only">Kartu baru</option>
+              <option value="all" data-i18n="gl_pick_all">Semua kartu</option>
+            </select></div>
+          <div class="field"><label class="lbl" for="gpFolder" data-i18n="m_folder">Folder</label>
+            <select id="gpFolder"></select></div>
+          <div class="field"><label class="lbl" for="gpTag" data-i18n="f_tag">Label</label>
+            <select id="gpTag"></select></div>
+          <div class="field"><label class="lbl" for="gpSearch" data-i18n="gl_pick_search_lbl">Cari</label>
+            <input type="text" id="gpSearch" data-i18n-ph="gl_pick_search" placeholder="hanzi / pinyin / arti"></div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button class="btn sm" id="gpShuffle">🎲</button>
+          <button class="btn sm" id="gpClear" data-i18n="gl_pick_clear">Kosongkan</button>
+          <span class="mut" id="gpInfo"></span>
+        </div>
+        <div class="table-wrap" style="margin-top:10px">
+          <table><thead><tr>
+            <th style="width:38px"><input type="checkbox" id="gpAll"></th>
+            <th>Hanzi</th><th>Pinyin</th><th data-i18n="m_arti_th">Arti</th><th>Status</th><th data-i18n="m_folder">Folder</th>
+          </tr></thead><tbody id="gpRows"></tbody></table>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn primary" id="gpSave" data-i18n="gl_pick_save">Simpan Pilihan</button>
+          <button class="btn ghost" id="gpCancel" data-i18n="gl_cancel">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- form buat / edit ---- -->
+    <div id="glForm" class="hidden">
+      <div class="panel">
+        <h2 id="glFormTitle" data-i18n="gl_new">+ Buat Target Baru</h2>
+        <div class="field" style="margin-top:8px">
+          <label class="lbl" for="glfName" data-i18n="gl_name">Nama Target</label>
+          <input type="text" id="glfName" data-i18n-ph="gl_name_ph" placeholder="Hafalkan HSK 1">
+        </div>
+        <div style="margin-top:12px">
+          <label class="lbl" data-i18n="gl_type">Tipe</label>
+          <div class="chips" id="glfTypeChips">
+            <button class="btn sm active" data-gtype="count">🔢 <span data-i18n="gl_type_count">Hapal X Kata</span></button>
+            <button class="btn sm" data-gtype="folder">📁 <span data-i18n="gl_type_folder">Selesaikan Folder</span></button>
+            <button class="btn sm" data-gtype="label">🏷️ <span data-i18n="gl_type_label">Selesaikan Label</span></button>
+          </div>
+        </div>
+        <div class="formgrid" style="margin-top:12px">
+          <div class="field" id="glfCountWrap">
+            <label class="lbl" for="glfCount" data-i18n="gl_target">Target</label>
+            <input type="number" id="glfCount" min="1" max="9999" step="1" value="50">
+          </div>
+          <div class="field hidden" id="glfFolderWrap">
+            <label class="lbl" for="glfFolder" data-i18n="gl_target">Target</label>
+            <select id="glfFolder"></select>
+          </div>
+          <div class="field hidden" id="glfLabelWrap">
+            <label class="lbl" for="glfLabel" data-i18n="gl_target">Target</label>
+            <select id="glfLabel"></select>
+          </div>
+          <div class="field">
+            <label class="lbl" for="glfMastery" data-i18n="gl_mastery">Kriteria Hapal</label>
+            <select id="glfMastery">
+              <option value="1" data-i18n="gl_good_1">Good 1x</option>
+              <option value="3" selected data-i18n="gl_good_3">Good 3x</option>
+              <option value="5" data-i18n="gl_good_5">Good 5x</option>
+              <option value="10" data-i18n="gl_good_10">Good 10x</option>
+              <option value="custom" data-i18n="gl_custom">Custom...</option>
+            </select>
+          </div>
+          <div class="field hidden" id="glfMasteryCustomWrap">
+            <label class="lbl" for="glfMasteryCustom" data-i18n="gl_custom">Custom...</label>
+            <input type="number" id="glfMasteryCustom" min="1" max="99" step="1" value="3">
+          </div>
+          <div class="field">
+            <label class="lbl" for="glfDeadline" data-i18n="gl_deadline">Deadline (opsional)</label>
+            <input type="date" id="glfDeadline">
+          </div>
+        </div>
+        <p class="mut" id="glfMasteryHint" style="margin:8px 0 0" data-i18n="gl_mastery_hint">Kartu dianggap hapal jika Good ≥ angka ini</p>
+        <div class="row" style="margin-top:12px">
+          <label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="glfLinkDaily"> <span data-i18n="gl_link_daily">Link ke target harian</span></label>
+        </div>
+        <p class="mut" style="margin:4px 0 0" data-i18n="gl_link_daily_hint">Kartu baru harian diambil dari goal ini</p>
+        <div class="row" style="margin-top:14px">
+          <button class="btn primary" id="glfSave" data-i18n="gl_save">Simpan</button>
+          <button class="btn ghost" id="glfCancel" data-i18n="gl_cancel">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- detail target ---- -->
+    <div id="glDetail" class="hidden">
+      <div class="panel">
+        <div class="row spread">
+          <h2 style="margin:0" id="gdName">—</h2>
+          <span id="gdStatus" class="g-pill">🟢</span>
+        </div>
+        <p class="mut" id="gdType" style="margin:6px 0 0"></p>
+        <div class="row" style="margin-top:14px">
+          <b id="gdProgText">0 / 0</b>
+          <div class="progress"><div id="gdProgBar"></div></div>
+        </div>
+        <p class="mut" id="gdMastery" style="margin:8px 0 0"></p>
+        <p class="mut" id="gdDeadline" style="margin:4px 0 0"></p>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" id="gdBack" data-i18n="gl_back">← Kembali</button>
+          <button class="btn" id="gdEdit" data-i18n="gl_edit">Edit</button>
+          <button class="btn warn" id="gdArchive" data-i18n="gl_archive">Arsipkan</button>
+          <button class="btn bad" id="gdDelete" data-i18n="gl_delete">Hapus</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 data-i18n="gl_cards_title">Kartu dalam Target</h2>
+        <div class="table-wrap" style="margin-top:10px">
+          <table><thead><tr>
+            <th>Hanzi</th><th>Pinyin</th><th data-i18n="m_arti_th">Arti</th><th>Good</th><th>Status</th>
+          </tr></thead><tbody id="gdCardRows"></tbody></table>
+        </div>
+      </div>
+
+      <div id="glChart" class="panel">
+        <div class="row spread">
+          <h2 style="margin:0" data-i18n="gl_analytics">Analitik</h2>
+          <div class="chips" id="glTimeChips">
+            <button class="btn sm" data-gtime="7" data-i18n="gl_7d">7 hari</button>
+            <button class="btn sm active" data-gtime="14" data-i18n="gl_14d">14 hari</button>
+            <button class="btn sm" data-gtime="30" data-i18n="gl_30d">30 hari</button>
+            <button class="btn sm" data-gtime="all" data-i18n="gl_all">Semua</button>
+          </div>
+        </div>
+
+        <div class="stats" id="glStats" style="margin-top:14px"></div>
+
+        <div class="panel" style="padding:10px">
+          <h3 class="mut chart-h" data-i18n="gl_chart_progress">Progress Kumulatif</h3>
+          <div id="glLineChart" class="chart-box" style="height:200px"></div>
+        </div>
+
+        <div class="panel" style="padding:10px">
+          <h3 class="mut chart-h" data-i18n="gl_chart_daily">Aktivitas Harian</h3>
+          <div id="glBarChart" class="chart-box" style="height:160px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= PUSTAKA ================= -->
   <section id="v-lib" class="hidden">
 
@@ -863,6 +1076,17 @@ td .sub{color:var(--muted);font-size:.85rem}
           <select id="setSound"><option value="1" data-i18n="on">Nyala</option><option value="0" data-i18n="off">Mati</option></select></div>
         <div class="field"><label class="lbl" data-i18n="set_pinyin">Pinyin di latihan baca</label>
           <select id="setPinyin"><option value="1" data-i18n="show">Tampilkan</option><option value="0" data-i18n="hide">Sembunyikan</option></select></div>
+        <div class="field"><label class="lbl" for="setDailyTarget" data-i18n="set_daily_target">Target harian (kartu baru)</label>
+          <input type="number" id="setDailyTarget" min="1" max="50" step="1" value="5"></div>
+        <div class="field"><label class="lbl" for="setDailyMode" data-i18n="set_daily_mode">Mode kartu harian</label>
+          <select id="setDailyMode">
+            <option value="auto" data-i18n="gl_mode_auto">Acak</option>
+            <option value="manual" data-i18n="gl_mode_manual">Manual</option>
+          </select></div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="setAllowMore"> <span data-i18n="set_allow_more">Boleh tambah batch setelah selesai</span></label>
+        <label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="setAutoSuggest"> <span data-i18n="set_auto_suggest">Auto-suggest target baru</span></label>
       </div>
     </div>
 
@@ -1015,7 +1239,60 @@ confirm_import_acc:'File ini berisi data akun. Ganti profil, XP, level & statist
 empty_deck:'Belum ada kartu aktif. Buka Pustaka lalu aktifkan atau bikin folder kosakata.',
 welcome:'Selamat datang! Folder "HSK 1 — Paket Awal" sudah dibuat otomatis. Buka Pustaka untuk bikin folder sendiri atau salin template lain.',
 confirm_reset_all:'Reset SEMUA data (semua folder, akun, pengaturan)? Tidak bisa dibatalkan.',
-skipped:'Dilewati',time_label:'dtk'
+skipped:'Dilewati',time_label:'dtk',
+// --- Target & Misi ---
+nav_goals:'Target',gl_title:'Target & Misi',gl_daily_title:'Kartu Baru Hari Ini',
+gl_daily_progress:'{done}/{target} kartu',gl_add_batch:'Tambah Batch (+{n})',gl_start_learn:'Mulai Belajar',
+gl_new:'+ Buat Target Baru',gl_quick:'\u26A1 Quick Goal',
+gl_filter_active:'Aktif',gl_filter_done:'Selesai',gl_filter_all:'Semua',
+gl_name:'Nama Target',gl_name_ph:'mis. Hafalkan HSK 1',gl_type:'Tipe',
+gl_type_count:'Hapal X Kata',gl_type_folder:'Selesaikan Folder',gl_type_label:'Selesaikan Label',
+gl_target:'Target',gl_mastery:'Kriteria Hapal',gl_mastery_hint:'Kartu dianggap hapal jika Good \u2265 angka ini',
+gl_good_1:'Good 1x',gl_good_3:'Good 3x',gl_good_5:'Good 5x',gl_good_10:'Good 10x',gl_custom:'Custom...',
+gl_deadline:'Deadline (opsional)',gl_link_daily:'Link ke target harian',
+gl_link_daily_hint:'Kartu baru harian diambil dari goal ini',
+gl_save:'Simpan',gl_cancel:'Batal',gl_detail:'Lihat Detail',gl_edit:'Edit',gl_delete:'Hapus',
+gl_archive:'Arsipkan',gl_unarchive:'Aktifkan Lagi',gl_back:'\u2190 Kembali',
+gl_progress:'{current} / {total} hapal ({pct}%)',gl_mastery_label:'Hapal = Good \u2265 {n}x',
+gl_deadline_label:'Deadline: {d}',gl_overdue:'Lewat deadline!',gl_no_deadline:'Tanpa deadline',
+gl_completed:'Target "{name}" tercapai! +{xp} XP \U0001F389',
+gl_confirm_del:'Hapus target "{name}"?',gl_no_goals:'Belum ada target. Buat yang pertama!',
+gl_card_mastered:'\u2705 Hapal',gl_card_learning:'\U0001F504 Belajar',gl_card_new:'\u2B1C Belum',
+gl_suggest:'Buat target berikutnya: "{name}"?',
+gl_analytics:'Analitik',
+gl_pick_title:'Pilih Kartu Hari Ini',gl_pick_open:'✏️ Pilih Kartu',
+gl_mode:'Mode',gl_mode_auto:'Acak',gl_mode_manual:'Manual',
+gl_mode_auto_hint:'kartu dipilih otomatis',gl_mode_manual_hint:'kamu yang pilih sendiri',
+gl_pick_show:'Tampilkan',gl_pick_new_only:'Kartu baru',gl_pick_all:'Semua kartu',
+gl_pick_search_lbl:'Cari',gl_pick_search:'hanzi / pinyin / arti',
+gl_pick_shuffle:'\U0001F3B2 Acak {n}',gl_pick_clear:'Kosongkan',gl_pick_save:'Simpan Pilihan',
+gl_pick_none:'Tidak ada kartu yang cocok',gl_pick_saved:'{n} kartu diatur untuk hari ini',
+gl_pick_limit:'Menampilkan {n} kartu pertama \u2014 pakai filter buat mempersempit.',
+gl_pick_empty_manual:'Mode manual \u2014 pilih kartu dulu buat hari ini.',
+gl_folder_all:'Semua folder',set_daily_mode:'Mode kartu harian',
+gl_7d:'7 hari',gl_14d:'14 hari',gl_30d:'30 hari',gl_all:'Semua',
+gl_chart_progress:'Progress Kumulatif',gl_chart_daily:'Aktivitas Harian',
+gl_streak:'Streak',gl_streak_days:'{n} hari',gl_avg:'Rata-rata / hari',
+gl_est_overall:'Estimasi (semua)',gl_est_recent:'Estimasi (tren terkini)',
+gl_active_days:'Hari aktif',gl_remaining:'Sisa',gl_cards_day:'{n} kartu/hari',
+gl_est_date:'selesai ~{d}',gl_no_data:'Belum ada data. Mulai belajar dulu!',
+gl_target_line:'Target',
+gl_batch_added:'Batch baru: {n} kartu ditambahkan',gl_no_new_cards:'Tidak ada kartu baru tersisa',
+gl_quick_prompt:'Pilih folder untuk dijadikan target:',
+gl_cards_title:'Kartu dalam Target',gl_need_name:'Nama target belum diisi',
+gl_need_folder:'Belum ada folder untuk dijadikan target',gl_need_label:'Belum ada label untuk dijadikan target',
+gl_saved:'Target disimpan',gl_deleted:'Target dihapus',gl_archived:'Target diarsipkan',
+gl_unarchived:'Target diaktifkan lagi',gl_exists:'Target untuk pilihan itu sudah ada',
+gl_folder_off:'\u26A0\uFE0F Folder ini nonaktif \u2014 kartunya tidak muncul di Belajar',
+gl_type_info_count:'\U0001F522 Hapal {n} kata (dari folder aktif)',
+gl_type_info_folder:'\U0001F4C1 Folder: {n}',gl_type_info_label:'\U0001F3F7\uFE0F Label: {n}',
+gl_daily_note:'Sisa {n} kartu belum disentuh hari ini.',gl_daily_done:'Target hari ini selesai \U0001F389',
+gl_daily_empty:'Belum ada kartu baru \u2014 aktifkan folder di Pustaka dulu.',
+gl_linked:'\U0001F517 Sumber kartu harian',gl_quick_name:'Hafalkan {n}',
+hm_daily:'Kartu baru hari ini: {done}/{target}',
+f_today:'Hari Ini',
+set_daily_target:'Target harian (kartu baru)',set_allow_more:'Boleh tambah batch setelah selesai',
+set_auto_suggest:'Auto-suggest target baru',
 },
 en:{
 nav_study:'Study',nav_quiz:'Quiz',nav_game:'Game',nav_read:'Reading',nav_listen:'Listening',nav_lib:'Library',nav_manage:'Manage',nav_account:'Account',
@@ -1053,7 +1330,7 @@ hm_greet:'Good {time}, {name}!',hm_morning:'morning',hm_noon:'afternoon',hm_afte
 hm_review_title:"Today's Review",hm_due:'Due for review',hm_new:'New cards',hm_mastered:'Mastered',
 hm_start_review:'Start Review',hm_no_due:'No cards are due yet. Try learning some new ones first.',
 hm_quick:'Quick Actions',hm_quickquiz:'Quick Quiz (10 questions)',hm_practice_type:'Typing Practice',
-hm_today_title:'Today',hm_today:'{c} cards studied \u00b7 {q} quiz correct \u00b7 {y} typing correct',
+hm_review_title:'Review Today',hm_today_title:'Today',hm_today:'{c} cards studied \u00b7 {q} quiz correct \u00b7 {y} typing correct',
 hm_deck_info:'{n} cards in deck',f_due:'Due',
 mastered_noxp:'(mastered, no XP)',xp_gain:'+{n} XP',
 mist_title:'Mistake Review',mist_retry:'Practice Again',mist_timeout:'Timed out',mist_count:'{n} still wrong',
@@ -1122,7 +1399,60 @@ confirm_import_acc:'This file contains account data. Replace your current profil
 empty_deck:'No active cards. Open the Library and activate or create a vocabulary folder.',
 welcome:'Welcome! The folder "HSK 1 — Starter Pack" was created for you. Open the Library to build your own folders or copy more templates.',
 confirm_reset_all:'Reset ALL data (every folder, account, settings)? Cannot be undone.',
-skipped:'Skipped',time_label:'s'
+skipped:'Skipped',time_label:'s',
+// --- Goals & Missions ---
+nav_goals:'Goals',gl_title:'Goals & Missions',gl_daily_title:'New Cards Today',
+gl_daily_progress:'{done}/{target} cards',gl_add_batch:'Add Batch (+{n})',gl_start_learn:'Start Learning',
+gl_new:'+ Create New Goal',gl_quick:'\u26A1 Quick Goal',
+gl_filter_active:'Active',gl_filter_done:'Completed',gl_filter_all:'All',
+gl_name:'Goal Name',gl_name_ph:'e.g. Learn HSK 1',gl_type:'Type',
+gl_type_count:'Learn X Words',gl_type_folder:'Complete Folder',gl_type_label:'Complete Label',
+gl_target:'Target',gl_mastery:'Mastery Criteria',gl_mastery_hint:'A card is mastered when Good count \u2265 this number',
+gl_good_1:'Good 1x',gl_good_3:'Good 3x',gl_good_5:'Good 5x',gl_good_10:'Good 10x',gl_custom:'Custom...',
+gl_deadline:'Deadline (optional)',gl_link_daily:'Link to daily target',
+gl_link_daily_hint:'Daily new cards are drawn from this goal',
+gl_save:'Save',gl_cancel:'Cancel',gl_detail:'View Details',gl_edit:'Edit',gl_delete:'Delete',
+gl_archive:'Archive',gl_unarchive:'Unarchive',gl_back:'\u2190 Back',
+gl_progress:'{current} / {total} mastered ({pct}%)',gl_mastery_label:'Mastered = Good \u2265 {n}x',
+gl_deadline_label:'Deadline: {d}',gl_overdue:'Overdue!',gl_no_deadline:'No deadline',
+gl_completed:'Goal "{name}" completed! +{xp} XP \U0001F389',
+gl_confirm_del:'Delete goal "{name}"?',gl_no_goals:'No goals yet. Create your first one!',
+gl_card_mastered:'\u2705 Mastered',gl_card_learning:'\U0001F504 Learning',gl_card_new:'\u2B1C New',
+gl_suggest:'Create next goal: "{name}"?',
+gl_analytics:'Analytics',
+gl_pick_title:'Pick Today\u2019s Cards',gl_pick_open:'✏️ Pick Cards',
+gl_mode:'Mode',gl_mode_auto:'Random',gl_mode_manual:'Manual',
+gl_mode_auto_hint:'cards are picked for you',gl_mode_manual_hint:'you pick them yourself',
+gl_pick_show:'Show',gl_pick_new_only:'New cards',gl_pick_all:'All cards',
+gl_pick_search_lbl:'Search',gl_pick_search:'hanzi / pinyin / meaning',
+gl_pick_shuffle:'\U0001F3B2 Random {n}',gl_pick_clear:'Clear',gl_pick_save:'Save Selection',
+gl_pick_none:'No matching cards',gl_pick_saved:'{n} card(s) set for today',
+gl_pick_limit:'Showing the first {n} cards \u2014 use the filters to narrow down.',
+gl_pick_empty_manual:'Manual mode \u2014 pick your cards for today.',
+gl_folder_all:'All folders',set_daily_mode:'Daily card mode',
+gl_7d:'7 days',gl_14d:'14 days',gl_30d:'30 days',gl_all:'All',
+gl_chart_progress:'Cumulative Progress',gl_chart_daily:'Daily Activity',
+gl_streak:'Streak',gl_streak_days:'{n} days',gl_avg:'Avg / day',
+gl_est_overall:'Estimate (overall)',gl_est_recent:'Estimate (recent trend)',
+gl_active_days:'Active days',gl_remaining:'Remaining',gl_cards_day:'{n} cards/day',
+gl_est_date:'done by ~{d}',gl_no_data:'No data yet. Start learning!',
+gl_target_line:'Target',
+gl_batch_added:'New batch: {n} cards added',gl_no_new_cards:'No new cards remaining',
+gl_quick_prompt:'Pick a folder to set as a goal:',
+gl_cards_title:'Cards in Goal',gl_need_name:'Goal name is required',
+gl_need_folder:'No folder available to target',gl_need_label:'No label available to target',
+gl_saved:'Goal saved',gl_deleted:'Goal deleted',gl_archived:'Goal archived',
+gl_unarchived:'Goal unarchived',gl_exists:'A goal for that target already exists',
+gl_folder_off:'\u26A0\uFE0F This folder is inactive \u2014 its cards will not show up in Study',
+gl_type_info_count:'\U0001F522 Learn {n} words (from active folders)',
+gl_type_info_folder:'\U0001F4C1 Folder: {n}',gl_type_info_label:'\U0001F3F7\uFE0F Label: {n}',
+gl_daily_note:'{n} card(s) still untouched today.',gl_daily_done:'Today\u2019s target is done \U0001F389',
+gl_daily_empty:'No new cards \u2014 activate a folder in Library first.',
+gl_linked:'\U0001F517 Daily card source',gl_quick_name:'Learn {n}',
+hm_daily:'New cards today: {done}/{target}',
+f_today:'Today',
+set_daily_target:'Daily target (new cards)',set_allow_more:'Allow extra batch after completion',
+set_auto_suggest:'Auto-suggest new goals',
 }};
 const t=k=>(I18N[settings.lang]&&I18N[settings.lang][k])||I18N.id[k]||k;
 function applyI18n(){
@@ -1133,11 +1463,12 @@ function applyI18n(){
 }
 
 // ---------- storage / state ----------
-const K={cards:'mf2_cards',sents:'mf2_sents',acc:'mf2_account',set:'mf2_settings',seed:'mf2_seeded',daily:'mf2_daily',folders:'mf2_folders'};
+const K={cards:'mf2_cards',sents:'mf2_sents',acc:'mf2_account',set:'mf2_settings',seed:'mf2_seeded',daily:'mf2_daily',folders:'mf2_folders',goals:'mf2_goals'};
 const load=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}};
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){notify('Storage error: '+e.message,'error');}};
 
-let settings=Object.assign({lang:'id',charset:'simp',anim:true,dur:300,sound:true,showPinyin:true},load(K.set,{}));
+let settings=Object.assign({lang:'id',charset:'simp',anim:true,dur:300,sound:true,showPinyin:true,
+  dailyTarget:5,dailyAllowMore:true,autoSuggestGoal:true,dailyMode:'auto'},load(K.set,{}));
 const defAccount=()=>({name:'Pelajar',desc:'加油！',pfp:'👤',xp:0,level:1,
   stats:{cardsStudied:0,goodAnswers:0,againAnswers:0,totalQuizzes:0,quizCorrect:0,quizWrong:0,
          gamesPlayed:0,highScore:0,bestStreak:0,readCorrect:0,listenCorrect:0,typeCorrect:0}});
@@ -1270,13 +1601,25 @@ function renderTagUI(){
 // ---------- jadwal review (Leitner) + hitungan harian ----------
 const DAY_MS=86400000;
 const dayKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
-const defDaily=()=>({d:dayKey(),cards:0,quiz:0,type:0});
+// target & izin tambah batch ikut SETTINGS, jadi tetap sama walau harinya ganti
+const dailyTargetOf=()=>clamp(parseInt(settings.dailyTarget,10)||5,1,50);
+const dailyModeOf=()=>settings.dailyMode==='manual'?'manual':'auto';
+const defDaily=()=>({d:dayKey(),cards:0,quiz:0,type:0,picked:[],target:dailyTargetOf(),allowMore:settings.dailyAllowMore!==false,mode:dailyModeOf()});
 let daily=Object.assign(defDaily(),load(K.daily,{}));
 if(daily.d!==dayKey())daily=defDaily();
+if(!Array.isArray(daily.picked))daily.picked=[];
+daily.target=dailyTargetOf();
+daily.allowMore=settings.dailyAllowMore!==false;
+daily.mode=dailyModeOf();
+const saveDaily=()=>save(K.daily,daily);
+function rollDaily(){
+  if(daily.d===dayKey())return false;
+  daily=defDaily();saveDaily();return true;    // hari baru: pilihan kemarin dibuang, pick ulang
+}
 function bumpDaily(k,n){
-  if(daily.d!==dayKey())daily=defDaily();
+  rollDaily();
   daily[k]=(daily[k]||0)+(n===undefined?1:n);
-  save(K.daily,daily);
+  saveDaily();
 }
 // normalisasi struktur folder & kartu lama (tanpa lastReview/nextDue/id)
 function migrateCards(){
@@ -1322,6 +1665,7 @@ function markCard(c,kind){
   c.lastReview=Date.now();
   c.nextDue=kind==='again'?Date.now():nextDueFrom(c,Date.now());
   syncTwins(c);saveCards();
+  afterCardMarked(c);
 }
 
 // ---------- charset / meaning helpers ----------
@@ -2455,10 +2799,17 @@ function stBuild(){
   else if(st.filter==='new')list=list.filter(c=>!c.status);
   else if(st.filter==='good')list=list.filter(c=>c.status==='good');
   else if(st.filter==='due')list=list.filter(isDue);
+  else if(st.filter==='today'){
+    if(!dailyPickedCards().length)autoPickDaily();
+    const ps=new Set(daily.picked||[]);
+    list=list.filter(c=>ps.has(c.id));   // kartu yang sudah dinilai tetap ditampilkan
+  }
   st.order=list.map(c=>c.id);
   if(st.idx>=st.order.length)st.idx=0;
   const dueEl=$('#stDueCount');
   if(dueEl){const dc=scope.filter(isDue).length;dueEl.textContent=dc?String(dc):'';}
+  const tdEl=$('#stTodayCount');
+  if(tdEl){const tc=dailyLeft();tdEl.textContent=tc?String(tc):'';}
   const pc=$('#stPoolCount');
   if(pc)pc.textContent=fmt(t('f_pool'),{n:list.length});
   st.flipped=false;stRender();
@@ -2544,7 +2895,8 @@ function stMark(kind){
     if(kind==='good')fxCorrect();else fxWrong();
   }
   syncTwins(c);saveCards();saveAccount();
-  if(st.filter==='all'||st.filter===kind){setTimeout(()=>stMove('next'),260);}
+  afterCardMarked(c);
+  if(st.filter==='all'||st.filter==='today'||st.filter===kind){setTimeout(()=>stMove('next'),260);}
   else{setTimeout(()=>{stBuild();},300);}
 }
 // swipe / tap
@@ -3567,8 +3919,8 @@ function dl(name,obj){
 const today=()=>new Date().toISOString().slice(0,10);
 const slug=s=>String(s||'folder').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'folder';
 const libPayload=()=>({app:'mandaflip',version:3,type:'library',exported:new Date().toISOString(),folders});
-const accPayload=()=>({app:'mandaflip',version:3,type:'account',exported:new Date().toISOString(),account,settings});
-const fullPayload=()=>({app:'mandaflip',version:3,type:'full',exported:new Date().toISOString(),folders,account,settings});
+const accPayload=()=>({app:'mandaflip',version:3,type:'account',exported:new Date().toISOString(),account,settings,goals,daily});
+const fullPayload=()=>({app:'mandaflip',version:3,type:'full',exported:new Date().toISOString(),folders,account,settings,goals,daily});
 const exportLib=()=>dl('mandaflip-pustaka-'+today()+'.json',libPayload());
 const exportAcc=()=>dl('mandaflip-akun-'+today()+'.json',accPayload());
 $('#bkExportLib').onclick=exportLib;
@@ -3638,9 +3990,17 @@ async function importPayload(d){
       account.stats=Object.assign(defAccount().stats,d.account.stats||{});
       saveAccount();acc=true;
       if(d.settings&&typeof d.settings==='object'){settings=Object.assign(settings,d.settings);saveSettings();applySettingsUI();}
+      if(Array.isArray(d.goals)){goals=d.goals.map(g=>defGoal(g&&typeof g==='object'?g:{}));saveGoals();}
+      if(d.daily&&typeof d.daily==='object'){
+        daily=Object.assign(defDaily(),d.daily);
+        if(daily.d!==dayKey())daily=defDaily();
+        if(!Array.isArray(daily.picked))daily.picked=[];
+        daily.target=dailyTargetOf();daily.allowMore=settings.dailyAllowMore!==false;
+        saveDaily();
+      }
     }
   }else throw new Error('format');
-  afterFolderChange();renderAccount();applyI18n();
+  afterFolderChange();renderAccount();applyI18n();glRender();
   const parts=[];
   if(nf||w||s)parts.push(fmt(t('import_lib_ok'),{f:nf,w,s}));
   if(acc)parts.push(t('import_acc_ok'));
@@ -3744,8 +4104,9 @@ function hmRender(){
   $('#hmMastered').textContent=deck.cards.filter(isMastered).length;
   $('#hmDeckInfo').textContent=fmt(t('hm_deck_info'),{n:deck.cards.length});
   $('#hmReview').disabled=!deck.cards.length;
-  if(daily.d!==dayKey())daily=defDaily();
+  rollDaily();
   $('#hmToday').textContent=fmt(t('hm_today'),{c:daily.cards,q:daily.quiz,y:daily.type});
+  glRenderDaily();
   const dueEl=$('#stDueCount');if(dueEl)dueEl.textContent=due?String(due):'';
 }
 $('#stTagFilter').onchange=e=>{st.tag=e.target.value;st.idx=0;stBuild();};
@@ -3772,6 +4133,704 @@ $('#hmGame').onclick=()=>setView('v-game');
 $('#hmRead').onclick=()=>setView('v-read');
 
 // =========================================================
+// TARGET / GOALS  (target harian + misi jangka panjang)
+// =========================================================
+// Goal menyimpan REFERENSI (folder id / label), bukan salinan kartu, jadi
+// progresnya selalu ikut data folder yang sebenarnya.
+const defGoal=o=>Object.assign({
+  id:uid(),name:'Target',type:'count',
+  folderId:null,labelTag:null,targetCount:null,
+  masteryGood:3,deadline:null,
+  created:Date.now(),completed:null,archived:false,
+  history:[],linkedDaily:false},o||{});
+
+let goals=load(K.goals,[]);
+if(!Array.isArray(goals))goals=[];
+goals=goals.map(g=>defGoal(g&&typeof g==='object'?g:{}));
+const saveGoals=()=>save(K.goals,goals);
+const goalById=id=>goals.find(g=>g.id===id)||null;
+
+// kata yang sama bisa nongol di beberapa folder -> hitung sekali saja (sama seperti deck)
+function dedupeCards(list){
+  const seen=new Set(),out=[];
+  (list||[]).forEach(c=>{if(!c)return;const k=ckey(c);if(seen.has(k))return;seen.add(k);out.push(c);});
+  return out;
+}
+const cardsByTag=tag=>{const out=[];folders.forEach(f=>f.cards.forEach(c=>{if(tagOf(c)===tag)out.push(c);}));return dedupeCards(out);};
+
+function goalCards(goal){
+  if(!goal)return [];
+  if(goal.type==='folder'){const f=folderById(goal.folderId);return f?dedupeCards(f.cards):[];}
+  if(goal.type==='label')return cardsByTag(goal.labelTag);
+  return dedupeCards(deck.cards);
+}
+function goalProgress(goal){
+  const cards=goalCards(goal);
+  const need=Math.max(1,goal.masteryGood||1);
+  const mastered=cards.filter(c=>((c.stats&&c.stats.good)||0)>=need);
+  const total=goal.type==='count'?(goal.targetCount||0):cards.length;
+  const current=goal.type==='count'?Math.min(mastered.length,total):mastered.length;
+  return {current,total,pct:total?Math.round(current/total*100):0,cards,mastered};
+}
+const goalIcon=g=>g.type==='folder'?'📁':g.type==='label'?'🏷️':'🔢';
+function goalTypeInfo(g){
+  if(g.type==='folder'){const f=folderById(g.folderId);return fmt(t('gl_type_info_folder'),{n:f?f.icon+' '+f.name:'—'});}
+  if(g.type==='label')return fmt(t('gl_type_info_label'),{n:g.labelTag||'—'});
+  return fmt(t('gl_type_info_count'),{n:g.targetCount||0});
+}
+const goalOverdue=g=>!!(g.deadline&&!g.completed&&g.deadline<Date.now());
+const fmtDate=ts=>{try{return new Date(ts).toLocaleDateString(settings.lang==='en'?'en-GB':'id-ID',{day:'numeric',month:'short',year:'numeric'});}catch(e){return '';}};
+const dateInputValue=ts=>{if(!ts)return '';const d=new Date(ts);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+
+// ---------- target harian ----------
+function dailyPool(){
+  let pool=deck.cards.filter(isNewCard);
+  const lg=goals.find(g=>g.linkedDaily&&!g.completed&&!g.archived);
+  if(lg){
+    const ids=new Set(goalCards(lg).map(c=>c.id));
+    const sub=pool.filter(c=>ids.has(c.id));
+    if(sub.length)pool=sub;            // kalau kartu baru goal-nya habis, jatuh balik ke semua
+  }
+  const taken=new Set(daily.picked||[]);
+  return pool.filter(c=>!taken.has(c.id));
+}
+const dailyPickedCards=()=>(daily.picked||[]).map(id=>deck.cards.find(c=>c.id===id)).filter(Boolean);
+const dailyDone=()=>dailyPickedCards().filter(c=>!!c.status).length;
+const dailyLeft=()=>dailyPickedCards().filter(c=>!c.status).length;
+const dailyTotal=()=>Math.max(daily.target||1,(daily.picked||[]).length);
+
+function autoPickDaily(){
+  rollDaily();
+  // buang id yang kartunya sudah hilang (folder dihapus / dinonaktifkan)
+  const alive=new Set(deck.cards.map(c=>c.id));
+  daily.picked=(daily.picked||[]).filter(id=>alive.has(id));
+  if(dailyModeOf()==='manual'){saveDaily();return daily.picked.length;}   // manual: user yang isi
+  const need=Math.max(0,(daily.target||1)-daily.picked.length);
+  if(need>0)daily.picked=daily.picked.concat(shuffle(dailyPool()).slice(0,need).map(c=>c.id));
+  saveDaily();
+  return daily.picked.length;
+}
+function addDailyBatch(){
+  rollDaily();
+  const add=shuffle(dailyPool()).slice(0,daily.target||1);
+  if(!add.length){notify(t('gl_no_new_cards'),'warning');return 0;}
+  daily.picked=(daily.picked||[]).concat(add.map(c=>c.id));
+  saveDaily();
+  notify(fmt(t('gl_batch_added'),{n:add.length}),'success');
+  glRefresh();
+  return add.length;
+}
+
+// ---------- history + penyelesaian ----------
+function updateGoalHistory(goal,prog){
+  if(!Array.isArray(goal.history))goal.history=[];
+  const p=prog||goalProgress(goal),today=dayKey();
+  const last=goal.history.length?goal.history[goal.history.length-1]:null;
+  if(last&&last.d===today){last.mastered=p.current;last.total=p.total;}
+  else goal.history.push({d:today,mastered:p.current,total:p.total});
+  if(goal.history.length>120)goal.history=[goal.history[0]].concat(goal.history.slice(-90));
+}
+function goalComplete(goal,prog){
+  goal.completed=Date.now();
+  saveGoals();
+  fxFinish();
+  const p=prog||goalProgress(goal);
+  const bonus=Math.min(300,Math.round(p.total*2));   // dibatasi biar kurva level nggak jebol
+  addXp(bonus);
+  notify(fmt(t('gl_completed'),{name:goal.name,xp:bonus}),'success');
+  if(settings.autoSuggestGoal)suggestNextGoal(goal);
+}
+// dipanggil dari stMark() dan markCard() -> semua jalur "kartu dinilai" lewat sini
+function afterCardMarked(c){
+  if(!c||!goals.length)return;
+  const key=ckey(c);
+  let dirty=false;
+  goals.forEach(g=>{
+    if(g.archived)return;
+    const p=goalProgress(g);
+    if(g.type!=='count'&&!p.cards.some(x=>ckey(x)===key))return;
+    updateGoalHistory(g,p);dirty=true;
+    if(!g.completed&&p.total>0&&p.current>=p.total)goalComplete(g,p);
+  });
+  if(dirty)saveGoals();
+  glRefresh();
+}
+
+// ---------- saran target berikutnya ----------
+function goalTaken(type,ref){
+  return goals.some(g=>!g.archived&&g.type===type&&(type==='folder'?g.folderId===ref:type==='label'?g.labelTag===ref:false));
+}
+function nextGoalSuggestion(prev){
+  if(prev.type==='folder'){
+    const i=folders.findIndex(f=>f.id===prev.folderId);
+    const rest=folders.slice(i+1).concat(i>0?folders.slice(0,i):[]);
+    const f=rest.find(x=>x.cards.length&&!goalTaken('folder',x.id));
+    if(f)return {name:fmt(t('gl_quick_name'),{n:f.name}),type:'folder',folderId:f.id,masteryGood:prev.masteryGood};
+  }else if(prev.type==='label'){
+    const tags=allTags().filter(g=>cardsByTag(g).length);
+    const i=tags.indexOf(prev.labelTag);
+    const rest=tags.slice(i+1).concat(i>0?tags.slice(0,i):[]);
+    const g=rest.find(x=>!goalTaken('label',x));
+    if(g)return {name:fmt(t('gl_quick_name'),{n:g}),type:'label',labelTag:g,masteryGood:prev.masteryGood};
+  }else{
+    const n=(prev.targetCount||50)+50;
+    return {name:fmt(t('gl_quick_name'),{n:n+' '+t('lib_words')}),type:'count',targetCount:n,masteryGood:prev.masteryGood};
+  }
+  return null;
+}
+async function suggestNextGoal(prev){
+  const s=nextGoalSuggestion(prev);
+  if(!s)return;
+  if(!await mConfirm(fmt(t('gl_suggest'),{name:s.name})))return;
+  goals.push(defGoal(s));saveGoals();
+  notify(t('gl_saved'),'success');
+  glShow('list');glRender();
+}
+
+// ---------- render ----------
+const gl={view:'list',filter:'active',editId:null,detailId:null,tf:'14'};
+function glShow(v){
+  gl.view=v;
+  $('#glList').classList.toggle('hidden',v!=='list');
+  $('#glForm').classList.toggle('hidden',v!=='form');
+  $('#glDetail').classList.toggle('hidden',v!=='detail');
+  $('#glPick').classList.toggle('hidden',v!=='pick');
+}
+// dipanggil sehabis kartu dinilai: cuma refresh yang lagi kelihatan
+function glRefresh(){
+  glRenderDaily();
+  if(curView==='v-goals'){
+    if(gl.view==='list')glRenderList();
+    else if(gl.view==='detail')glRenderDetail();
+  }
+  const td=$('#stTodayCount');
+  if(td){const n=dailyLeft();td.textContent=n?String(n):'';}
+}
+function glRender(){
+  glRenderDaily();
+  if(gl.view==='list')glRenderList();
+  else if(gl.view==='form')glFormFill();
+  else if(gl.view==='detail')glRenderDetail();
+}
+function glRenderDaily(){
+  rollDaily();
+  const done=dailyDone(),total=dailyTotal(),left=dailyLeft();
+  const pct=total?Math.round(done/total*100):0;
+  const txt=$('#glDailyText');
+  if(txt)txt.textContent=fmt(t('gl_daily_progress'),{done,target:total});
+  const bar=$('#glDailyBar');
+  if(bar)bar.style.width=pct+'%';
+  const note=$('#glDailyNote');
+  if(note){
+    if(!(daily.picked||[]).length&&dailyModeOf()==='manual')note.textContent=t('gl_pick_empty_manual');
+    else if(!(daily.picked||[]).length&&!deck.cards.filter(isNewCard).length)note.textContent=t('gl_daily_empty');
+    else if(left)note.textContent=fmt(t('gl_daily_note'),{n:left});
+    else note.textContent=t('gl_daily_done');
+  }
+  const manual=dailyModeOf()==='manual';
+  const bt=$('#glBatch');
+  if(bt){
+    const can=!manual&&daily.allowMore!==false&&!left&&!!dailyPool().length;
+    bt.classList.toggle('hidden',!can);
+    bt.textContent=fmt(t('gl_add_batch'),{n:daily.target||1});
+  }
+  $$('#glModeChips .btn').forEach(b=>b.classList.toggle('active',(b.dataset.gmode==='manual')===manual));
+  const mh=$('#glModeHint');
+  if(mh)mh.textContent=manual?t('gl_mode_manual_hint'):t('gl_mode_auto_hint');
+  const hl=$('#hmDailyLbl');
+  if(hl)hl.textContent=fmt(t('hm_daily'),{done,target:total});
+  const hb=$('#hmDailyBar');
+  if(hb)hb.style.width=pct+'%';
+}
+function glVisibleGoals(){
+  if(gl.filter==='active')return goals.filter(g=>!g.completed&&!g.archived);
+  if(gl.filter==='done')return goals.filter(g=>!!g.completed);
+  return goals.slice();
+}
+function glRenderList(){
+  const box=$('#glCards');if(!box)return;
+  const list=glVisibleGoals();
+  $('#glEmpty').classList.toggle('hidden',!!list.length);
+  box.innerHTML=list.map(g=>{
+    const p=goalProgress(g);                      // sekali per goal, hasilnya dipakai ulang di bawah
+    const badge=g.completed?'✅':g.archived?'📦':'🟢';
+    const dim=g.completed||g.archived?'opacity:.62;':'';
+    const f=g.type==='folder'?folderById(g.folderId):null;
+    const warn=f&&!f.active?'<p class="mut" style="margin:0;color:var(--warn)">'+esc(t('gl_folder_off'))+'</p>':'';
+    const dl=g.deadline
+      ?'<p class="mut" style="margin:0'+(goalOverdue(g)?';color:var(--danger)':'')+'">'
+        +esc(goalOverdue(g)?t('gl_overdue'):fmt(t('gl_deadline_label'),{d:fmtDate(g.deadline)}))+'</p>'
+      :'';
+    const link=g.linkedDaily&&!g.completed&&!g.archived?'<p class="mut" style="margin:0">'+esc(t('gl_linked'))+'</p>':'';
+    return '<div class="pack" style="'+dim+'">'
+      +'<h3>'+badge+' '+goalIcon(g)+' '+esc(g.name)+'</h3>'
+      +'<p>'+esc(goalTypeInfo(g))+'</p>'
+      +'<div class="row"><div class="progress"><div style="width:'+p.pct+'%"></div></div></div>'
+      +'<span class="meta">'+esc(fmt(t('gl_progress'),{current:p.current,total:p.total,pct:p.pct}))+'</span>'
+      +link+dl+warn
+      +'<div class="row">'
+        +'<button class="btn sm" data-gact="detail" data-gid="'+esc(g.id)+'">'+esc(t('gl_detail'))+'</button>'
+        +'<button class="btn sm" data-gact="edit" data-gid="'+esc(g.id)+'">'+esc(t('gl_edit'))+'</button>'
+        +'<button class="btn sm bad" data-gact="del" data-gid="'+esc(g.id)+'">'+esc(t('gl_delete'))+'</button>'
+      +'</div></div>';
+  }).join('');
+}
+function glRenderDetail(){
+  const g=goalById(gl.detailId);
+  if(!g){glShow('list');glRenderList();return;}
+  const p=goalProgress(g);
+  $('#gdName').textContent=goalIcon(g)+' '+g.name;
+  $('#gdStatus').textContent=g.completed?'✅':g.archived?'📦':'🟢';
+  const f=g.type==='folder'?folderById(g.folderId):null;
+  $('#gdType').textContent=goalTypeInfo(g)+(f&&!f.active?' · '+t('gl_folder_off'):'');
+  $('#gdProgText').textContent=fmt(t('gl_progress'),{current:p.current,total:p.total,pct:p.pct});
+  $('#gdProgBar').style.width=p.pct+'%';
+  $('#gdMastery').textContent=fmt(t('gl_mastery_label'),{n:g.masteryGood});
+  const dl=$('#gdDeadline');
+  dl.textContent=g.deadline?(goalOverdue(g)?t('gl_overdue'):fmt(t('gl_deadline_label'),{d:fmtDate(g.deadline)})):t('gl_no_deadline');
+  dl.style.color=goalOverdue(g)?'var(--danger)':'';
+  $('#gdArchive').textContent=g.archived?t('gl_unarchive'):t('gl_archive');
+  const need=Math.max(1,g.masteryGood||1);
+  const rank=c=>{const good=(c.stats&&c.stats.good)||0;return good>=need?2:(c.status||good?1:0);};
+  const rows=p.cards.slice().sort((a,b)=>rank(a)-rank(b)||String(a.pinyin||'').localeCompare(String(b.pinyin||'')));
+  $('#gdCardRows').innerHTML=rows.map(c=>{
+    const good=(c.stats&&c.stats.good)||0,r=rank(c);
+    const st=r===2?t('gl_card_mastered'):r===1?t('gl_card_learning'):t('gl_card_new');
+    return '<tr><td>'+esc(disp(c))+'</td><td>'+esc(c.pinyin||'')+'</td><td>'+esc(mean(c)||'')
+      +'</td><td>'+good+'</td><td>'+esc(st)+'</td></tr>';
+  }).join('')||'<tr><td colspan="5" class="mut">—</td></tr>';
+  renderGoalAnalytics(g);
+}
+
+// ---------- form ----------
+function glFormFill(){
+  const g=gl.editId?goalById(gl.editId):null;
+  $('#glFormTitle').textContent=g?t('gl_edit'):t('gl_new');
+  $('#glfName').value=g?g.name:'';
+  const type=g?g.type:'count';
+  $$('#glfTypeChips .btn').forEach(b=>b.classList.toggle('active',b.dataset.gtype===type));
+  // folder & label dropdown selalu dibangun ulang biar ikut data terbaru
+  const fsel=$('#glfFolder');
+  fsel.innerHTML=folders.map(f=>'<option value="'+esc(f.id)+'">'+esc(f.icon+' '+f.name)+' ('+f.cards.length+')</option>').join('')
+    ||'<option value="">—</option>';
+  const lsel=$('#glfLabel');
+  const tags=allTags().filter(x=>cardsByTag(x).length);
+  lsel.innerHTML=tags.map(x=>'<option value="'+esc(x)+'">'+esc(x)+' ('+cardsByTag(x).length+')</option>').join('')
+    ||'<option value="">—</option>';
+  if(g&&g.type==='folder'&&g.folderId)fsel.value=g.folderId;
+  if(g&&g.type==='label'&&g.labelTag)lsel.value=g.labelTag;
+  $('#glfCount').value=g&&g.type==='count'?(g.targetCount||50):50;
+  const mg=g?g.masteryGood:3;
+  const preset=[1,3,5,10].indexOf(mg)>=0;
+  $('#glfMastery').value=preset?String(mg):'custom';
+  $('#glfMasteryCustom').value=mg;
+  $('#glfDeadline').value=g&&g.deadline?dateInputValue(g.deadline):'';
+  $('#glfLinkDaily').checked=g?!!g.linkedDaily:false;
+  glfSyncType(type);
+  glfSyncMastery();
+}
+function glfType(){const b=$('#glfTypeChips .btn.active');return b?b.dataset.gtype:'count';}
+function glfSyncType(type){
+  $('#glfCountWrap').classList.toggle('hidden',type!=='count');
+  $('#glfFolderWrap').classList.toggle('hidden',type!=='folder');
+  $('#glfLabelWrap').classList.toggle('hidden',type!=='label');
+}
+function glfSyncMastery(){
+  $('#glfMasteryCustomWrap').classList.toggle('hidden',$('#glfMastery').value!=='custom');
+}
+function glfRead(){
+  const type=glfType();
+  const name=$('#glfName').value.trim();
+  if(!name){notify(t('gl_need_name'),'warning');return null;}
+  const mv=$('#glfMastery').value;
+  const mastery=clamp(parseInt(mv==='custom'?$('#glfMasteryCustom').value:mv,10)||1,1,99);
+  const dv=$('#glfDeadline').value;
+  let deadline=null;
+  if(dv){const d=new Date(dv+'T23:59:59');if(!isNaN(d.getTime()))deadline=d.getTime();}
+  const o={name,type,masteryGood:mastery,deadline,linkedDaily:$('#glfLinkDaily').checked,
+    folderId:null,labelTag:null,targetCount:null};
+  if(type==='folder'){
+    o.folderId=$('#glfFolder').value||null;
+    if(!o.folderId){notify(t('gl_need_folder'),'warning');return null;}
+  }else if(type==='label'){
+    o.labelTag=$('#glfLabel').value||null;
+    if(!o.labelTag){notify(t('gl_need_label'),'warning');return null;}
+  }else{
+    o.targetCount=clamp(parseInt($('#glfCount').value,10)||50,1,9999);
+  }
+  return o;
+}
+function glSaveForm(){
+  const o=glfRead();if(!o)return;
+  let g=gl.editId?goalById(gl.editId):null;
+  if(g)Object.assign(g,o);
+  else{g=defGoal(o);goals.push(g);}
+  if(g.linkedDaily)goals.forEach(x=>{if(x!==g)x.linkedDaily=false;});   // cuma satu goal yang nyetir kartu harian
+  updateGoalHistory(g);
+  saveGoals();
+  gl.editId=null;
+  glShow('list');glRender();
+  notify(t('gl_saved'),'success');
+}
+async function glDelete(id){
+  const g=goalById(id);if(!g)return;
+  if(!await mConfirm(fmt(t('gl_confirm_del'),{name:g.name})))return;
+  goals=goals.filter(x=>x.id!==id);
+  saveGoals();
+  glShow('list');glRender();
+  notify(t('gl_deleted'),'success');
+}
+async function glQuick(){
+  const list=folders.filter(f=>f.cards.length);
+  if(!list.length){notify(t('gl_need_folder'),'warning');return;}
+  const html='<select id="glqSel" style="width:100%;margin-top:10px">'
+    +list.map(f=>'<option value="'+esc(f.id)+'">'+esc(f.icon+' '+f.name)+' ('+f.cards.length+')</option>').join('')
+    +'</select>';
+  const id=await openModal({title:t('gl_quick'),msg:t('gl_quick_prompt'),html,cancelText:t('cancel'),
+    collect:()=>{const el=$('#glqSel');return el?el.value:null;}});
+  if(!id)return;
+  const f=folderById(id);if(!f)return;
+  if(goalTaken('folder',f.id)){notify(t('gl_exists'),'warning');return;}
+  const g=defGoal({name:fmt(t('gl_quick_name'),{n:f.name}),type:'folder',folderId:f.id,masteryGood:3});
+  goals.push(g);updateGoalHistory(g);saveGoals();
+  glShow('list');glRender();
+  notify(t('gl_saved'),'success');
+}
+
+// ---------- pilih kartu harian manual ----------
+// daily.picked tetap satu-satunya sumber kebenaran; mode cuma menentukan siapa yang mengisinya.
+const gp={sel:new Set(),scope:'new',folder:'all',tag:'all',q:''};
+const GP_LIMIT=400;
+
+function gpFolderList(){
+  const m=new Map();
+  deck.cards.forEach(c=>{const f=ownerOf(c);if(f&&!m.has(f.id))m.set(f.id,f);});
+  return [...m.values()];
+}
+function gpCandidates(){
+  let list=deck.cards;
+  if(gp.scope==='new')list=list.filter(isNewCard);
+  if(gp.folder!=='all'){const f=folderById(gp.folder);list=list.filter(c=>ownerOf(c)===f);}
+  list=byTag(list,gp.tag);
+  const q=gp.q.trim().toLowerCase();
+  if(q){
+    const qp=normPy(q);
+    list=list.filter(c=>String(c.hanzi||'').includes(q)||String(c.trad||'').includes(q)
+      ||(qp&&normPy(c.pinyin).includes(qp))
+      ||String(c.arti||'').toLowerCase().includes(q)||String(c.en||'').toLowerCase().includes(q));
+  }
+  return list;
+}
+const gpStatus=c=>!c.status?t('gl_card_new'):(c.status==='good'?'✅ Good':'🔁 Again');
+function gpSyncCount(){
+  const el=$('#gpCount');
+  if(el)el.textContent=gp.sel.size+' / '+(daily.target||1);
+  const sh=$('#gpShuffle');
+  if(sh)sh.textContent=fmt(t('gl_pick_shuffle'),{n:daily.target||1});
+}
+function gpRenderRows(){
+  const rows=gpCandidates();
+  const shown=rows.slice(0,GP_LIMIT);
+  $('#gpRows').innerHTML=shown.map(c=>{
+    const f=ownerOf(c);
+    return '<tr><td><input type="checkbox" data-cid="'+esc(c.id)+'"'+(gp.sel.has(c.id)?' checked':'')+'></td>'
+      +'<td>'+esc(disp(c))+'</td><td>'+esc(c.pinyin||'')+'</td><td>'+esc(mean(c)||'')+'</td>'
+      +'<td>'+esc(gpStatus(c))+'</td><td class="mut">'+esc(f?f.icon+' '+f.name:'—')+'</td></tr>';
+  }).join('')||'<tr><td colspan="6" class="mut">'+esc(t('gl_pick_none'))+'</td></tr>';
+  const info=$('#gpInfo');
+  if(info)info.textContent=rows.length>GP_LIMIT?fmt(t('gl_pick_limit'),{n:GP_LIMIT}):fmt(t('f_pool'),{n:rows.length});
+  const all=$('#gpAll');
+  if(all)all.checked=!!shown.length&&shown.every(c=>gp.sel.has(c.id));
+  gpSyncCount();
+}
+function gpOpen(){
+  gp.sel=new Set((daily.picked||[]).filter(id=>deck.cards.some(c=>c.id===id)));
+  gp.scope='new';gp.folder='all';gp.tag='all';gp.q='';
+  $('#gpScope').value='new';$('#gpSearch').value='';
+  const fs=gpFolderList();
+  $('#gpFolder').innerHTML='<option value="all">'+esc(t('gl_folder_all'))+'</option>'
+    +fs.map(f=>'<option value="'+esc(f.id)+'">'+esc(f.icon+' '+f.name)+'</option>').join('');
+  const counts=tagCounts(deck.cards);
+  $('#gpTag').innerHTML='<option value="all">'+esc(t('f_tag_all'))+' ('+deck.cards.length+')</option>'
+    +[...counts.keys()].sort().map(g=>'<option value="'+esc(g)+'">'+esc(g)+' ('+counts.get(g)+')</option>').join('');
+  glShow('pick');
+  gpRenderRows();
+}
+function gpSave(){
+  daily.picked=[...gp.sel].filter(id=>deck.cards.some(c=>c.id===id));
+  saveDaily();
+  notify(fmt(t('gl_pick_saved'),{n:daily.picked.length}),'success');
+  glShow('list');glRender();
+  if(st.filter==='today')stBuild();
+}
+$('#glPickOpen').onclick=gpOpen;
+$('#gpScope').onchange=e=>{gp.scope=e.target.value;gpRenderRows();};
+$('#gpFolder').onchange=e=>{gp.folder=e.target.value;gpRenderRows();};
+$('#gpTag').onchange=e=>{gp.tag=e.target.value;gpRenderRows();};
+$('#gpSearch').oninput=e=>{gp.q=e.target.value;gpRenderRows();};
+$('#gpRows').addEventListener('change',e=>{
+  const cb=e.target.closest('input[data-cid]');if(!cb)return;
+  if(cb.checked)gp.sel.add(cb.dataset.cid);else gp.sel.delete(cb.dataset.cid);
+  const all=$('#gpAll');
+  if(all&&!cb.checked)all.checked=false;
+  gpSyncCount();
+});
+$('#gpAll').onchange=e=>{
+  const shown=gpCandidates().slice(0,GP_LIMIT);
+  shown.forEach(c=>{if(e.target.checked)gp.sel.add(c.id);else gp.sel.delete(c.id);});
+  gpRenderRows();
+};
+$('#gpShuffle').onclick=()=>{
+  const pool=gpCandidates();
+  if(!pool.length){notify(t('gl_pick_none'),'warning');return;}
+  gp.sel=new Set(shuffle(pool).slice(0,daily.target||1).map(c=>c.id));
+  gpRenderRows();
+};
+$('#gpClear').onclick=()=>{gp.sel.clear();gpRenderRows();};
+$('#gpSave').onclick=gpSave;
+$('#gpCancel').onclick=()=>{glShow('list');glRender();};
+$('#glModeChips').addEventListener('click',e=>{
+  const b=e.target.closest('[data-gmode]');if(!b)return;
+  settings.dailyMode=b.dataset.gmode==='manual'?'manual':'auto';
+  saveSettings();
+  daily.mode=settings.dailyMode;saveDaily();
+  $('#setDailyMode').value=settings.dailyMode;
+  glRenderDaily();
+  if(st.filter==='today')stBuild();
+});
+
+// ---------- analitik goal: SVG dibangun manual, tanpa library ----------
+// Semua tanggal pakai kunci lokal 'YYYY-MM-DD' (sama seperti dayKey()), jangan
+// toISOString() — di WIB itu meleset satu hari.
+const dayParse=k=>{const p=String(k).split('-');return new Date(+p[0],(+p[1]||1)-1,+p[2]||1);};
+const dayAdd=(k,n)=>{const d=dayParse(k);d.setDate(d.getDate()+n);return dateInputValue(d.getTime());};
+const daysBetween=(a,b)=>Math.round((dayParse(b)-dayParse(a))/DAY_MS);
+const nn=v=>Math.round(v*10)/10;
+
+function calcStreak(history){
+  if(!history||!history.length)return 0;
+  const days=new Set(history.map(h=>h.d));
+  let cur=dayKey(),n=0;
+  if(!days.has(cur))cur=dayAdd(cur,-1);   // hari ini belum belajar -> streak kemarin masih hidup
+  while(days.has(cur)){n++;cur=dayAdd(cur,-1);}
+  return n;
+}
+
+// history cuma nyimpan hari yang ada aktivitas; chart butuh sumbu tanggal yang rapat,
+// jadi hari kosong diisi (garis kumulatif mendatar, bar = 0).
+const DEADLINE_HORIZON=45;
+function goalSeries(goal,tf){
+  const hist=(goal.history||[]).slice().sort((a,b)=>String(a.d).localeCompare(String(b.d)));
+  if(!hist.length)return [];
+  const today=dayKey(),last=hist[hist.length-1].d;
+  const end=today>last?today:last;
+  let start=tf==='all'?hist[0].d:dayAdd(end,-(Math.max(1,parseInt(tf,10)||14)-1));
+  if(start<hist[0].d)start=hist[0].d;
+  if(daysBetween(start,end)+1>120)start=dayAdd(end,-119);   // batasi biar sumbu X tetap kebaca
+  // entri pertama goal itu foto awal (kartu yang memang sudah hapal duluan), bukan hasil sehari
+  let base=hist[0].mastered||0;
+  hist.forEach(h=>{if(h.d<start)base=h.mastered||0;});
+  const map=new Map();
+  hist.forEach(h=>map.set(h.d,h));
+  const out=[];
+  let run=base,tot=hist[hist.length-1].total||0;
+  for(let d=start;d<=end;d=dayAdd(d,1)){
+    const e=map.get(d),prev=run;
+    if(e){run=e.mastered||0;tot=e.total||tot;}
+    out.push({d,mastered:run,delta:Math.max(0,run-prev),active:!!e,total:tot,future:false});
+    if(out.length>400)break;
+  }
+  // ruang ke depan sampai deadline: titiknya tidak digambar, cuma buat skala sumbu X
+  const dk=goal.deadline?dateInputValue(goal.deadline):'';
+  if(dk&&dk>end&&daysBetween(end,dk)<=DEADLINE_HORIZON){
+    for(let d=dayAdd(end,1);d<=dk;d=dayAdd(d,1))
+      out.push({d,mastered:run,delta:0,active:false,total:tot,future:true});
+  }
+  return out;
+}
+
+function estimateCompletion(goal,prog){
+  const p=prog||goalProgress(goal);
+  const remaining=Math.max(0,p.total-p.current);
+  const hist=goal.history||[];
+  const days=Math.max(1,Math.round((Date.now()-(goal.created||Date.now()))/DAY_MS)+1);
+  const overallPace=p.current/days;
+  // laju terkini = rata-rata antar hari AKTIF terakhir (skenario optimis)
+  const recent=hist.slice(-7);
+  let sum=0;
+  for(let i=1;i<recent.length;i++)sum+=Math.max(0,(recent[i].mastered||0)-(recent[i-1].mastered||0));
+  const recentPace=recent.length>1?sum/(recent.length-1):0;
+  const est=pace=>(remaining>0&&pace>0)?new Date(Date.now()+(remaining/pace)*DAY_MS):null;
+  return {remaining,overallPace:nn(overallPace),recentPace:nn(recentPace),
+    overall:est(overallPace),recent:est(recentPace)};
+}
+
+// ---------- SVG ----------
+function svgLineChart(series,total,deadline){
+  const W=600,H=180,PL=42,PR=52,PT=12,PB=26;
+  const pw=W-PL-PR,ph=H-PT-PB,n=series.length;
+  const maxY=Math.max(1,total||0,...series.map(p=>p.mastered));
+  const X=i=>n<2?PL+pw/2:PL+i/(n-1)*pw;
+  const Y=v=>PT+ph-(v/maxY)*ph;
+  const o=[];
+  // grid + label sumbu Y
+  for(let i=0;i<=4;i++){
+    const v=maxY*i/4,y=nn(Y(v));
+    o.push('<line x1="'+PL+'" y1="'+y+'" x2="'+(PL+pw)+'" y2="'+y+'" stroke="var(--border)" stroke-width="1"/>');
+    o.push('<text x="'+(PL-6)+'" y="'+(y+3)+'" fill="var(--muted)" font-size="10" text-anchor="end">'+Math.round(v)+'</text>');
+  }
+  // garis target
+  if(total>0){
+    const y=nn(Y(total));
+    o.push('<line x1="'+PL+'" y1="'+y+'" x2="'+(PL+pw)+'" y2="'+y+'" stroke="var(--accent2)" stroke-width="1.5" stroke-dasharray="5 4"/>');
+    o.push('<text x="'+(PL+pw+5)+'" y="'+(y+3)+'" fill="var(--accent2)" font-size="10">'+esc(t('gl_target_line'))+'</text>');
+  }
+  // deadline (hanya kalau jatuh di dalam rentang yang digambar)
+  if(deadline&&n){
+    const dk=dateInputValue(deadline);
+    const i=series.findIndex(p=>p.d===dk);
+    if(i>=0){
+      const x=nn(X(i));
+      o.push('<line x1="'+x+'" y1="'+PT+'" x2="'+x+'" y2="'+(PT+ph)+'" stroke="var(--danger)" stroke-width="1.5" stroke-dasharray="4 3"/>');
+      o.push('<text x="'+(x+3)+'" y="'+(PT+9)+'" fill="var(--danger)" font-size="9">⏰</text>');
+    }
+  }
+  // area + garis (titik masa depan cuma buat skala, tidak digambar)
+  const real=series.filter(p=>!p.future),rn=real.length;
+  const pts=real.map((p,i)=>nn(X(i))+' '+nn(Y(p.mastered)));
+  if(rn>1){
+    o.push('<path d="M'+pts.join(' L')+' L'+nn(X(rn-1))+' '+(PT+ph)+' L'+nn(X(0))+' '+(PT+ph)+' Z" fill="var(--accent)" fill-opacity=".1"/>');
+  }
+  o.push('<path d="M'+pts.join(' L')+'" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>');
+  if(rn<=40)real.forEach((p,i)=>o.push('<circle cx="'+nn(X(i))+'" cy="'+nn(Y(p.mastered))+'" r="3" fill="var(--accent)"/>'));
+  // label sumbu X
+  const step=Math.max(1,Math.ceil(n/6));
+  series.forEach((p,i)=>{
+    if(i%step&&i!==n-1)return;
+    o.push('<text x="'+nn(X(i))+'" y="'+(PT+ph+16)+'" fill="var(--muted)" font-size="10" text-anchor="middle">'+p.d.slice(8)+'/'+p.d.slice(5,7)+'</text>');
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" role="img">'+o.join('')+'</svg>';
+}
+
+function svgBarChart(series){
+  const W=600,H=150,PL=42,PR=14,PT=10,PB=26;
+  const pw=W-PL-PR,ph=H-PT-PB,n=series.length;
+  const maxY=Math.max(1,...series.map(p=>p.delta));
+  const o=[];
+  for(let i=0;i<=2;i++){
+    const v=maxY*i/2,y=nn(PT+ph-(v/maxY)*ph);
+    o.push('<line x1="'+PL+'" y1="'+y+'" x2="'+(PL+pw)+'" y2="'+y+'" stroke="var(--border)" stroke-width="1"/>');
+    o.push('<text x="'+(PL-6)+'" y="'+(y+3)+'" fill="var(--muted)" font-size="10" text-anchor="end">'+Math.round(v)+'</text>');
+  }
+  const slot=pw/n,bw=Math.max(2,Math.min(26,slot*0.7));
+  series.forEach((p,i)=>{
+    const bh=p.delta/maxY*ph;
+    if(bh<=0)return;
+    const bx=nn(PL+slot*i+(slot-bw)/2),by=nn(PT+ph-bh),r=Math.min(3,bw/2,bh);
+    o.push('<path d="M'+bx+' '+nn(by+bh)+'V'+nn(by+r)+'Q'+bx+' '+nn(by)+' '+nn(bx+r)+' '+nn(by)
+      +'H'+nn(bx+bw-r)+'Q'+nn(bx+bw)+' '+nn(by)+' '+nn(bx+bw)+' '+nn(by+r)+'V'+nn(by+bh)+'Z" fill="var(--accent2)"/>');
+  });
+  const step=Math.max(1,Math.ceil(n/6));
+  series.forEach((p,i)=>{
+    if(i%step&&i!==n-1)return;
+    o.push('<text x="'+nn(PL+slot*i+slot/2)+'" y="'+(PT+ph+16)+'" fill="var(--muted)" font-size="10" text-anchor="middle">'+p.d.slice(8)+'/'+p.d.slice(5,7)+'</text>');
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" role="img">'+o.join('')+'</svg>';
+}
+
+// ---------- stats + orkestrasi ----------
+function statCard(label,value,sub,small){
+  return '<div class="stat"><h4>'+esc(label)+'</h4><p'+(small?' class="sm"':'')+'>'+esc(value)+'</p>'
+    +(sub?'<span class="sub">'+esc(sub)+'</span>':'')+'</div>';
+}
+function renderGoalStats(goal,prog,series){
+  const box=$('#glStats');if(!box)return;
+  const hist=goal.history||[];
+  const est=estimateCompletion(goal,prog);
+  const days=Math.max(1,Math.round((Date.now()-(goal.created||Date.now()))/DAY_MS)+1);
+  const doneTxt=goal.completed?fmtDate(goal.completed):'—';
+  const estTxt=d=>goal.completed?doneTxt:(d?fmtDate(d.getTime()):'—');
+  const activeInRange=series.filter(p=>p.active).length;
+  box.innerHTML=[
+    statCard(t('gl_streak'),'🔥 '+fmt(t('gl_streak_days'),{n:calcStreak(hist)})),
+    statCard(t('gl_avg'),String(nn(prog.current/days)),fmt(t('gl_cards_day'),{n:nn(prog.current/days)})),
+    statCard(t('gl_remaining'),String(est.remaining)),
+    statCard(t('gl_active_days'),String(hist.length),activeInRange<hist.length?('• '+activeInRange):''),
+    statCard('📊 '+t('gl_est_overall'),estTxt(est.overall),fmt(t('gl_cards_day'),{n:est.overallPace}),true),
+    statCard('🚀 '+t('gl_est_recent'),estTxt(est.recent),fmt(t('gl_cards_day'),{n:est.recentPace}),true)
+  ].join('');
+}
+function renderGoalAnalytics(goal){
+  if(!goal)return;
+  const prog=goalProgress(goal);
+  const series=goalSeries(goal,gl.tf);
+  renderGoalStats(goal,prog,series);
+  const empty='<p class="mut">'+esc(t('gl_no_data'))+'</p>';
+  const line=$('#glLineChart'),bar=$('#glBarChart');
+  if(series.filter(p=>!p.future).length<2){
+    if(line)line.innerHTML=empty;
+    if(bar)bar.innerHTML=empty;
+    return;
+  }
+  if(line)line.innerHTML=svgLineChart(series,prog.total,goal.deadline);
+  if(bar)bar.innerHTML=svgBarChart(series);
+}
+$('#glTimeChips').addEventListener('click',e=>{
+  const b=e.target.closest('[data-gtime]');if(!b)return;
+  gl.tf=b.dataset.gtime;
+  $$('#glTimeChips .btn').forEach(x=>x.classList.toggle('active',x===b));
+  renderGoalAnalytics(goalById(gl.detailId));
+});
+
+// ---------- events ----------
+$('#glFilterChips').addEventListener('click',e=>{
+  const b=e.target.closest('[data-gfilter]');if(!b)return;
+  gl.filter=b.dataset.gfilter;
+  $$('#glFilterChips .btn').forEach(x=>x.classList.toggle('active',x===b));
+  glRenderList();
+});
+$('#glCards').addEventListener('click',e=>{
+  const b=e.target.closest('[data-gact]');if(!b)return;
+  const id=b.dataset.gid,act=b.dataset.gact;
+  if(act==='detail'){gl.detailId=id;glShow('detail');glRenderDetail();}
+  else if(act==='edit'){gl.editId=id;glShow('form');glFormFill();}
+  else if(act==='del')glDelete(id);
+});
+$('#glNew').onclick=()=>{gl.editId=null;glShow('form');glFormFill();};
+$('#glQuick').onclick=glQuick;
+$('#glStart').onclick=()=>{
+  if(!deck.cards.length){notify(t('empty_deck'),'warning');setView('v-lib');return;}
+  autoPickDaily();
+  if(!(daily.picked||[]).length){
+    if(dailyModeOf()==='manual'){notify(t('gl_pick_empty_manual'),'warning');gpOpen();return;}
+    notify(t('gl_no_new_cards'),'warning');return;
+  }
+  $('#stTagFilter').value='all';st.tag='all';
+  stSetFilter('today');
+  setView('v-study');
+};
+$('#glBatch').onclick=()=>addDailyBatch();
+$('#glfTypeChips').addEventListener('click',e=>{
+  const b=e.target.closest('[data-gtype]');if(!b)return;
+  $$('#glfTypeChips .btn').forEach(x=>x.classList.toggle('active',x===b));
+  glfSyncType(b.dataset.gtype);
+});
+$('#glfMastery').onchange=glfSyncMastery;
+$('#glfSave').onclick=glSaveForm;
+$('#glfCancel').onclick=()=>{gl.editId=null;glShow(gl.detailId&&goalById(gl.detailId)?'detail':'list');glRender();};
+$('#gdBack').onclick=()=>{glShow('list');glRender();};
+$('#gdEdit').onclick=()=>{gl.editId=gl.detailId;glShow('form');glFormFill();};
+$('#gdDelete').onclick=()=>glDelete(gl.detailId);
+$('#gdArchive').onclick=()=>{
+  const g=goalById(gl.detailId);if(!g)return;
+  g.archived=!g.archived;
+  if(g.archived)g.linkedDaily=false;
+  saveGoals();
+  notify(g.archived?t('gl_archived'):t('gl_unarchived'),'success');
+  glShow('list');glRender();
+};
+
+// =========================================================
 // SETTINGS / NAV / BOOT
 // =========================================================
 function applySettingsUI(){
@@ -3781,19 +4840,40 @@ function applySettingsUI(){
   $('#setPinyin').value=settings.showPinyin?'1':'0';
   $('#stAnim').checked=!!settings.anim;
   $('#gmSound').value=settings.sound?'1':'0';
+  $('#setDailyTarget').value=dailyTargetOf();
+  $('#setAllowMore').checked=settings.dailyAllowMore!==false;
+  $('#setAutoSuggest').checked=settings.autoSuggestGoal!==false;
+  $('#setDailyMode').value=dailyModeOf();
 }
 function rerenderAll(){
-  applyI18n();renderTagUI();stBuild();renderLib();renderManage();renderAccount();hmRender();
+  applyI18n();renderTagUI();stBuild();renderLib();renderManage();renderAccount();hmRender();glRender();
 }
 $('#setLang').onchange=e=>{settings.lang=e.target.value;saveSettings();rerenderAll();};
 $('#setCharset').onchange=e=>{settings.charset=e.target.value;saveSettings();rerenderAll();};
 $('#setSound').onchange=e=>{settings.sound=e.target.value==='1';saveSettings();$('#gmSound').value=e.target.value;};
 $('#setPinyin').onchange=e=>{settings.showPinyin=e.target.value==='1';saveSettings();};
+$('#setDailyTarget').onchange=e=>{
+  settings.dailyTarget=clamp(parseInt(e.target.value,10)||5,1,50);
+  saveSettings();e.target.value=settings.dailyTarget;
+  daily.target=settings.dailyTarget;saveDaily();
+  glRender();gpSyncCount();stBuild();
+};
+$('#setAllowMore').onchange=e=>{
+  settings.dailyAllowMore=e.target.checked;saveSettings();
+  daily.allowMore=settings.dailyAllowMore;saveDaily();glRenderDaily();
+};
+$('#setAutoSuggest').onchange=e=>{settings.autoSuggestGoal=e.target.checked;saveSettings();};
+$('#setDailyMode').onchange=e=>{
+  settings.dailyMode=e.target.value==='manual'?'manual':'auto';saveSettings();
+  daily.mode=settings.dailyMode;saveDaily();
+  glRender();stBuild();
+};
+$('#hmGoals').onclick=()=>setView('v-goals');
 $('#langToggle').onclick=()=>{settings.lang=settings.lang==='id'?'en':'id';saveSettings();$('#setLang').value=settings.lang;rerenderAll();};
 $('#charsetToggle').onclick=()=>{settings.charset=settings.charset==='simp'?'trad':'simp';saveSettings();$('#setCharset').value=settings.charset;rerenderAll();};
 
 let curView='v-home';
-const VIEWS=['v-home','v-study','v-quiz','v-game','v-read','v-listen','v-type','v-lib','v-manage','v-account'];
+const VIEWS=['v-home','v-study','v-quiz','v-game','v-read','v-listen','v-type','v-goals','v-lib','v-manage','v-account'];
 function setView(v){
   if(VIEWS.indexOf(v)<0)return;
   curView=v;
@@ -3801,6 +4881,10 @@ function setView(v){
   VIEWS.forEach(x=>{const el=$('#'+x);if(el)el.classList.toggle('hidden',x!==v);});
   if(v==='v-home')hmRender();
   if(v==='v-study')stBuild();
+  if(v==='v-goals'){
+    if(gl.view==='detail'&&!goalById(gl.detailId))gl.view='list';
+    glShow(gl.view);glRender();
+  }
   if(v==='v-account')renderAccount();
   if(v==='v-lib')renderLib();
   if(v==='v-manage')renderManage();
@@ -3856,6 +4940,7 @@ function boot(){
   renderLib();
   renderManage();
   renderAccount();
+  glShow('list');glRender();
   setView('v-home');
 }
 boot();
