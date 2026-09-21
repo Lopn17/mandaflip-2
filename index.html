@@ -64,6 +64,8 @@ label.lbl{font-size:.8rem;color:var(--muted);margin:0 0 4px}
 .qz-repeat-option input:checked{border-color:var(--accent);background:var(--accent)}
 .qz-repeat-option input:checked::after{content:'✓';position:absolute;inset:-3px 0 0;text-align:center;color:#0b1020;font-size:.8rem;font-weight:800}
 .qz-repeat-option span{min-width:0;font-size:.86rem;line-height:1.25;overflow-wrap:anywhere}
+.practice-count-custom{display:none}
+.practice-count-custom.visible{display:flex}
 /* ---------- flashcard ---------- */
 .fc{position:relative;perspective:1200px;height:420px;touch-action:pan-y;user-select:none;cursor:pointer}
 .fc-wrap{position:absolute;inset:0}
@@ -419,8 +421,9 @@ td .sub{color:var(--muted);font-size:.85rem}
             <option value="5">5</option><option value="10" selected>10</option>
             <option value="15">15</option><option value="20">20</option>
             <option value="50">50</option><option value="100">100</option>
-            <option value="all" data-i18n="opt_all">Semua</option>
+            <option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom</option>
           </select></div>
+        <div class="field practice-count-custom"><label class="lbl" for="qzCustomCount" data-i18n="opt_custom">Custom</label><input type="number" id="qzCustomCount" min="1" max="9999" value="25"></div>
         <div class="field qz-repeat-field">
           <label class="lbl" for="qzRepeat" data-i18n="qz_repeat">Ulangi kartu</label>
           <label class="qz-repeat-option" for="qzRepeat">
@@ -486,8 +489,10 @@ td .sub{color:var(--muted);font-size:.85rem}
         <div class="field"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
           <select id="gmCount">
             <option value="5">5</option><option value="10" selected>10</option>
-            <option value="15">15</option><option value="20">20</option>
+            <option value="15">15</option><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom</option>
           </select></div>
+        <div class="field practice-count-custom"><label class="lbl" for="gmCustomCount" data-i18n="opt_custom">Custom</label><input type="number" id="gmCustomCount" min="1" max="9999" value="25"></div>
+        <div class="field"><label class="lbl" for="gmRepeat" data-i18n="qz_repeat">Ulangi kartu</label><label class="qz-repeat-option" for="gmRepeat"><input type="checkbox" id="gmRepeat"><span data-i18n="qz_repeat_hint">Boleh melebihi jumlah kartu</span></label></div>
         <div class="field"><label class="lbl" data-i18n="g_speed">Kecepatan</label>
           <select id="gmSpeed">
             <option value="20" data-i18n="g_relax">Santai (20 dtk)</option>
@@ -549,7 +554,9 @@ td .sub{color:var(--muted);font-size:.85rem}
       </div>
       <div class="row" style="margin-top:12px">
         <div class="field" style="max-width:160px"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="rdCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option></select></div>
+          <select id="rdCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom</option></select></div>
+        <div class="field practice-count-custom"><label class="lbl" for="rdCustomCount" data-i18n="opt_custom">Custom</label><input type="number" id="rdCustomCount" min="1" max="9999" value="25"></div>
+        <div class="field"><label class="lbl" for="rdRepeat" data-i18n="qz_repeat">Ulangi kartu</label><label class="qz-repeat-option" for="rdRepeat"><input type="checkbox" id="rdRepeat"><span data-i18n="qz_repeat_hint">Boleh melebihi jumlah kartu</span></label></div>
         <div class="field" style="max-width:240px"><label class="lbl" for="rdSrcSet" data-i18n="lbl_srcset_s">Sumber Kalimat</label>
           <select id="rdSrcSet"></select></div>
         <button class="btn primary" id="rdStart" data-i18n="btn_start" style="align-self:end">Mulai</button>
@@ -590,7 +597,9 @@ td .sub{color:var(--muted);font-size:.85rem}
       </div>
       <div class="row" style="margin-top:12px">
         <div class="field" style="max-width:160px"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="lsCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option></select></div>
+          <select id="lsCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom</option></select></div>
+        <div class="field practice-count-custom"><label class="lbl" for="lsCustomCount" data-i18n="opt_custom">Custom</label><input type="number" id="lsCustomCount" min="1" max="9999" value="25"></div>
+        <div class="field"><label class="lbl" for="lsRepeat" data-i18n="qz_repeat">Ulangi kartu</label><label class="qz-repeat-option" for="lsRepeat"><input type="checkbox" id="lsRepeat"><span data-i18n="qz_repeat_hint">Boleh melebihi jumlah kartu</span></label></div>
         <div class="field"><label class="lbl" for="lsSrcSet" data-i18n="lbl_srcset">Sumber Kartu</label>
           <select id="lsSrcSet"></select></div>
         <div class="field" style="flex:0 0 auto;min-width:0"><label class="lbl">&nbsp;</label>
@@ -649,8 +658,10 @@ td .sub{color:var(--muted);font-size:.85rem}
           <select id="tyTag"></select></div>
         <div class="field"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
           <select id="tyCount">
-            <option value="5">5</option><option value="10" selected>10</option><option value="15">15</option>
+            <option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom</option>
           </select></div>
+        <div class="field practice-count-custom"><label class="lbl" for="tyCustomCount" data-i18n="opt_custom">Custom</label><input type="number" id="tyCustomCount" min="1" max="9999" value="25"></div>
+        <div class="field"><label class="lbl" for="tyRepeat" data-i18n="qz_repeat">Ulangi kartu</label><label class="qz-repeat-option" for="tyRepeat"><input type="checkbox" id="tyRepeat"><span data-i18n="qz_repeat_hint">Boleh melebihi jumlah kartu</span></label></div>
         <div class="field"><button class="btn primary" id="tyStart" data-i18n="btn_start">Mulai</button></div>
       </div>
       <p class="mut" style="margin-bottom:0" data-i18n="ty_note">Jawaban boleh hanzi atau pinyin — dua-duanya dihitung benar.</p>
@@ -1245,7 +1256,7 @@ nav_study:'Belajar',nav_quiz:'Kuis',nav_game:'Game',nav_read:'Baca',nav_listen:'
 study_title:'Mode Belajar (Flashcard)',front_hanzi:'Depan: Hanzi',front_pinyin:'Depan: Pinyin',front_arti:'Depan: Arti',
 f_all:'Semua',f_new:'Belum',btn_flip:'Flip',btn_notyet:'Not Yet',btn_shuffle:'Acak',anim:'Animasi',
 study_hint:'Shortcut: Spasi=Flip · ←/→ · G/A/B · S=Suara · W=Cara Tulis · Geser kartu di HP',
-quiz_title:'Kuis Pilihan Ganda',lbl_source:'Isi Soal',src_all:'Semua Kartu',lbl_mode:'Tipe Soal',lbl_count:'Jumlah Soal',lbl_choices:'Jumlah Pilihan',btn_start:'Mulai',opt_all:'Semua',
+quiz_title:'Kuis Pilihan Ganda',lbl_source:'Isi Soal',src_all:'Semua Kartu',lbl_mode:'Tipe Soal',lbl_count:'Jumlah Soal',lbl_choices:'Jumlah Pilihan',btn_start:'Mulai',opt_all:'Semua',opt_custom:'Custom',
 qm_ha:'Hanzi → Arti',qm_hp:'Hanzi → Pinyin',qm_ah:'Arti → Hanzi',qm_ap:'Arti → Pinyin',qm_pa:'Pinyin → Arti',qm_ph:'Pinyin → Hanzi',
 qm_sh:'Suara → Hanzi',qm_sa:'Suara → Arti',qm_sp:'Suara → Pinyin',qm_hs:'Hanzi → Suara',qm_as:'Arti → Suara',qm_ps:'Pinyin → Suara',qm_mix:'Campur (Acak)',
 score:'Skor',correct:'Benar',wrong:'Salah',btn_prev_q:'Sebelumnya',btn_next_q:'Berikutnya',btn_end:'Akhiri',pick_lbl:'Pilih',
@@ -1440,7 +1451,7 @@ nav_study:'Study',nav_quiz:'Quiz',nav_game:'Game',nav_read:'Reading',nav_listen:
 study_title:'Study Mode (Flashcards)',front_hanzi:'Front: Hanzi',front_pinyin:'Front: Pinyin',front_arti:'Front: Meaning',
 f_all:'All',f_new:'New',btn_flip:'Flip',btn_notyet:'Not Yet',btn_shuffle:'Shuffle',anim:'Animation',
 study_hint:'Shortcuts: Space=Flip · ←/→ · G/A/B · S=Audio · W=Write · Swipe on mobile',
-quiz_title:'Multiple Choice Quiz',lbl_source:'Question Pool',src_all:'All Cards',lbl_mode:'Question Type',lbl_count:'Questions',lbl_choices:'Choices',btn_start:'Start',opt_all:'All',
+quiz_title:'Multiple Choice Quiz',lbl_source:'Question Pool',src_all:'All Cards',lbl_mode:'Question Type',lbl_count:'Questions',lbl_choices:'Choices',btn_start:'Start',opt_all:'All',opt_custom:'Custom',
 qm_ha:'Hanzi → Meaning',qm_hp:'Hanzi → Pinyin',qm_ah:'Meaning → Hanzi',qm_ap:'Meaning → Pinyin',qm_pa:'Pinyin → Meaning',qm_ph:'Pinyin → Hanzi',
 qm_sh:'Audio → Hanzi',qm_sa:'Audio → Meaning',qm_sp:'Audio → Pinyin',qm_hs:'Hanzi → Audio',qm_as:'Meaning → Audio',qm_ps:'Pinyin → Audio',qm_mix:'Mixed (Random)',
 score:'Score',correct:'Correct',wrong:'Wrong',btn_prev_q:'Previous',btn_next_q:'Next',btn_end:'End',pick_lbl:'Pick',
@@ -4487,6 +4498,27 @@ window.addEventListener('resize',()=>{
 // =========================================================
 // KUIS
 // =========================================================
+function practiceCount(selectId,customId,poolSize){
+  const value=$(selectId).value;
+  if(value==='all')return poolSize;
+  if(value==='custom')return clamp(parseInt($(customId).value,10)||0,1,9999);
+  return Math.max(1,parseInt(value,10)||1);
+}
+function repeatItems(items,count,allowRepeat){
+  if(!items.length)return [];
+  if(!allowRepeat)return shuffle(items).slice(0,count);
+  const out=[];
+  while(out.length<count)out.push(...shuffle(items).slice(0,Math.min(items.length,count-out.length)));
+  return out;
+}
+['qz','gm','rd','ls','ty'].forEach(prefix=>{
+  const select=$('#'+prefix+'Count');
+  if(!select)return;
+  select.addEventListener('change',()=>{
+    const custom=$('#'+prefix+'CustomCount');
+    if(custom)custom.closest('.practice-count-custom').classList.toggle('visible',select.value==='custom');
+  });
+});
 let qz=null;
 let qzWrong={cards:[],mode:'mix',nCh:4};
 const QMODES=['ha','hp','ah','ap','pa','ph','sh','sa','sp','hs','as','ps'];
@@ -4524,14 +4556,10 @@ $('#qzStart').onclick=()=>{
   if(pool.length<Math.max(2,Math.min(nCh,4))){notify(fmt(t('msg_need_cards'),{n:Math.max(4,nCh)}),'warning');return;}
   const cv=$('#qzCount').value;
   const repeat=$('#qzRepeat').checked;
-  const requested=cv==='all'?pool.length:parseInt(cv,10);
+  const requested=practiceCount('#qzCount','#qzCustomCount',pool.length);
   let n=repeat&&cv!=='all'?requested:Math.min(requested,pool.length);
   const mode=$('#qzMode').value;
-  if(repeat&&cv!=='all'){
-    const cards=[];
-    while(cards.length<n)cards.push(...shuffle(pool).slice(0,Math.min(pool.length,n-cards.length)));
-    qzBegin(cards,mode,nCh);
-  }else qzBegin(shuffle(pool).slice(0,n),mode,nCh);
+  qzBegin(repeatItems(pool,n,repeat),mode,nCh);
 };
 function qzBegin(cards,mode,nCh){
   qz={i:0,correct:0,nCh,mode,pool:cards.map(c=>qzBuildQ(c,mode==='mix'?pick(QMODES):mode,nCh))};
@@ -4667,17 +4695,19 @@ $('#rdModes').addEventListener('click',e=>{
   $$('#rdModes .btn').forEach(x=>x.classList.toggle('active',x===b));
 });
 $('#rdStart').onclick=()=>{
-  const n=parseInt($('#rdCount').value,10);
+  const repeat=$('#rdRepeat').checked;
   const Ss=srcSents($('#rdSrcSet').value);
   let qs=[];
   if(rd.mode==='para'){
     const all=[];
     PARAGRAPHS.forEach(p=>p.qs.forEach(q=>all.push({type:'para',p,q})));
-    qs=shuffle(all).slice(0,n);
+    const n=practiceCount('#rdCount','#rdCustomCount',all.length);
+    qs=repeatItems(all,n,repeat);
   }else{
+    const n=practiceCount('#rdCount','#rdCustomCount',Ss.length);
     if(Ss.length<4){notify(fmt(t('msg_need_sents'),{n:4}),'warning');return;}
     if(rd.mode==='s2m'){
-      qs=shuffle([...Ss]).slice(0,n).map(s=>{
+      qs=repeatItems(Ss,n,repeat).map(s=>{
         const others=shuffle(Ss.filter(x=>x.id!==s.id)).slice(0,3).map(x=>mean(x));
         return{type:'s2m',s,choices:shuffle([mean(s),...others]),correct:mean(s)};
       });
@@ -4685,7 +4715,7 @@ $('#rdStart').onclick=()=>{
       const cand=Ss.filter(s=>(s.seg||'').split(' ').length>=4);
       if(cand.length<4){notify(fmt(t('msg_need_sents'),{n:4}),'warning');return;}
       const allToks=[...new Set(Ss.flatMap(s=>(s.seg||'').split(' ')))];
-      qs=shuffle(cand).slice(0,n).map(s=>{
+      qs=repeatItems(cand,n,repeat).map(s=>{
         const toks=s.seg.split(' ');
         const good=toks.filter(w=>w.length>1||!PARTICLES.includes(w));
         const token=pick(good.length?good:toks);
@@ -4695,7 +4725,7 @@ $('#rdStart').onclick=()=>{
     }else{ // order
       const cand=Ss.filter(s=>!/[，、；：]/.test(s.hanzi)&&s.seg&&s.seg.split(' ').length>=3&&s.seg.split(' ').length<=9);
       if(cand.length<3){notify(fmt(t('msg_need_sents'),{n:4}),'warning');return;}
-      qs=shuffle(cand).slice(0,n).map(s=>{
+      qs=repeatItems(cand,n,repeat).map(s=>{
         const toks=s.seg.split(' ');
         let sh=shuffle([...toks]);
         if(sh.join('')===toks.join(''))sh=[...toks].reverse();
@@ -4831,27 +4861,29 @@ $('#lsModes').addEventListener('click',e=>{
   $$('#lsModes .btn').forEach(x=>x.classList.toggle('active',x===b));
 });
 $('#lsStart').onclick=()=>{
-  const n=parseInt($('#lsCount').value,10);
+  const repeat=$('#lsRepeat').checked;
   const lsrc=$('#lsSrcSet').value;
   let qs=[];
   if(ls.mode==='sm'){
     const Ss=srcSents(lsrc);
+    const n=practiceCount('#lsCount','#lsCustomCount',Ss.length);
     if(Ss.length<4){notify(fmt(t('msg_need_sents'),{n:4}),'warning');return;}
-    qs=shuffle([...Ss]).slice(0,n).map(s=>{
+    qs=repeatItems(Ss,n,repeat).map(s=>{
       const others=shuffle(Ss.filter(x=>x.id!==s.id)).slice(0,3).map(x=>mean(x));
       return{type:'sm',speakText:disp(s),s,choices:shuffle([mean(s),...others]),correct:mean(s)};
     });
   }else{
     const Cs=deck.cards;
+    const n=practiceCount('#lsCount','#lsCustomCount',Cs.length);
     if(Cs.length<4){notify(fmt(t('msg_need_cards'),{n:4}),'warning');return;}
     if(ls.mode==='wh'){
-      qs=shuffle([...Cs]).slice(0,n).map(c=>{
+      qs=repeatItems(Cs,n,repeat).map(c=>{
         const seen=new Set([disp(c)]);const dis=[];
         for(const o of shuffle(Cs)){const v=disp(o);if(!seen.has(v)){seen.add(v);dis.push(v);}if(dis.length>=3)break;}
         return{type:'wh',speakText:disp(c),c,choices:shuffle([disp(c),...dis]),correct:disp(c)};
       });
     }else{
-      qs=shuffle([...Cs]).slice(0,n).map(c=>({type:'dict',speakText:disp(c),c,correct:c.pinyin}));
+      qs=repeatItems(Cs,n,repeat).map(c=>({type:'dict',speakText:disp(c),c,correct:c.pinyin}));
     }
   }
   ls.qs=qs;ls.i=0;ls.score=0;
@@ -4962,7 +4994,7 @@ function gmSentQ(s,sents){
 }
 $('#gmStart').onclick=()=>{
   const src=$('#gmSource').value;
-  const n=parseInt($('#gmCount').value,10);
+  const repeat=$('#gmRepeat').checked;
   const tt=parseInt($('#gmSpeed').value,10);
   settings.sound=$('#gmSound').value==='1';saveSettings();$('#setSound').value=settings.sound?'1':'0';
   const tg=$('#gmTag').value;
@@ -4972,6 +5004,8 @@ $('#gmStart').onclick=()=>{
   if((src==='vocab'&&!canV)||(src==='sent'&&!canS)||(src==='mix'&&!canV&&!canS)){
     notify(fmt(t(canV?'msg_need_sents':'msg_need_cards'),{n:4}),'warning');return;
   }
+  const available=src==='vocab'?cards.length:src==='sent'?sents.length:cards.length+sents.length;
+  const n=Math.min(practiceCount('#gmCount','#gmCustomCount',available),repeat?9999:available);
   const qs=[];
   for(let i=0;i<n;i++){
     let useSent;
@@ -5272,8 +5306,8 @@ $('#tyStart').onclick=()=>{
   else if(f==='good')pool=pool.filter(c=>c.status==='good');
   else if(f==='due')pool=pool.filter(isDue);
   if(!pool.length){notify(fmt(t('msg_need_cards'),{n:1}),'warning');return;}
-  const n=Math.min(parseInt($('#tyCount').value,10),pool.length);
-  tyBegin(shuffle(pool).slice(0,n),$('#tyMode').value);
+  const n=practiceCount('#tyCount','#tyCustomCount',pool.length);
+  tyBegin(repeatItems(pool,n,$('#tyRepeat').checked),$('#tyMode').value);
 };
 $('#tyCheck').onclick=tyDoCheck;
 $('#tyPlay').onclick=()=>{const q=ty&&ty.qs[ty.i];if(q)speak(disp(q.card));};
