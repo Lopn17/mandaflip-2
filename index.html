@@ -196,11 +196,36 @@ td .sub{color:var(--muted);font-size:.85rem}
 .stat h4{margin:0 0 6px;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .stat p{margin:0;font-size:1.45rem;font-weight:700}
 .ranks{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
-.rank{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;opacity:.4;filter:grayscale(.85);transition:all .3s}
-.rank.active{opacity:1;filter:none;border-color:var(--accent);box-shadow:0 0 18px rgba(124,156,255,.35);transform:scale(1.03)}
-.rank .ic{font-size:1.7rem}
-.rank .nm{font-weight:700;font-size:.9rem}
+.rank{--rank-glow:124,156,255;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,rgba(var(--rank-glow),.12),var(--card) 68%);border:1px solid rgba(var(--rank-glow),.2);border-radius:14px;padding:14px 10px;text-align:center;opacity:.38;filter:grayscale(.9);transition:transform .28s ease,opacity .28s ease,filter .28s ease,border-color .28s ease,box-shadow .28s ease,background .28s ease;cursor:default}
+.rank::before{content:'';position:absolute;inset:-45%;z-index:-1;background:radial-gradient(circle,rgba(var(--rank-glow),.26),transparent 62%);opacity:0;transform:scale(.7);transition:opacity .35s,transform .35s}
+.rank:hover{opacity:1;filter:none;transform:translateY(-5px) scale(1.035);border-color:rgba(var(--rank-glow),.75);box-shadow:0 12px 28px rgba(var(--rank-glow),.22),0 0 18px rgba(var(--rank-glow),.16)}
+.rank:hover::before{opacity:1;transform:scale(1)}
+.rank.obtained{opacity:1;filter:none;border-color:rgba(var(--rank-glow),.5);box-shadow:0 0 14px rgba(var(--rank-glow),.12)}
+.rank.current{transform:scale(1.045);border-color:rgb(var(--rank-glow));box-shadow:0 0 22px rgba(var(--rank-glow),.42)}
+.rank.current:hover{transform:translateY(-5px) scale(1.075)}
+.rank.locked .ic{filter:grayscale(1);opacity:.7}
+.rank .ic{font-size:1.85rem;line-height:1.1;transition:transform .3s,filter .3s}
+.rank:hover .ic{transform:translateY(-3px) rotate(-4deg) scale(1.12)}
+.rank .nm{margin-top:5px;font-weight:750;font-size:.9rem}
 .rank .lv{color:var(--muted);font-size:.78rem}
+.rank .state{display:block;margin-top:5px;color:rgb(var(--rank-glow));font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:0;transition:opacity .25s}
+.rank.obtained .state{opacity:.8}
+.rank.current .state{opacity:1}
+.rank:nth-child(7n+1){--rank-glow:99,230,190}
+.rank:nth-child(7n+2){--rank-glow:160,174,255}
+.rank:nth-child(7n+3){--rank-glow:255,187,92}
+.rank:nth-child(7n+4){--rank-glow:255,112,142}
+.rank:nth-child(7n+5){--rank-glow:188,137,255}
+.rank:nth-child(7n+6){--rank-glow:79,205,231}
+.rank:nth-child(7n){--rank-glow:255,214,102}
+.rank.royal{--rank-glow:255,214,102;background:linear-gradient(145deg,rgba(255,214,102,.2),rgba(126,73,214,.18) 55%,var(--card))}
+.rank.royal::after{content:'✦';position:absolute;top:7px;right:10px;color:#ffe18a;font-size:.75rem;animation:rankSpark 2.2s ease-in-out infinite}
+.rank.emperor{--rank-glow:255,126,201;background:linear-gradient(145deg,rgba(255,126,201,.22),rgba(103,88,255,.24) 52%,var(--card));border-color:rgba(255,178,226,.55);box-shadow:0 0 20px rgba(255,126,201,.2)}
+.rank.emperor::after{content:'✦  ✧  ✦';position:absolute;top:7px;left:0;right:0;color:#ffd5f1;font-size:.7rem;letter-spacing:.5em;animation:rankSpark 1.8s ease-in-out infinite}
+.rank.emperor .ic,.rank.royal .ic{animation:rankFloat 2.8s ease-in-out infinite}
+.rank.emperor:hover,.rank.royal:hover{box-shadow:0 14px 36px rgba(var(--rank-glow),.35),0 0 30px rgba(var(--rank-glow),.28)}
+@keyframes rankFloat{50%{transform:translateY(-5px) scale(1.08)}}
+@keyframes rankSpark{50%{opacity:.35;transform:scale(1.25) rotate(8deg)}}
 .profile{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .avatar{width:86px;height:86px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-size:2.5rem;background:var(--card);overflow:hidden;flex:0 0 auto}
 .avatar img{width:100%;height:100%;object-fit:cover}
@@ -1952,7 +1977,7 @@ const mConfirm=msg=>openModal({title:t('m_confirm'),msg,cancelText:t('cancel')})
 const mPrompt=(msg,def,title)=>openModal({title:title||t('m_input'),msg,input:def===undefined?true:def,cancelText:t('cancel')});
 
 // ---------- XP / level / rank ----------
-const MAX_LEVEL=160;
+const MAX_LEVEL=200;
 const totalXpFor=l=>l<=1?0:Math.round(60*Math.pow(l-1,1.6));
 function levelFromXp(xp){for(let l=1;l<MAX_LEVEL;l++){if(xp<totalXpFor(l+1))return l;}return MAX_LEVEL;}
 const RANKS=[
@@ -1964,7 +1989,8 @@ const RANKS=[
  {lv:75,ic:'🦄',name:'Unicorn Ujian'},{lv:80,ic:'🐲',name:'Naga Kecil'},{lv:90,ic:'🐉',name:'Naga Dewasa'},
  {lv:100,ic:'⚔️',name:'Pendekar Bahasa'},{lv:110,ic:'🛡️',name:'Penjaga Aksara'},{lv:120,ic:'🏮',name:'Lentera Merah'},
  {lv:130,ic:'🎓',name:'Sarjana Han'},{lv:140,ic:'📜',name:'Ahli Klasik'},{lv:145,ic:'🏔️',name:'Puncak Taishan'},
- {lv:150,ic:'🌕',name:'Bulan Purnama'},{lv:155,ic:'☄️',name:'Komet Mandarin'},{lv:160,ic:'👑',name:'Raja Hanzi'}
+ {lv:150,ic:'🌕',name:'Bulan Purnama'},{lv:155,ic:'☄️',name:'Komet Mandarin'},{lv:165,ic:'⚜️',name:'Emas Pinyin'},
+ {lv:180,ic:'👑',name:'Raja Hanzi'},{lv:200,ic:'🤴',name:'Kaisar Hanyu'}
 ];
 const rankFor=lv=>{let r=RANKS[0];for(const x of RANKS){if(lv>=x.lv)r=x;}return r;};
 function addXp(n){
@@ -5630,9 +5656,13 @@ function renderAccount(){
   });
   const rb=$('#acRanks');rb.innerHTML='';
   const myRank=rankFor(account.level);
-  RANKS.forEach(x=>{
-    const d=document.createElement('div');d.className='rank'+(x===myRank?' active':'');
-    d.innerHTML='<div class="ic">'+x.ic+'</div><div class="nm">'+esc(x.name)+'</div><div class="lv">Lv '+x.lv+'+</div>';
+  RANKS.forEach((x,i)=>{
+    const obtained=account.level>=x.lv;
+    const d=document.createElement('div');
+    d.className='rank '+(obtained?'obtained ':'locked ')+(x===myRank?'current ':'')+(x.name==='Raja Hanzi'?'royal ':'')+(x.name==='Kaisar Hanyu'?'emperor':'');
+    d.title=obtained?'Rank sudah diperoleh':'Buka di level '+x.lv;
+    d.setAttribute('aria-label',x.name+' — Lv '+x.lv+(obtained?' — diperoleh':' — terkunci'));
+    d.innerHTML='<div class="ic">'+x.ic+'</div><div class="nm">'+esc(x.name)+'</div><div class="lv">Lv '+x.lv+'+</div><span class="state">'+(obtained?'DIPEROLEH':'TERKUNCI')+'</span>';
     rb.appendChild(d);
   });
   $('#gmHigh').textContent=s.highScore;
