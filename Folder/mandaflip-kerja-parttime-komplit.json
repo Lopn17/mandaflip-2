@@ -1,0 +1,1105 @@
+{
+ "version": 2,
+ "folders": [
+  {
+   "name": "💼 Kerja Part-time (Komplit)",
+   "desc": "Edisi lengkap A-Z: cari kerja, interview, izin kerja mahasiswa asing, hari pertama, melayani pelanggan, shift, masalah, gaji, sampai resign.",
+   "icon": "💼",
+   "cards": [
+    {
+     "hanzi": "找工作",
+     "trad": "找工作",
+     "pinyin": "zhǎo gōngzuò",
+     "arti": "mencari kerja",
+     "en": "to look for a job",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "征人",
+     "trad": "徵人",
+     "pinyin": "zhēngrén",
+     "arti": "mencari karyawan (buka lowongan)",
+     "en": "hiring; recruiting",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "应征",
+     "trad": "應徵",
+     "pinyin": "yìngzhēng",
+     "arti": "melamar kerja",
+     "en": "to apply for a job",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "职缺",
+     "trad": "職缺",
+     "pinyin": "zhíquē",
+     "arti": "lowongan kerja",
+     "en": "job opening; vacancy",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "兼职",
+     "trad": "兼職",
+     "pinyin": "jiānzhí",
+     "arti": "kerja paruh waktu (formal)",
+     "en": "part-time job (formal)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "全职",
+     "trad": "全職",
+     "pinyin": "quánzhí",
+     "arti": "kerja penuh waktu",
+     "en": "full-time",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "自我介绍",
+     "trad": "自我介紹",
+     "pinyin": "zìwǒ jièshào",
+     "arti": "perkenalan diri",
+     "en": "self-introduction",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "经验",
+     "trad": "經驗",
+     "pinyin": "jīngyàn",
+     "arti": "pengalaman",
+     "en": "experience",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "录取",
+     "trad": "錄取",
+     "pinyin": "lùqǔ",
+     "arti": "diterima (kerja/sekolah)",
+     "en": "to be accepted; hired",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "试用期",
+     "trad": "試用期",
+     "pinyin": "shìyòngqī",
+     "arti": "masa percobaan",
+     "en": "probation period",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "供餐",
+     "trad": "供餐",
+     "pinyin": "gōngcān",
+     "arti": "disediakan makan (fasilitas kerja)",
+     "en": "meals provided",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "工作许可",
+     "trad": "工作許可",
+     "pinyin": "gōngzuò xǔkě",
+     "arti": "izin kerja (work permit)",
+     "en": "work permit",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "合约",
+     "trad": "合約",
+     "pinyin": "héyuē",
+     "arti": "kontrak",
+     "en": "contract",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "劳健保",
+     "trad": "勞健保",
+     "pinyin": "láojiànbǎo",
+     "arti": "asuransi kerja + kesehatan (istilah TW)",
+     "en": "labor + health insurance (TW)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "最低时薪",
+     "trad": "最低時薪",
+     "pinyin": "zuìdī shíxīn",
+     "arti": "upah minimum per jam",
+     "en": "minimum hourly wage",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "新人",
+     "trad": "新人",
+     "pinyin": "xīnrén",
+     "arti": "karyawan baru; orang baru",
+     "en": "newcomer; new staff",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "员工",
+     "trad": "員工",
+     "pinyin": "yuángōng",
+     "arti": "karyawan; staf",
+     "en": "employee; staff",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "教育训练",
+     "trad": "教育訓練",
+     "pinyin": "jiàoyù xùnliàn",
+     "arti": "pelatihan karyawan (istilah TW)",
+     "en": "staff training (TW term)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "制服",
+     "trad": "制服",
+     "pinyin": "zhìfú",
+     "arti": "seragam",
+     "en": "uniform",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "围裙",
+     "trad": "圍裙",
+     "pinyin": "wéiqún",
+     "arti": "celemek",
+     "en": "apron",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "顾客",
+     "trad": "顧客",
+     "pinyin": "gùkè",
+     "arti": "pelanggan",
+     "en": "customer",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "欢迎光临",
+     "trad": "歡迎光臨",
+     "pinyin": "huānyíng guānglín",
+     "arti": "selamat datang (ke toko)",
+     "en": "welcome (to the store)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "谢谢光临",
+     "trad": "謝謝光臨",
+     "pinyin": "xièxiè guānglín",
+     "arti": "terima kasih atas kunjungannya",
+     "en": "thank you for coming",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "久等了",
+     "trad": "久等了",
+     "pinyin": "jiǔ děng le",
+     "arti": "maaf sudah menunggu lama",
+     "en": "sorry for the wait",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "点餐",
+     "trad": "點餐",
+     "pinyin": "diǎncān",
+     "arti": "memesan makanan",
+     "en": "to order food",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "餐点",
+     "trad": "餐點",
+     "pinyin": "cāndiǎn",
+     "arti": "hidangan; pesanan",
+     "en": "meal; food order",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "菜单",
+     "trad": "菜單",
+     "pinyin": "càidān",
+     "arti": "menu",
+     "en": "menu",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "内用",
+     "trad": "內用",
+     "pinyin": "nèiyòng",
+     "arti": "makan di tempat",
+     "en": "dine in",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "外带",
+     "trad": "外帶",
+     "pinyin": "wàidài",
+     "arti": "bawa pulang; bungkus",
+     "en": "takeaway",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "外送",
+     "trad": "外送",
+     "pinyin": "wàisòng",
+     "arti": "pesan antar; delivery",
+     "en": "delivery",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "客满",
+     "trad": "客滿",
+     "pinyin": "kèmǎn",
+     "arti": "penuh (pelanggan)",
+     "en": "full house; fully seated",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "尖峰时间",
+     "trad": "尖峰時間",
+     "pinyin": "jiānfēng shíjiān",
+     "arti": "jam sibuk (istilah TW)",
+     "en": "peak hours (TW term)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "收银",
+     "trad": "收銀",
+     "pinyin": "shōuyín",
+     "arti": "jaga kasir",
+     "en": "to work the cashier",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "收银机",
+     "trad": "收銀機",
+     "pinyin": "shōuyínjī",
+     "arti": "mesin kasir",
+     "en": "cash register",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "找钱",
+     "trad": "找錢",
+     "pinyin": "zhǎoqián",
+     "arti": "memberi kembalian",
+     "en": "to give change",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "零钱",
+     "trad": "零錢",
+     "pinyin": "língqián",
+     "arti": "uang receh",
+     "en": "small change; coins",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "发票",
+     "trad": "發票",
+     "pinyin": "fāpiào",
+     "arti": "struk resmi (uniform invoice TW)",
+     "en": "receipt; uniform invoice (TW)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "补货",
+     "trad": "補貨",
+     "pinyin": "bǔhuò",
+     "arti": "mengisi ulang stok",
+     "en": "to restock",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "库存",
+     "trad": "庫存",
+     "pinyin": "kùcún",
+     "arti": "stok; persediaan",
+     "en": "stock; inventory",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "备料",
+     "trad": "備料",
+     "pinyin": "bèiliào",
+     "arti": "menyiapkan bahan",
+     "en": "to prep ingredients",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "洗碗",
+     "trad": "洗碗",
+     "pinyin": "xǐwǎn",
+     "arti": "mencuci piring",
+     "en": "to wash dishes",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "擦桌子",
+     "trad": "擦桌子",
+     "pinyin": "cā zhuōzi",
+     "arti": "mengelap meja",
+     "en": "to wipe tables",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "扫地",
+     "trad": "掃地",
+     "pinyin": "sǎodì",
+     "arti": "menyapu lantai",
+     "en": "to sweep the floor",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "拖地",
+     "trad": "拖地",
+     "pinyin": "tuōdì",
+     "arti": "mengepel lantai",
+     "en": "to mop the floor",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "倒垃圾",
+     "trad": "倒垃圾",
+     "pinyin": "dào lājī",
+     "arti": "membuang sampah",
+     "en": "to take out the trash",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "开店",
+     "trad": "開店",
+     "pinyin": "kāidiàn",
+     "arti": "buka toko",
+     "en": "to open the shop",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "打烊",
+     "trad": "打烊",
+     "pinyin": "dǎyàng",
+     "arti": "tutup toko (akhir hari)",
+     "en": "to close up shop",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "换班",
+     "trad": "換班",
+     "pinyin": "huànbān",
+     "arti": "tukar shift",
+     "en": "to swap shifts",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "代班",
+     "trad": "代班",
+     "pinyin": "dàibān",
+     "arti": "menggantikan shift orang",
+     "en": "to cover a shift",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "排休",
+     "trad": "排休",
+     "pinyin": "páixiū",
+     "arti": "mengatur hari libur",
+     "en": "to schedule days off",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "月休",
+     "trad": "月休",
+     "pinyin": "yuèxiū",
+     "arti": "jatah libur per bulan",
+     "en": "monthly days off",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "迟到",
+     "trad": "遲到",
+     "pinyin": "chídào",
+     "arti": "terlambat",
+     "en": "to be late",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "早退",
+     "trad": "早退",
+     "pinyin": "zǎotuì",
+     "arti": "pulang lebih awal",
+     "en": "to leave early",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "旷职",
+     "trad": "曠職",
+     "pinyin": "kuàngzhí",
+     "arti": "bolos kerja tanpa izin",
+     "en": "absent without leave",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "病假",
+     "trad": "病假",
+     "pinyin": "bìngjià",
+     "arti": "izin sakit",
+     "en": "sick leave",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "事假",
+     "trad": "事假",
+     "pinyin": "shìjià",
+     "arti": "izin urusan pribadi",
+     "en": "personal leave",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "出错",
+     "trad": "出錯",
+     "pinyin": "chūcuò",
+     "arti": "membuat kesalahan",
+     "en": "to make a mistake",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "弄坏",
+     "trad": "弄壞",
+     "pinyin": "nònghuài",
+     "arti": "merusak (tidak sengaja)",
+     "en": "to break (accidentally)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "受伤",
+     "trad": "受傷",
+     "pinyin": "shòushāng",
+     "arti": "terluka",
+     "en": "to get injured",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "OK绷",
+     "trad": "OK繃",
+     "pinyin": "OK bēng",
+     "arti": "plester luka (istilah TW)",
+     "en": "band-aid (TW term)",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "塞车",
+     "trad": "塞車",
+     "pinyin": "sāichē",
+     "arti": "macet",
+     "en": "traffic jam",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "发薪日",
+     "trad": "發薪日",
+     "pinyin": "fāxīnrì",
+     "arti": "hari gajian",
+     "en": "payday",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "加班费",
+     "trad": "加班費",
+     "pinyin": "jiābānfèi",
+     "arti": "uang lembur",
+     "en": "overtime pay",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "薪资单",
+     "trad": "薪資單",
+     "pinyin": "xīnzīdān",
+     "arti": "slip gaji",
+     "en": "pay slip",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "转账",
+     "trad": "轉帳",
+     "pinyin": "zhuǎnzhàng",
+     "arti": "transfer (bank)",
+     "en": "bank transfer",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "账户",
+     "trad": "帳戶",
+     "pinyin": "zhànghù",
+     "arti": "rekening bank",
+     "en": "bank account",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "扣税",
+     "trad": "扣稅",
+     "pinyin": "kòushuì",
+     "arti": "potong pajak",
+     "en": "tax deduction",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "辞职",
+     "trad": "辭職",
+     "pinyin": "cízhí",
+     "arti": "mengundurkan diri",
+     "en": "to resign",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "离职",
+     "trad": "離職",
+     "pinyin": "lízhí",
+     "arti": "berhenti dari pekerjaan",
+     "en": "to leave a job",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "提前",
+     "trad": "提前",
+     "pinyin": "tíqián",
+     "arti": "lebih awal; di muka",
+     "en": "in advance; ahead of time",
+     "tag": "kerja"
+    }
+   ],
+   "sents": [
+    {
+     "hanzi": "请问这里在征人吗？",
+     "trad": "請問這裡在徵人嗎？",
+     "pinyin": "Qǐngwèn zhèlǐ zài zhēngrén ma?",
+     "seg": "请问 这里 在 征人 吗",
+     "arti": "Permisi, di sini sedang buka lowongan?",
+     "en": "Excuse me, are you hiring here?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我想应征打工的职缺。",
+     "trad": "我想應徵打工的職缺。",
+     "pinyin": "Wǒ xiǎng yìngzhēng dǎgōng de zhíquē.",
+     "seg": "我 想 应征 打工 的 职缺",
+     "arti": "Saya mau melamar lowongan part-time.",
+     "en": "I would like to apply for the part-time position.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问怎么应征？要填表格吗？",
+     "trad": "請問怎麼應徵？要填表格嗎？",
+     "pinyin": "Qǐngwèn zěnme yìngzhēng? Yào tián biǎogé ma?",
+     "seg": "请问 怎么 应征 要 填 表格 吗",
+     "arti": "Bagaimana cara melamarnya? Perlu mengisi formulir?",
+     "en": "How do I apply? Do I need to fill in a form?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我可以留我的联络方式吗？",
+     "trad": "我可以留我的聯絡方式嗎？",
+     "pinyin": "Wǒ kěyǐ liú wǒ de liánluò fāngshì ma?",
+     "seg": "我 可以 留 我 的 联络 方式 吗",
+     "arti": "Boleh saya tinggalkan kontak saya?",
+     "en": "May I leave my contact information?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我是从印尼来的留学生。",
+     "trad": "我是從印尼來的留學生。",
+     "pinyin": "Wǒ shì cóng Yìnní lái de liúxuéshēng.",
+     "seg": "我 是 从 印尼 来 的 留学生",
+     "arti": "Saya mahasiswa asing dari Indonesia.",
+     "en": "I am an international student from Indonesia.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我在中原大学念书。",
+     "trad": "我在中原大學念書。",
+     "pinyin": "Wǒ zài Zhōngyuán Dàxué niànshū.",
+     "seg": "我 在 中原 大学 念书",
+     "arti": "Saya kuliah di Universitas Chung Yuan.",
+     "en": "I study at Chung Yuan Christian University.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我有餐饮的工作经验。",
+     "trad": "我有餐飲的工作經驗。",
+     "pinyin": "Wǒ yǒu cānyǐn de gōngzuò jīngyàn.",
+     "seg": "我 有 餐饮 的 工作 经验",
+     "arti": "Saya punya pengalaman kerja di bidang F&B.",
+     "en": "I have work experience in food and beverage.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我没有经验，但是我学得很快。",
+     "trad": "我沒有經驗，但是我學得很快。",
+     "pinyin": "Wǒ méiyǒu jīngyàn, dànshì wǒ xué de hěn kuài.",
+     "seg": "我 没有 经验 但是 我 学 得 很 快",
+     "arti": "Saya belum punya pengalaman, tapi saya cepat belajar.",
+     "en": "I have no experience, but I learn fast.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "学期中我一个星期最多只能工作二十个小时。",
+     "trad": "學期中我一個星期最多只能工作二十個小時。",
+     "pinyin": "Xuéqī zhōng wǒ yí gè xīngqī zuìduō zhǐ néng gōngzuò èrshí gè xiǎoshí.",
+     "seg": "学期 中 我 一 个 星期 最多 只 能 工作 二十 个 小时",
+     "arti": "Selama semester saya maksimal hanya boleh kerja 20 jam per minggu.",
+     "en": "During the semester I can work at most 20 hours a week.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问什么时候可以开始上班？",
+     "trad": "請問什麼時候可以開始上班？",
+     "pinyin": "Qǐngwèn shénme shíhou kěyǐ kāishǐ shàngbān?",
+     "seg": "请问 什么 时候 可以 开始 上班",
+     "arti": "Kapan saya bisa mulai bekerja?",
+     "en": "When can I start working?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问有供餐吗？",
+     "trad": "請問有供餐嗎？",
+     "pinyin": "Qǐngwèn yǒu gōngcān ma?",
+     "seg": "请问 有 供餐 吗",
+     "arti": "Apakah disediakan makan?",
+     "en": "Are meals provided?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "试用期的薪水一样吗？",
+     "trad": "試用期的薪水一樣嗎？",
+     "pinyin": "Shìyòngqī de xīnshuǐ yíyàng ma?",
+     "seg": "试用期 的 薪水 一样 吗",
+     "arti": "Apakah gaji masa percobaan sama?",
+     "en": "Is the pay the same during probation?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我有工作许可，可以合法打工。",
+     "trad": "我有工作許可，可以合法打工。",
+     "pinyin": "Wǒ yǒu gōngzuò xǔkě, kěyǐ héfǎ dǎgōng.",
+     "seg": "我 有 工作 许可 可以 合法 打工",
+     "arti": "Saya punya izin kerja, bisa bekerja secara legal.",
+     "en": "I have a work permit, so I can work legally.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问有帮我保劳健保吗？",
+     "trad": "請問有幫我保勞健保嗎？",
+     "pinyin": "Qǐngwèn yǒu bāng wǒ bǎo láojiànbǎo ma?",
+     "seg": "请问 有 帮 我 保 劳健保 吗",
+     "arti": "Apakah saya didaftarkan asuransi kerja dan kesehatan?",
+     "en": "Will you enroll me in labor and health insurance?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "需要签合约吗？",
+     "trad": "需要簽合約嗎？",
+     "pinyin": "Xūyào qiān héyuē ma?",
+     "seg": "需要 签 合约 吗",
+     "arti": "Apakah perlu tanda tangan kontrak?",
+     "en": "Do I need to sign a contract?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "今天是我第一天上班，请多多指教。",
+     "trad": "今天是我第一天上班，請多多指教。",
+     "pinyin": "Jīntiān shì wǒ dì-yī tiān shàngbān, qǐng duōduō zhǐjiào.",
+     "seg": "今天 是 我 第一 天 上班 请 多多 指教",
+     "arti": "Hari ini hari pertama saya kerja, mohon bimbingannya.",
+     "en": "Today is my first day, please guide me.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问我的制服要去哪里拿？",
+     "trad": "請問我的制服要去哪裡拿？",
+     "pinyin": "Qǐngwèn wǒ de zhìfú yào qù nǎlǐ ná?",
+     "seg": "请问 我 的 制服 要 去 哪里 拿",
+     "arti": "Seragam saya ambil di mana?",
+     "en": "Where do I pick up my uniform?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "这个机器怎么用？",
+     "trad": "這個機器怎麼用？",
+     "pinyin": "Zhège jīqì zěnme yòng?",
+     "seg": "这个 机器 怎么 用",
+     "arti": "Mesin ini cara pakainya bagaimana?",
+     "en": "How do I use this machine?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "如果我做错了，请告诉我。",
+     "trad": "如果我做錯了，請告訴我。",
+     "pinyin": "Rúguǒ wǒ zuò cuò le, qǐng gàosu wǒ.",
+     "seg": "如果 我 做 错 了 请 告诉 我",
+     "arti": "Kalau saya salah, tolong beri tahu saya.",
+     "en": "If I do something wrong, please tell me.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "欢迎光临，请问几位？",
+     "trad": "歡迎光臨，請問幾位？",
+     "pinyin": "Huānyíng guānglín, qǐngwèn jǐ wèi?",
+     "seg": "欢迎 光临 请问 几 位",
+     "arti": "Selamat datang, untuk berapa orang?",
+     "en": "Welcome, how many people?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问要内用还是外带？",
+     "trad": "請問要內用還是外帶？",
+     "pinyin": "Qǐngwèn yào nèiyòng háishi wàidài?",
+     "seg": "请问 要 内用 还是 外带",
+     "arti": "Makan di sini atau dibawa pulang?",
+     "en": "For here or to go?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问要点什么？",
+     "trad": "請問要點什麼？",
+     "pinyin": "Qǐngwèn yào diǎn shénme?",
+     "seg": "请问 要 点 什么",
+     "arti": "Mau pesan apa?",
+     "en": "What would you like to order?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "好的，请稍等一下。",
+     "trad": "好的，請稍等一下。",
+     "pinyin": "Hǎo de, qǐng shāo děng yíxià.",
+     "seg": "好的 请 稍 等 一下",
+     "arti": "Baik, mohon tunggu sebentar.",
+     "en": "Okay, please wait a moment.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "久等了，这是您的餐点。",
+     "trad": "久等了，這是您的餐點。",
+     "pinyin": "Jiǔ děng le, zhè shì nín de cāndiǎn.",
+     "seg": "久等 了 这 是 您 的 餐点",
+     "arti": "Maaf menunggu, ini pesanan Anda.",
+     "en": "Sorry for the wait, here is your order.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "总共一百二十元。",
+     "trad": "總共一百二十元。",
+     "pinyin": "Zǒnggòng yìbǎi èrshí yuán.",
+     "seg": "总共 一百 二十 元",
+     "arti": "Totalnya 120 dolar (NT).",
+     "en": "That will be 120 NT dollars in total.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "收您两百，找您八十。",
+     "trad": "收您兩百，找您八十。",
+     "pinyin": "Shōu nín liǎngbǎi, zhǎo nín bāshí.",
+     "seg": "收 您 两百 找 您 八十",
+     "arti": "Terima 200, kembalian 80.",
+     "en": "Out of 200, here is 80 change.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "这是您的发票和零钱。",
+     "trad": "這是您的發票和零錢。",
+     "pinyin": "Zhè shì nín de fāpiào hé língqián.",
+     "seg": "这 是 您 的 发票 和 零钱",
+     "arti": "Ini struk dan kembalian Anda.",
+     "en": "Here is your receipt and change.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "不好意思，这个卖完了。",
+     "trad": "不好意思，這個賣完了。",
+     "pinyin": "Bù hǎoyìsi, zhège mài wán le.",
+     "seg": "不好意思 这个 卖 完 了",
+     "arti": "Maaf, yang ini sudah habis.",
+     "en": "Sorry, this one is sold out.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "现在客满，需要等大概十分钟。",
+     "trad": "現在客滿，需要等大概十分鐘。",
+     "pinyin": "Xiànzài kèmǎn, xūyào děng dàgài shí fēnzhōng.",
+     "seg": "现在 客满 需要 等 大概 十 分钟",
+     "arti": "Sekarang penuh, perlu menunggu sekitar 10 menit.",
+     "en": "We are full now, the wait is about ten minutes.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "谢谢光临，欢迎再来！",
+     "trad": "謝謝光臨，歡迎再來！",
+     "pinyin": "Xièxiè guānglín, huānyíng zài lái!",
+     "seg": "谢谢 光临 欢迎 再 来",
+     "arti": "Terima kasih, silakan datang lagi!",
+     "en": "Thank you, please come again!",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我先去补货。",
+     "trad": "我先去補貨。",
+     "pinyin": "Wǒ xiān qù bǔhuò.",
+     "seg": "我 先 去 补货",
+     "arti": "Saya restock dulu.",
+     "en": "I will go restock first.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "桌子我擦好了。",
+     "trad": "桌子我擦好了。",
+     "pinyin": "Zhuōzi wǒ cā hǎo le.",
+     "seg": "桌子 我 擦 好 了",
+     "arti": "Mejanya sudah saya lap.",
+     "en": "I have wiped the tables.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "垃圾我等一下拿去倒。",
+     "trad": "垃圾我等一下拿去倒。",
+     "pinyin": "Lājī wǒ děng yíxià ná qù dào.",
+     "seg": "垃圾 我 等一下 拿 去 倒",
+     "arti": "Sampahnya nanti saya buang.",
+     "en": "I will take out the trash in a bit.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "库存不够了，要跟老板说吗？",
+     "trad": "庫存不夠了，要跟老闆說嗎？",
+     "pinyin": "Kùcún bú gòu le, yào gēn lǎobǎn shuō ma?",
+     "seg": "库存 不够 了 要 跟 老板 说 吗",
+     "arti": "Stok tidak cukup, perlu bilang ke bos?",
+     "en": "Stock is running low, should I tell the boss?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "现在是尖峰时间，大家加油！",
+     "trad": "現在是尖峰時間，大家加油！",
+     "pinyin": "Xiànzài shì jiānfēng shíjiān, dàjiā jiāyóu!",
+     "seg": "现在 是 尖峰 时间 大家 加油",
+     "arti": "Sekarang jam sibuk, semangat semua!",
+     "en": "It is peak hour now, let us go everyone!",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "还有什么需要我做的吗？",
+     "trad": "還有什麼需要我做的嗎？",
+     "pinyin": "Hái yǒu shénme xūyào wǒ zuò de ma?",
+     "seg": "还 有 什么 需要 我 做 的 吗",
+     "arti": "Masih ada yang perlu saya kerjakan?",
+     "en": "Is there anything else you need me to do?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我可以先去休息吃饭吗？",
+     "trad": "我可以先去休息吃飯嗎？",
+     "pinyin": "Wǒ kěyǐ xiān qù xiūxi chīfàn ma?",
+     "seg": "我 可以 先 去 休息 吃饭 吗",
+     "arti": "Boleh saya istirahat makan dulu?",
+     "en": "May I take my meal break first?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "快打烊了，我先扫地拖地。",
+     "trad": "快打烊了，我先掃地拖地。",
+     "pinyin": "Kuài dǎyàng le, wǒ xiān sǎodì tuōdì.",
+     "seg": "快 打烊 了 我 先 扫地 拖地",
+     "arti": "Sebentar lagi tutup, saya sapu dan pel dulu.",
+     "en": "We are closing soon, I will sweep and mop first.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "下星期的班表出来了吗？",
+     "trad": "下星期的班表出來了嗎？",
+     "pinyin": "Xià xīngqī de bānbiǎo chūlái le ma?",
+     "seg": "下 星期 的 班表 出来 了 吗",
+     "arti": "Jadwal shift minggu depan sudah keluar?",
+     "en": "Is next week's schedule out yet?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我下星期五要考试，可以排休吗？",
+     "trad": "我下星期五要考試，可以排休嗎？",
+     "pinyin": "Wǒ xià xīngqīwǔ yào kǎoshì, kěyǐ páixiū ma?",
+     "seg": "我 下 星期五 要 考试 可以 排休 吗",
+     "arti": "Jumat depan saya ada ujian, boleh dijadwalkan libur?",
+     "en": "I have an exam next Friday, can I have that day off?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "你可以帮我代班吗？我请你喝饮料。",
+     "trad": "你可以幫我代班嗎？我請你喝飲料。",
+     "pinyin": "Nǐ kěyǐ bāng wǒ dàibān ma? Wǒ qǐng nǐ hē yǐnliào.",
+     "seg": "你 可以 帮 我 代班 吗 我 请 你 喝 饮料",
+     "arti": "Bisa gantikan shift saya? Nanti kutraktir minuman.",
+     "en": "Can you cover my shift? I will buy you a drink.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "期末考那个星期我想少排一点班。",
+     "trad": "期末考那個星期我想少排一點班。",
+     "pinyin": "Qímòkǎo nàge xīngqī wǒ xiǎng shǎo pái yìdiǎn bān.",
+     "seg": "期末考 那个 星期 我 想 少 排 一点 班",
+     "arti": "Minggu UAS saya mau dikurangi shiftnya.",
+     "en": "I would like fewer shifts during finals week.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "路上塞车，我可能会迟到十分钟。",
+     "trad": "路上塞車，我可能會遲到十分鐘。",
+     "pinyin": "Lùshang sāichē, wǒ kěnéng huì chídào shí fēnzhōng.",
+     "seg": "路上 塞车 我 可能 会 迟到 十 分钟",
+     "arti": "Jalanan macet, saya mungkin telat 10 menit.",
+     "en": "Traffic is bad, I might be ten minutes late.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我今天不太舒服，可以请病假吗？",
+     "trad": "我今天不太舒服，可以請病假嗎？",
+     "pinyin": "Wǒ jīntiān bú tài shūfu, kěyǐ qǐng bìngjià ma?",
+     "seg": "我 今天 不太 舒服 可以 请 病假 吗",
+     "arti": "Hari ini saya kurang enak badan, boleh izin sakit?",
+     "en": "I am not feeling well today, may I take sick leave?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我下星期有事，想请一天事假。",
+     "trad": "我下星期有事，想請一天事假。",
+     "pinyin": "Wǒ xià xīngqī yǒu shì, xiǎng qǐng yì tiān shìjià.",
+     "seg": "我 下 星期 有 事 想 请 一 天 事假",
+     "arti": "Minggu depan saya ada urusan, mau izin satu hari.",
+     "en": "I have something next week, I would like one day of personal leave.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "对不起，我把杯子弄坏了。",
+     "trad": "對不起，我把杯子弄壞了。",
+     "pinyin": "Duìbuqǐ, wǒ bǎ bēizi nònghuài le.",
+     "seg": "对不起 我 把 杯子 弄坏 了",
+     "arti": "Maaf, saya tidak sengaja memecahkan gelas.",
+     "en": "Sorry, I accidentally broke a cup.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我做错了，我马上重做一份。",
+     "trad": "我做錯了，我馬上重做一份。",
+     "pinyin": "Wǒ zuò cuò le, wǒ mǎshàng chóng zuò yí fèn.",
+     "seg": "我 做 错 了 我 马上 重 做 一 份",
+     "arti": "Saya salah buat, langsung saya buat ulang satu.",
+     "en": "I made it wrong, I will remake one right away.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我的手受伤了，请问有OK绷吗？",
+     "trad": "我的手受傷了，請問有OK繃嗎？",
+     "pinyin": "Wǒ de shǒu shòushāng le, qǐngwèn yǒu OK bēng ma?",
+     "seg": "我 的 手 受伤 了 请问 有 OK绷 吗",
+     "arti": "Tangan saya terluka, apakah ada plester?",
+     "en": "I hurt my hand, do you have a band-aid?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "请问发薪日是几号？",
+     "trad": "請問發薪日是幾號？",
+     "pinyin": "Qǐngwèn fāxīnrì shì jǐ hào?",
+     "seg": "请问 发薪日 是 几 号",
+     "arti": "Tanggal berapa hari gajian?",
+     "en": "What date is payday?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "薪水会转账到我的账户吗？",
+     "trad": "薪水會轉帳到我的帳戶嗎？",
+     "pinyin": "Xīnshuǐ huì zhuǎnzhàng dào wǒ de zhànghù ma?",
+     "seg": "薪水 会 转账 到 我 的 账户 吗",
+     "arti": "Gaji akan ditransfer ke rekening saya?",
+     "en": "Will my salary be transferred to my account?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我的薪资单好像算错了。",
+     "trad": "我的薪資單好像算錯了。",
+     "pinyin": "Wǒ de xīnzīdān hǎoxiàng suàn cuò le.",
+     "seg": "我 的 薪资单 好像 算 错 了",
+     "arti": "Slip gaji saya sepertinya salah hitung.",
+     "en": "I think my pay slip was calculated wrong.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "加班有加班费吗？",
+     "trad": "加班有加班費嗎？",
+     "pinyin": "Jiābān yǒu jiābānfèi ma?",
+     "seg": "加班 有 加班费 吗",
+     "arti": "Kalau lembur ada uang lemburnya?",
+     "en": "Is there overtime pay for overtime work?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "外籍学生的薪水要扣税吗？",
+     "trad": "外籍學生的薪水要扣稅嗎？",
+     "pinyin": "Wàijí xuéshēng de xīnshuǐ yào kòushuì ma?",
+     "seg": "外籍 学生 的 薪水 要 扣税 吗",
+     "arti": "Gaji mahasiswa asing dipotong pajak?",
+     "en": "Is tax deducted from a foreign student's salary?",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "老板，我想跟你谈一下。",
+     "trad": "老闆，我想跟你談一下。",
+     "pinyin": "Lǎobǎn, wǒ xiǎng gēn nǐ tán yíxià.",
+     "seg": "老板 我 想 跟 你 谈 一下",
+     "arti": "Bos, saya mau bicara sebentar.",
+     "en": "Boss, I would like to talk with you for a moment.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "下学期我的课很多，想离职。",
+     "trad": "下學期我的課很多，想離職。",
+     "pinyin": "Xià xuéqī wǒ de kè hěn duō, xiǎng lízhí.",
+     "seg": "下 学期 我 的 课 很 多 想 离职",
+     "arti": "Semester depan kelas saya banyak, saya mau berhenti.",
+     "en": "I have many classes next semester, so I would like to quit.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "我会提前两个星期跟你说。",
+     "trad": "我會提前兩個星期跟你說。",
+     "pinyin": "Wǒ huì tíqián liǎng gè xīngqī gēn nǐ shuō.",
+     "seg": "我 会 提前 两 个 星期 跟 你 说",
+     "arti": "Saya akan memberi tahu dua minggu sebelumnya.",
+     "en": "I will let you know two weeks in advance.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "谢谢你这段时间的照顾。",
+     "trad": "謝謝你這段時間的照顧。",
+     "pinyin": "Xièxiè nǐ zhè duàn shíjiān de zhàogù.",
+     "seg": "谢谢 你 这 段 时间 的 照顾",
+     "arti": "Terima kasih sudah membimbing saya selama ini.",
+     "en": "Thank you for taking care of me during this time.",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "今天客人好多，累死了！",
+     "trad": "今天客人好多，累死了！",
+     "pinyin": "Jīntiān kèrén hǎo duō, lèi sǐ le!",
+     "seg": "今天 客人 好 多 累 死 了",
+     "arti": "Hari ini pelanggannya banyak banget, capek sekali!",
+     "en": "So many customers today, I am exhausted!",
+     "tag": "kerja"
+    },
+    {
+     "hanzi": "你吃饭了吗？一起吃便当吧。",
+     "trad": "你吃飯了嗎？一起吃便當吧。",
+     "pinyin": "Nǐ chīfàn le ma? Yìqǐ chī biàndāng ba.",
+     "seg": "你 吃饭 了 吗 一起 吃 便当 吧",
+     "arti": "Kamu sudah makan? Ayo makan bento bareng.",
+     "en": "Have you eaten? Let us have lunch boxes together.",
+     "tag": "kerja"
+    }
+   ]
+  }
+ ]
+}
