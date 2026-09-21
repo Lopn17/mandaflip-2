@@ -5006,15 +5006,15 @@ $('#gmStart').onclick=()=>{
   }
   const available=src==='vocab'?cards.length:src==='sent'?sents.length:cards.length+sents.length;
   const n=Math.min(practiceCount('#gmCount','#gmCustomCount',available),repeat?9999:available);
-  const qs=[];
-  for(let i=0;i<n;i++){
-    let useSent;
-    if(src==='vocab')useSent=false;
-    else if(src==='sent')useSent=true;
-    else useSent=canS&&(!canV||Math.random()<.4);
-    if(useSent)qs.push(gmSentQ(pick(sents),sents));
-    else qs.push(gmVocabQ(pick(cards),cards));
-  }
+  const sourceItems=src==='vocab'
+    ?cards.map(card=>({kind:'vocab',item:card}))
+    :src==='sent'
+      ?sents.map(sent=>({kind:'sent',item:sent}))
+      :cards.map(card=>({kind:'vocab',item:card})).concat(sents.map(sent=>({kind:'sent',item:sent})));
+  const sequence=repeatItems(sourceItems,n,repeat);
+  const qs=sequence.map(entry=>entry.kind==='sent'
+    ?gmSentQ(entry.item,sents)
+    :gmVocabQ(entry.item,cards));
   gm={qs,i:0,score:0,streak:0,best:0,correct:0,timeTotal:tt,timeLeft:tt,
       raf:null,last:0,frozen:0,dbl:false,lastTickSec:-1,answered:false,
       pu:{fifty:2,freeze:1,dbl:1,skip:1}};
