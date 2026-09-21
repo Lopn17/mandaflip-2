@@ -57,6 +57,13 @@ option{color:#0b0e1a;background:#fff}
 .field{display:flex;flex-direction:column;min-width:130px;flex:1}
 label.lbl{font-size:.8rem;color:var(--muted);margin:0 0 4px}
 .formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end}
+.qz-repeat-field{min-width:0}
+.qz-repeat-option{display:grid;grid-template-columns:20px minmax(0,1fr);align-items:center;gap:10px;min-width:0;min-height:42px;padding:7px 10px;border:1px solid var(--border);border-radius:12px;background:rgba(124,156,255,.06);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
+.qz-repeat-option:hover{border-color:var(--accent);background:rgba(124,156,255,.12)}
+.qz-repeat-option input{appearance:none;width:18px;height:18px;margin:0;border:2px solid var(--muted);border-radius:5px;background:transparent;cursor:pointer;position:relative}
+.qz-repeat-option input:checked{border-color:var(--accent);background:var(--accent)}
+.qz-repeat-option input:checked::after{content:'✓';position:absolute;inset:-3px 0 0;text-align:center;color:#0b1020;font-size:.8rem;font-weight:800}
+.qz-repeat-option span{min-width:0;font-size:.86rem;line-height:1.25;overflow-wrap:anywhere}
 /* ---------- flashcard ---------- */
 .fc{position:relative;perspective:1200px;height:420px;touch-action:pan-y;user-select:none;cursor:pointer}
 .fc-wrap{position:absolute;inset:0}
@@ -88,14 +95,6 @@ label.lbl{font-size:.8rem;color:var(--muted);margin:0 0 4px}
 .choice-audio{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:12px;background:var(--card);border:1px solid var(--border)}
 .choice-audio.correct{outline:2px solid var(--accent2)}
 .choice-audio.wrong{outline:2px solid var(--danger)}
-.qnav{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px;margin-top:10px;max-height:220px;overflow:auto;padding:10px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
-.qnav button{padding:8px 0;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;font:inherit;font-size:.9rem}
-.qnav button:hover{border-color:var(--accent)}
-.qnav button.cur{outline:2px solid var(--accent)}
-.qnav button.ok{background:var(--accent2);border-color:var(--accent2);color:#04170f}
-.qnav button.bad{background:var(--danger);border-color:var(--danger);color:#fff}
-.qnav button.done{border-color:var(--accent)}
-.cntx{max-width:120px}
 .feedback{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-top:12px}
 .feedback .big{font-size:1.5rem;font-weight:700}
 @media(max-width:700px){.choices{grid-template-columns:1fr}}
@@ -416,9 +415,25 @@ td .sub{color:var(--muted);font-size:.85rem}
             <option value="mix" data-i18n="qm_mix">Campur (Acak)</option>
           </select></div>
         <div class="field"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="qzCount"><option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="qzCountX" min="1" max="9999" value="30" style="margin-top:6px"></div>
+          <select id="qzCount">
+            <option value="5">5</option><option value="10" selected>10</option>
+            <option value="15">15</option><option value="20">20</option>
+            <option value="50">50</option><option value="100">100</option>
+            <option value="all" data-i18n="opt_all">Semua</option>
+          </select></div>
+        <div class="field qz-repeat-field">
+          <label class="lbl" for="qzRepeat" data-i18n="qz_repeat">Ulangi kartu</label>
+          <label class="qz-repeat-option" for="qzRepeat">
+            <input type="checkbox" id="qzRepeat">
+            <span data-i18n="qz_repeat_hint">Boleh melebihi jumlah kartu</span>
+          </label>
+        </div>
         <div class="field"><label class="lbl" data-i18n="lbl_choices">Jumlah Pilihan</label>
-          <select id="qzChoiceN"><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12">12</option><option value="16">16</option><option value="20">20</option><option value="30">30</option><option value="50">50</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="qzChoiceNX" min="2" max="500" value="6" style="margin-top:6px"></div>
+          <select id="qzChoiceN">
+            <option value="2">2</option><option value="4" selected>4</option>
+            <option value="6">6</option><option value="8">8</option>
+            <option value="12">12</option><option value="20">20</option>
+          </select></div>
         <div class="field"><button class="btn primary" id="qzStart" data-i18n="btn_start">Mulai</button></div>
       </div>
     </div>
@@ -433,11 +448,9 @@ td .sub{color:var(--muted);font-size:.85rem}
         <input type="text" id="qzSearch" style="flex:1" data-i18n-ph="m_search" placeholder="Cari...">
       </div>
       <div class="choices" id="qzChoices"></div>
-      <div class="qnav hidden" id="qzNav"></div>
       <div class="feedback hidden" id="qzFeedback"></div>
       <div class="row spread" style="margin-top:12px">
         <button class="btn" id="qzPrev" data-i18n="btn_prev_q">Sebelumnya</button>
-        <button class="btn ghost" id="qzNavBtn" data-i18n="btn_nav">☰ Navigasi</button>
         <button class="btn ghost" id="qzEnd" data-i18n="btn_end">Akhiri</button>
         <button class="btn primary" id="qzNext" data-i18n="btn_next_q">Berikutnya</button>
       </div>
@@ -471,7 +484,10 @@ td .sub{color:var(--muted);font-size:.85rem}
         <div class="field"><label class="lbl" data-i18n="f_tag">Label</label>
           <select id="gmTag"></select></div>
         <div class="field"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="gmCount"><option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="gmCountX" min="1" max="9999" value="30" style="margin-top:6px"></div>
+          <select id="gmCount">
+            <option value="5">5</option><option value="10" selected>10</option>
+            <option value="15">15</option><option value="20">20</option>
+          </select></div>
         <div class="field"><label class="lbl" data-i18n="g_speed">Kecepatan</label>
           <select id="gmSpeed">
             <option value="20" data-i18n="g_relax">Santai (20 dtk)</option>
@@ -533,7 +549,7 @@ td .sub{color:var(--muted);font-size:.85rem}
       </div>
       <div class="row" style="margin-top:12px">
         <div class="field" style="max-width:160px"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="rdCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="rdCountX" min="1" max="9999" value="30" style="margin-top:6px"></div>
+          <select id="rdCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option></select></div>
         <div class="field" style="max-width:240px"><label class="lbl" for="rdSrcSet" data-i18n="lbl_srcset_s">Sumber Kalimat</label>
           <select id="rdSrcSet"></select></div>
         <button class="btn primary" id="rdStart" data-i18n="btn_start" style="align-self:end">Mulai</button>
@@ -574,7 +590,7 @@ td .sub{color:var(--muted);font-size:.85rem}
       </div>
       <div class="row" style="margin-top:12px">
         <div class="field" style="max-width:160px"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="lsCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="lsCountX" min="1" max="9999" value="30" style="margin-top:6px"></div>
+          <select id="lsCount"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option></select></div>
         <div class="field"><label class="lbl" for="lsSrcSet" data-i18n="lbl_srcset">Sumber Kartu</label>
           <select id="lsSrcSet"></select></div>
         <div class="field" style="flex:0 0 auto;min-width:0"><label class="lbl">&nbsp;</label>
@@ -632,7 +648,9 @@ td .sub{color:var(--muted);font-size:.85rem}
         <div class="field"><label class="lbl" data-i18n="f_tag">Label</label>
           <select id="tyTag"></select></div>
         <div class="field"><label class="lbl" data-i18n="lbl_count">Jumlah Soal</label>
-          <select id="tyCount"><option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="all" data-i18n="opt_all">Semua</option><option value="custom" data-i18n="opt_custom">Custom…</option></select><input type="number" class="cntx hidden" id="tyCountX" min="1" max="9999" value="30" style="margin-top:6px"></div>
+          <select id="tyCount">
+            <option value="5">5</option><option value="10" selected>10</option><option value="15">15</option>
+          </select></div>
         <div class="field"><button class="btn primary" id="tyStart" data-i18n="btn_start">Mulai</button></div>
       </div>
       <p class="mut" style="margin-bottom:0" data-i18n="ty_note">Jawaban boleh hanzi atau pinyin — dua-duanya dihitung benar.</p>
@@ -649,10 +667,7 @@ td .sub{color:var(--muted);font-size:.85rem}
         <button class="btn ghost" id="tyHint" data-i18n="ty_hint">Petunjuk</button>
       </div>
       <div class="feedback hidden" id="tyFeedback"></div>
-      <div class="qnav hidden" id="tyNav"></div>
       <div class="row spread" style="margin-top:12px">
-        <button class="btn" id="tyPrev" data-i18n="btn_prev_q">Sebelumnya</button>
-        <button class="btn ghost" id="tyNavBtn" data-i18n="btn_nav">☰ Navigasi</button>
         <button class="btn ghost" id="tyEnd" data-i18n="btn_end">Akhiri</button>
         <button class="btn primary" id="tyNext" data-i18n="btn_next_q">Berikutnya</button>
       </div>
@@ -888,6 +903,11 @@ td .sub{color:var(--muted);font-size:.85rem}
           <button class="btn sm active" data-ltab="mine" data-i18n="lib_tab_mine">Folder Saya</button>
           <button class="btn sm" data-ltab="tpl" data-i18n="lib_tab_tpl">Template</button>
         </div>
+        <div class="field" style="margin-top:14px">
+          <label class="lbl" for="libSearch" data-i18n="lib_search_lbl">Cari di seluruh pustaka</label>
+          <input type="search" id="libSearch" data-i18n-ph="lib_search_ph" placeholder="Cari hanzi, pinyin, arti, atau label...">
+        </div>
+        <div id="libSearchResults" class="packs" style="margin-top:10px"></div>
 
         <div id="libMineWrap" style="margin-top:14px">
           <div class="row">
@@ -1225,7 +1245,7 @@ nav_study:'Belajar',nav_quiz:'Kuis',nav_game:'Game',nav_read:'Baca',nav_listen:'
 study_title:'Mode Belajar (Flashcard)',front_hanzi:'Depan: Hanzi',front_pinyin:'Depan: Pinyin',front_arti:'Depan: Arti',
 f_all:'Semua',f_new:'Belum',btn_flip:'Flip',btn_notyet:'Not Yet',btn_shuffle:'Acak',anim:'Animasi',
 study_hint:'Shortcut: Spasi=Flip · ←/→ · G/A/B · S=Suara · W=Cara Tulis · Geser kartu di HP',
-quiz_title:'Kuis Pilihan Ganda',lbl_source:'Isi Soal',src_all:'Semua Kartu',lbl_mode:'Tipe Soal',lbl_count:'Jumlah Soal',lbl_choices:'Jumlah Pilihan',btn_start:'Mulai',opt_all:'Semua',opt_custom:'Custom…',btn_nav:'☰ Navigasi',
+quiz_title:'Kuis Pilihan Ganda',lbl_source:'Isi Soal',src_all:'Semua Kartu',lbl_mode:'Tipe Soal',lbl_count:'Jumlah Soal',lbl_choices:'Jumlah Pilihan',btn_start:'Mulai',opt_all:'Semua',
 qm_ha:'Hanzi → Arti',qm_hp:'Hanzi → Pinyin',qm_ah:'Arti → Hanzi',qm_ap:'Arti → Pinyin',qm_pa:'Pinyin → Arti',qm_ph:'Pinyin → Hanzi',
 qm_sh:'Suara → Hanzi',qm_sa:'Suara → Arti',qm_sp:'Suara → Pinyin',qm_hs:'Hanzi → Suara',qm_as:'Arti → Suara',qm_ps:'Pinyin → Suara',qm_mix:'Campur (Acak)',
 score:'Skor',correct:'Benar',wrong:'Salah',btn_prev_q:'Sebelumnya',btn_next_q:'Berikutnya',btn_end:'Akhiri',pick_lbl:'Pilih',
@@ -1294,6 +1314,10 @@ lib_tpl_desc:'Paket siap pakai. Salin jadi folder baru yang bebas kamu edit — 
 lib_new:'+ Folder Baru',lib_import_f:'Import Folder',lib_export_lib:'Export Pustaka',
 lib_copy:'Salin jadi Folder',lib_add_here:'Tambah ke Folder…',lib_used:'dipakai di {n} folder',
 lib_active:'Aktif',lib_inactive:'Nonaktif',lib_open:'Buka',
+lib_search_lbl:'Cari di seluruh pustaka',lib_search_ph:'Cari hanzi, pinyin, arti, atau label...',
+lib_search_empty:'Ketik kata untuk mencari di semua folder.',lib_search_none:'Kata tidak ditemukan di pustaka.',
+lib_search_found:'{n} hasil ditemukan',lib_search_folder:'Folder',
+qz_repeat:'Ulangi kartu',qz_repeat_hint:'Boleh melebihi jumlah kartu',
 lib_summary:'{f} folder · {a} aktif · {c} kata & {s} kalimat masuk data belajar',
 lib_empty:'Belum ada folder. Bikin folder baru, atau salin dari tab Template.',
 lib_back:'← Kembali',lib_edit_folder:'✏️ Edit Folder',lib_from_tpl:'📦 Tambah dari Template',
@@ -1485,6 +1509,10 @@ lib_tpl_desc:'Ready-made packs. Copy one into a new folder you can freely edit �
 lib_new:'+ New Folder',lib_import_f:'Import Folder',lib_export_lib:'Export Library',
 lib_copy:'Copy as Folder',lib_add_here:'Add to Folder…',lib_used:'used in {n} folder(s)',
 lib_active:'Active',lib_inactive:'Inactive',lib_open:'Open',
+lib_search_lbl:'Search the whole library',lib_search_ph:'Search hanzi, pinyin, meaning, or label...',
+lib_search_empty:'Type a word to search every folder.',lib_search_none:'No matching word in the library.',
+lib_search_found:'{n} result(s) found',lib_search_folder:'Folder',
+qz_repeat:'Repeat cards',qz_repeat_hint:'Allow more questions than cards',
 lib_summary:'{f} folders · {a} active · {c} words & {s} sentences in study data',
 lib_empty:'No folders yet. Create one, or copy from the Templates tab.',
 lib_back:'← Back',lib_edit_folder:'✏️ Edit Folder',lib_from_tpl:'📦 Add from Template',
@@ -2680,7 +2708,7 @@ function renderLib(){
   $$('#libTabs .btn').forEach(b=>b.classList.toggle('active',b.dataset.ltab===lib.tab));
   $('#libMineWrap').classList.toggle('hidden',lib.tab!=='mine');
   $('#libTplWrap').classList.toggle('hidden',lib.tab!=='tpl');
-  renderFolderList();renderTplList();
+  renderFolderList();renderTplList();renderLibSearch();
 }
 function renderFolderList(){
   const box=$('#fdList');box.innerHTML='';
@@ -2795,6 +2823,7 @@ function renderFolderItems(){
       const act=document.createElement('div');act.className='actions';
       act.append(
         mk('🔊',()=>speak(disp(c))),
+        mk('✍️',()=>wrOpen(c),'',t('wr_title')),
         mk('✏️',()=>{
           $('#ffId').value=c.id;$('#ffHanzi').value=c.hanzi;$('#ffTrad').value=c.trad||'';
           $('#ffPinyin').value=c.pinyin;$('#ffArti').value=c.arti||'';$('#ffEn').value=c.en||'';
@@ -2831,6 +2860,7 @@ function renderFolderItems(){
       const act=document.createElement('div');act.className='actions';
       act.append(
         mk('🔊',()=>speak(disp(s))),
+        mk('✍️',()=>wrOpen(s),'',t('wr_title')),
         mk('✏️',()=>{
           $('#fsId').value=s.id;$('#fsHanzi').value=s.hanzi;$('#fsTrad').value=s.trad||'';
           $('#fsPinyin').value=s.pinyin;$('#fsSeg').value=s.seg||'';$('#fsArti').value=s.arti||'';$('#fsEn').value=s.en||'';
@@ -2862,6 +2892,36 @@ $('#libTabs').addEventListener('click',e=>{
   const b=e.target.closest('[data-ltab]');if(!b)return;
   lib.tab=b.dataset.ltab;renderLib();
 });
+function renderLibSearch(){
+  const box=$('#libSearchResults');if(!box)return;
+  const q=($('#libSearch').value||'').trim().toLowerCase();
+  if(!q){box.innerHTML='<p class="mut">'+esc(t('lib_search_empty'))+'</p>';return;}
+  const results=[];
+  folders.forEach(f=>{
+    f.cards.forEach(c=>{
+      const hay=[c.hanzi,c.trad,c.pinyin,c.arti,c.en,c.tag].join(' ').toLowerCase();
+      if(hay.includes(q))results.push({item:c,folder:f,type:'word'});
+    });
+    f.sents.forEach(s=>{
+      const hay=[s.hanzi,s.trad,s.pinyin,s.arti,s.en,s.tag].join(' ').toLowerCase();
+      if(hay.includes(q))results.push({item:s,folder:f,type:'sentence'});
+    });
+  });
+  if(!results.length){box.innerHTML='<p class="mut">'+esc(t('lib_search_none'))+'</p>';return;}
+  box.innerHTML='<p class="mut">'+esc(fmt(t('lib_search_found'),{n:results.length}))+'</p>';
+  results.slice(0,100).forEach(({item,folder,type})=>{
+    const d=document.createElement('div');d.className='fdcard';
+    d.innerHTML='<div class="fdtop"><div style="flex:1;min-width:0"><h3>'+esc(disp(item))+'</h3>'+
+      '<p class="fdsub">'+esc(item.pinyin||'')+' · '+esc(mean(item)||'')+'</p></div>'+
+      '<span class="meta">'+esc(folder.icon||'📁')+' '+esc(folder.name)+'</span></div>'+
+      '<span class="mut">'+esc(type==='word'?t('lib_words'):t('lib_sents'))+' · '+esc(item.tag||'')+'</span>';
+    const row=document.createElement('div');row.className='fdactions';
+    const stroke=document.createElement('button');stroke.className='btn sm';stroke.textContent='✍️';stroke.title=t('wr_title');stroke.onclick=()=>wrOpen(item);
+    const open=document.createElement('button');open.className='btn sm primary';open.textContent=t('lib_open');open.onclick=()=>{openFolder(folder.id);lib.ftab=type==='word'?'words':'sents';renderFolderDetail();};
+    row.append(stroke,open);d.appendChild(row);box.appendChild(d);
+  });
+}
+$('#libSearch').oninput=renderLibSearch;
 $('#fdTabs').addEventListener('click',e=>{
   const b=e.target.closest('[data-ftab]');if(!b)return;
   lib.ftab=b.dataset.ftab;$('#fdSearch').value='';renderFolderDetail();
@@ -4450,43 +4510,6 @@ function qzBuildQ(card,mode,nCh){
   q.choices=shuffle([q.correct,...dis]);
   return q;
 }
-function cntRaw(id){
-  const s=document.getElementById(id);if(!s)return NaN;
-  if(s.value==='custom'){const x=document.getElementById(id+'X');const v=x?parseInt(x.value,10):NaN;return isFinite(v)&&v>0?v:NaN;}
-  if(s.value==='all')return Infinity;
-  const v=parseInt(s.value,10);return isFinite(v)?v:NaN;
-}
-function cntVal(id,max){
-  let v=cntRaw(id);
-  if(!isFinite(v)||v<1)v=Math.min(10,max);
-  return Math.max(1,Math.min(v,max));
-}
-function bindCount(id){
-  const s=document.getElementById(id),x=document.getElementById(id+'X');
-  if(!s||!x)return;
-  const upd=()=>{
-    x.classList.toggle('hidden',s.value!=='custom');
-    if(s.value==='custom')setTimeout(()=>{try{x.focus();x.select();}catch(e){}},20);
-  };
-  if(!s._cntBound){s.addEventListener('change',upd);s._cntBound=1;}
-  upd();
-}
-function bindAllCounts(){['qzCount','qzChoiceN','gmCount','rdCount','lsCount','tyCount'].forEach(bindCount);}
-function renderQNav(boxId,items,cur,go,statusOf){
-  const box=document.getElementById(boxId);if(!box)return;
-  box.innerHTML='';
-  items.forEach((q,i)=>{
-    const b=document.createElement('button');
-    b.type='button';b.textContent=String(i+1);
-    const st=statusOf(q);
-    if(st==='ok')b.classList.add('ok');
-    else if(st==='bad')b.classList.add('bad');
-    else if(st==='done')b.classList.add('done');
-    if(i===cur)b.classList.add('cur');
-    b.onclick=()=>go(i);
-    box.appendChild(b);
-  });
-}
 function qzXpMult(n){return n>=20?12:n>=10?9:n>=6?7:n>=4?5:3;}
 $('#qzStart').onclick=()=>{
   const src=$('#qzSrcSet').value;
@@ -4497,11 +4520,18 @@ $('#qzStart').onclick=()=>{
   if(f==='again')pool=pool.filter(c=>c.status==='again');
   else if(f==='new')pool=pool.filter(c=>!c.status);
   else if(f==='good')pool=pool.filter(c=>c.status==='good');
-  if(pool.length<2){notify(fmt(t('msg_need_cards'),{n:2}),'warning');return;}
-  const nCh=Math.max(2,cntVal('qzChoiceN',pool.length));
-  const n=cntVal('qzCount',pool.length);
+  const nCh=parseInt($('#qzChoiceN').value,10);
+  if(pool.length<Math.max(2,Math.min(nCh,4))){notify(fmt(t('msg_need_cards'),{n:Math.max(4,nCh)}),'warning');return;}
+  const cv=$('#qzCount').value;
+  const repeat=$('#qzRepeat').checked;
+  const requested=cv==='all'?pool.length:parseInt(cv,10);
+  let n=repeat&&cv!=='all'?requested:Math.min(requested,pool.length);
   const mode=$('#qzMode').value;
-  qzBegin(shuffle(pool).slice(0,n),mode,nCh);
+  if(repeat&&cv!=='all'){
+    const cards=[];
+    while(cards.length<n)cards.push(...shuffle(pool).slice(0,Math.min(pool.length,n-cards.length)));
+    qzBegin(cards,mode,nCh);
+  }else qzBegin(shuffle(pool).slice(0,n),mode,nCh);
 };
 function qzBegin(cards,mode,nCh){
   qz={i:0,correct:0,nCh,mode,pool:cards.map(c=>qzBuildQ(c,mode==='mix'?pick(QMODES):mode,nCh))};
@@ -4528,7 +4558,6 @@ function qzShow(){
   if(q.answered){qzFeedback(q);}else fb.classList.add('hidden');
   $('#qzPrev').disabled=qz.i===0;
   $('#qzNext').textContent=qz.i===qz.pool.length-1?t('btn_end'):t('btn_next_q');
-  if(!$('#qzNav').classList.contains('hidden'))qzRenderNav();
 }
 function qzRenderChoices(q,filter){
   const box=$('#qzChoices');box.innerHTML='';
@@ -4590,17 +4619,6 @@ function qzFeedback(q){
 $('#qzPlay').onclick=()=>{const q=qz&&qz.pool[qz.i];if(q)speak(disp(q.card));};
 $('#qzSearch').oninput=e=>{const q=qz&&qz.pool[qz.i];if(q)qzRenderChoices(q,e.target.value);};
 $('#qzPrev').onclick=()=>{if(qz&&qz.i>0){qz.i--;qzShow();}};
-function qzRenderNav(){
-  if(!qz)return;
-  renderQNav('qzNav',qz.pool,qz.i,i=>{qz.i=i;qzShow();},
-    q=>!q.answered?'':(q.chosen===q.correct?'ok':'bad'));
-}
-$('#qzNavBtn').onclick=()=>{
-  if(!qz)return;
-  const box=$('#qzNav');
-  box.classList.toggle('hidden');
-  if(!box.classList.contains('hidden')){qzRenderNav();box.scrollIntoView({block:'nearest',behavior:'smooth'});}
-};
 $('#qzNext').onclick=()=>{
   if(!qz)return;
   if(qz.i<qz.pool.length-1){qz.i++;qzShow();}
@@ -4649,10 +4667,8 @@ $('#rdModes').addEventListener('click',e=>{
   $$('#rdModes .btn').forEach(x=>x.classList.toggle('active',x===b));
 });
 $('#rdStart').onclick=()=>{
+  const n=parseInt($('#rdCount').value,10);
   const Ss=srcSents($('#rdSrcSet').value);
-  const n=cntVal('rdCount',Math.max(1,rd.mode==='para'
-    ?PARAGRAPHS.reduce((a,p)=>a+p.qs.length,0)
-    :Ss.length));
   let qs=[];
   if(rd.mode==='para'){
     const all=[];
@@ -4815,8 +4831,8 @@ $('#lsModes').addEventListener('click',e=>{
   $$('#lsModes .btn').forEach(x=>x.classList.toggle('active',x===b));
 });
 $('#lsStart').onclick=()=>{
+  const n=parseInt($('#lsCount').value,10);
   const lsrc=$('#lsSrcSet').value;
-  const n=cntVal('lsCount',Math.max(1,(ls.mode==='sm'?srcSents(lsrc).length:srcCards(lsrc).length)));
   let qs=[];
   if(ls.mode==='sm'){
     const Ss=srcSents(lsrc);
@@ -4946,6 +4962,7 @@ function gmSentQ(s,sents){
 }
 $('#gmStart').onclick=()=>{
   const src=$('#gmSource').value;
+  const n=parseInt($('#gmCount').value,10);
   const tt=parseInt($('#gmSpeed').value,10);
   settings.sound=$('#gmSound').value==='1';saveSettings();$('#setSound').value=settings.sound?'1':'0';
   const tg=$('#gmTag').value;
@@ -4955,7 +4972,6 @@ $('#gmStart').onclick=()=>{
   if((src==='vocab'&&!canV)||(src==='sent'&&!canS)||(src==='mix'&&!canV&&!canS)){
     notify(fmt(t(canV?'msg_need_sents':'msg_need_cards'),{n:4}),'warning');return;
   }
-  const n=cntVal('gmCount',Math.max(1,src==='vocab'?cards.length:src==='sent'?sents.length:(cards.length+sents.length)));
   const qs=[];
   for(let i=0;i<n;i++){
     let useSent;
@@ -5184,8 +5200,6 @@ function tyShow(){
   $('#tyCheck').disabled=q.answered;
   $('#tyHint').disabled=q.answered;
   $('#tyNext').textContent=ty.i===ty.qs.length-1?t('btn_end'):t('btn_next_q');
-  $('#tyPrev').disabled=ty.i===0;
-  if(!$('#tyNav').classList.contains('hidden'))tyRenderNav();
   if(q.answered)tyFeedback(q);else $('#tyFeedback').classList.add('hidden');
   if(q.audio&&!q.answered)speak(disp(q.card));
   setTimeout(()=>{try{inp.focus();}catch(e){}},40);
@@ -5258,7 +5272,7 @@ $('#tyStart').onclick=()=>{
   else if(f==='good')pool=pool.filter(c=>c.status==='good');
   else if(f==='due')pool=pool.filter(isDue);
   if(!pool.length){notify(fmt(t('msg_need_cards'),{n:1}),'warning');return;}
-  const n=cntVal('tyCount',pool.length);
+  const n=Math.min(parseInt($('#tyCount').value,10),pool.length);
   tyBegin(shuffle(pool).slice(0,n),$('#tyMode').value);
 };
 $('#tyCheck').onclick=tyDoCheck;
@@ -5274,22 +5288,8 @@ $('#tyInput').addEventListener('keydown',e=>{
   if(!ty)return;
   if(ty.qs[ty.i].answered)$('#tyNext').click();else tyDoCheck();
 });
-function tyStash(){if(!ty)return;const q=ty.qs[ty.i];if(q&&!q.answered)q.val=$('#tyInput').value;}
-function tyGo(i){if(!ty)return;tyStash();ty.i=i;tyShow();}
-function tyRenderNav(){
-  if(!ty)return;
-  renderQNav('tyNav',ty.qs,ty.i,tyGo,q=>!q.answered?(q.val?'done':''):(q.ok?'ok':'bad'));
-}
-$('#tyNavBtn').onclick=()=>{
-  if(!ty)return;
-  const box=$('#tyNav');
-  box.classList.toggle('hidden');
-  if(!box.classList.contains('hidden')){tyRenderNav();box.scrollIntoView({block:'nearest',behavior:'smooth'});}
-};
-$('#tyPrev').onclick=()=>{if(ty&&ty.i>0)tyGo(ty.i-1);};
 $('#tyNext').onclick=()=>{
   if(!ty)return;
-  tyStash();
   if(ty.i<ty.qs.length-1){ty.i++;tyShow();}
   else tyFinish();
 };
@@ -5655,7 +5655,7 @@ $('#hmReview').onclick=()=>{
 };
 $('#hmQuiz').onclick=()=>{
   if(deck.cards.length<4){notify(fmt(t('msg_need_cards'),{n:4}),'warning');return;}
-  $('#qzSrcSet').value='deck';$('#qzFilter').value='all';$('#qzTag').value='all';$('#qzMode').value='mix';$('#qzCount').value='10';$('#qzChoiceN').value='4';bindAllCounts();
+  $('#qzSrcSet').value='deck';$('#qzFilter').value='all';$('#qzTag').value='all';$('#qzMode').value='mix';$('#qzCount').value='10';$('#qzChoiceN').value='4';
   setView('v-quiz');
   $('#qzStart').click();
 };
@@ -6575,7 +6575,6 @@ function boot(){
   renderManage();
   renderAccount();
   glShow('list');glRender();
-  bindAllCounts();
   setView('v-home');
 }
 boot();
