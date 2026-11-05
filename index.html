@@ -1109,6 +1109,7 @@ td .sub{color:var(--muted);font-size:.85rem}
             <input type="text" id="wfTag" list="tagList" data-i18n-ph="m_tag_ph" placeholder="mis. hsk1, makanan"></div>
           <div class="field"><label class="lbl" data-i18n="m_target">Simpan ke folder</label><select id="wfFolder" required></select></div>
           <div class="field"><button class="btn primary" id="wfSave" data-i18n="m_save">Simpan</button></div>
+          <div class="field"><button class="btn ghost hidden" id="wfCancel" data-i18n="cancel">Batal</button></div>
         </div>
         <input type="hidden" id="wfId">
       </div>
@@ -1126,6 +1127,7 @@ td .sub{color:var(--muted);font-size:.85rem}
             <input type="text" id="sfTag" list="tagList" data-i18n-ph="m_tag_ph" placeholder="mis. hsk1, makanan"></div>
           <div class="field"><label class="lbl" data-i18n="m_target">Simpan ke folder</label><select id="sfFolder"></select></div>
           <div class="field"><button class="btn primary" id="sfSave" data-i18n="m_save">Simpan</button></div>
+          <div class="field"><button class="btn ghost hidden" id="sfCancel" data-i18n="cancel">Batal</button></div>
         </div>
         <input type="hidden" id="sfId">
       </div>
@@ -2745,6 +2747,17 @@ const TAG_ICON={hsk1:'📗',hsk2:'📘',hsk3:'📙',hsk4:'📕',tocfl:'⭐'};
 const tplIcon=x=>x.kind==='s'?'💬':(TAG_ICON[x.tag]||'📁');
 
 const lib={tab:'mine',openId:null,ftab:'words'};
+const fdDrafts={word:null,sent:null};
+const fdFields={
+  word:['ffHanzi','ffTrad','ffPinyin','ffArti','ffEn','ffTag'],
+  sent:['fsHanzi','fsTrad','fsPinyin','fsSeg','fsArti','fsEn','fsTag']
+};
+function folderFormSnapshot(kind){
+  return Object.fromEntries(fdFields[kind].map(id=>[id,$('#'+id).value]));
+}
+function restoreFolderForm(kind,snapshot){
+  fdFields[kind].forEach(id=>{ $('#'+id).value=snapshot[id]||''; });
+}
 
 function folderStats(f){
   let good=0,again=0,due=0,dup=0;
@@ -3010,6 +3023,7 @@ function renderTplList(){
 // ---- render: detail folder ----
 function openFolder(id){
   lib.openId=id;lib.ftab='words';
+  fdDrafts.word=null;fdDrafts.sent=null;
   fdClearForms();
   const s=$('#fdSearch');if(s)s.value='';
   renderLib();
@@ -3064,6 +3078,7 @@ function renderFolderItems(){
         mk('🔊',()=>speak(disp(c))),
         mk('✍️',()=>wrOpen(c),'',t('wr_title')),
         mk('✏️',()=>{
+          if(!$('#ffId').value)fdDrafts.word=folderFormSnapshot('word');
           $('#ffId').value=c.id;$('#ffHanzi').value=c.hanzi;$('#ffTrad').value=c.trad||'';
           $('#ffPinyin').value=c.pinyin;$('#ffArti').value=c.arti||'';$('#ffEn').value=c.en||'';
           $('#ffTag').value=c.tag||'';
@@ -3094,6 +3109,7 @@ function renderFolderItems(){
         mk('🔊',()=>speak(disp(s))),
         mk('✍️',()=>wrOpen(s),'',t('wr_title')),
         mk('✏️',()=>{
+          if(!$('#fsId').value)fdDrafts.sent=folderFormSnapshot('sent');
           $('#fsId').value=s.id;$('#fsHanzi').value=s.hanzi;$('#fsTrad').value=s.trad||'';
           $('#fsPinyin').value=s.pinyin;$('#fsSeg').value=s.seg||'';$('#fsArti').value=s.arti||'';$('#fsEn').value=s.en||'';
           $('#fsTag').value=s.tag||'';
@@ -3200,9 +3216,14 @@ $('#ffSave').onclick=async()=>{
     f.cards.push(Object.assign(normCard(data),{id:uid()}));
   }
   f.updated=Date.now();
-  fdClearForms();afterFolderChange();notify(t('msg_saved'),'success');
+  fdClearForms();fdDrafts.word=null;afterFolderChange();notify(t('msg_saved'),'success');
 };
-$('#ffCancel').onclick=()=>fdClearForms();
+$('#ffCancel').onclick=()=>{
+  const draft=fdDrafts.word;
+  fdClearForms();
+  if(draft)restoreFolderForm('word',draft);
+  fdDrafts.word=null;
+};
 $('#fsSegAuto').onclick=()=>{$('#fsSeg').value=autoSeg($('#fsHanzi').value.trim());};
 $('#fsSave').onclick=()=>{
   const f=curFolder();if(!f)return;
@@ -3218,9 +3239,14 @@ $('#fsSave').onclick=()=>{
     f.sents.push(Object.assign(normSent(data),{id:uid()}));
   }
   f.updated=Date.now();
-  fdClearForms();afterFolderChange();notify(t('msg_saved'),'success');
+  fdClearForms();fdDrafts.sent=null;afterFolderChange();notify(t('msg_saved'),'success');
 };
-$('#fsCancel').onclick=()=>fdClearForms();
+$('#fsCancel').onclick=()=>{
+  const draft=fdDrafts.sent;
+  fdClearForms();
+  if(draft)restoreFolderForm('sent',draft);
+  fdDrafts.sent=null;
+};
 
 // =========================================================
 // BELAJAR (flashcard + swipe)
@@ -5549,6 +5575,22 @@ $('#tyDone').onclick=()=>{$('#tyResult').classList.add('hidden');$('#tySetup').c
 // KELOLA (kata + kalimat + backup)
 // =========================================================
 let mgTab='words';
+const mgDrafts={word:null,sent:null};
+const mgFields={
+  word:['wfHanzi','wfTrad','wfPinyin','wfArti','wfEn','wfTag','wfFolder'],
+  sent:['sfHanzi','sfTrad','sfPinyin','sfSeg','sfArti','sfEn','sfTag','sfFolder']
+};
+function manageFormSnapshot(kind){
+  const fields=mgFields[kind];
+  return Object.fromEntries(fields.map(id=>[id,$('#'+id).value]));
+}
+function restoreManageForm(kind,snapshot){
+  mgFields[kind].forEach(id=>{ $('#'+id).value=snapshot[id]||''; });
+}
+function setManageEditMode(kind,editing){
+  const prefix=kind==='word'?'wf':'sf';
+  $('#'+prefix+'Cancel').classList.toggle('hidden',!editing);
+}
 $('#mgTabs').addEventListener('click',e=>{
   const b=e.target.closest('[data-mtab]');if(!b)return;
   mgTab=b.dataset.mtab;
@@ -5571,12 +5613,15 @@ function fillFolderSelect(sel){
 function clearManageWordForm(){
   ['wfId','wfHanzi','wfTrad','wfPinyin','wfArti','wfEn','wfTag'].forEach(x=>$('#'+x).value='');
   $('#wfFolder').disabled=false;
+  setManageEditMode('word',false);
 }
 function clearManageSentForm(){
   ['sfId','sfHanzi','sfTrad','sfPinyin','sfSeg','sfArti','sfEn','sfTag'].forEach(x=>$('#'+x).value='');
   $('#sfFolder').disabled=false;
+  setManageEditMode('sent',false);
 }
 function editWordInManage(c){
+  if(!$('#wfId').value)mgDrafts.word=manageFormSnapshot('word');
   setView('v-manage');mgTab='words';
   $$('#mgTabs [data-mtab]').forEach(x=>x.classList.toggle('active',x.dataset.mtab==='words'));
   $('#mgWords').classList.remove('hidden');$('#mgSents').classList.add('hidden');
@@ -5585,9 +5630,11 @@ function editWordInManage(c){
   $('#wfPinyin').value=c.pinyin;$('#wfArti').value=c.arti||'';$('#wfEn').value=c.en||'';$('#wfTag').value=c.tag||'';
   const own=ownersOf(c)[0];if(own)$('#wfFolder').value=own.id;
   $('#wfFolder').disabled=true;
+  setManageEditMode('word',true);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function editSentInManage(s){
+  if(!$('#sfId').value)mgDrafts.sent=manageFormSnapshot('sent');
   setView('v-manage');mgTab='sents';
   $$('#mgTabs [data-mtab]').forEach(x=>x.classList.toggle('active',x.dataset.mtab==='sents'));
   $('#mgWords').classList.add('hidden');$('#mgSents').classList.remove('hidden');
@@ -5596,6 +5643,7 @@ function editSentInManage(s){
   $('#sfPinyin').value=s.pinyin;$('#sfSeg').value=s.seg||'';$('#sfArti').value=s.arti||'';$('#sfEn').value=s.en||'';$('#sfTag').value=s.tag||'';
   const own=ownersOf(s)[0];if(own)$('#sfFolder').value=own.id;
   $('#sfFolder').disabled=true;
+  setManageEditMode('sent',true);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 async function deleteEveryCopy(item){
@@ -5722,7 +5770,14 @@ $('#wfSave').onclick=async()=>{
     target.updated=Date.now();
   }
   clearManageWordForm();
+  mgDrafts.word=null;
   afterFolderChange();notify(t('msg_saved'),'success');
+};
+$('#wfCancel').onclick=()=>{
+  const draft=mgDrafts.word;
+  clearManageWordForm();
+  if(draft)restoreManageForm('word',draft);
+  mgDrafts.word=null;
 };
 $('#sfSegAuto').onclick=()=>{$('#sfSeg').value=autoSeg($('#sfHanzi').value.trim());};
 $('#sfSave').onclick=()=>{
@@ -5741,7 +5796,14 @@ $('#sfSave').onclick=()=>{
     target.updated=Date.now();
   }
   clearManageSentForm();
+  mgDrafts.sent=null;
   afterFolderChange();notify(t('msg_saved'),'success');
+};
+$('#sfCancel').onclick=()=>{
+  const draft=mgDrafts.sent;
+  clearManageSentForm();
+  if(draft)restoreManageForm('sent',draft);
+  mgDrafts.sent=null;
 };
 
 // =========================================================
