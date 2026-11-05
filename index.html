@@ -152,6 +152,27 @@ th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-weight:
 td .hz{font-size:1.6rem;font-weight:600}
 td .sub{color:var(--muted);font-size:.85rem}
 .actions{display:flex;gap:6px;flex-wrap:wrap}
+.folder-badges{display:flex;gap:5px;flex-wrap:wrap;min-width:160px}
+.folder-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border:1px solid var(--border);border-radius:999px;background:rgba(124,156,255,.08);color:var(--text);font-size:.75rem;white-space:nowrap}
+.folder-badge.off{opacity:.62}
+.folder-checks{display:flex;flex-direction:column;gap:8px;max-height:45vh;overflow:auto;padding:2px}
+.folder-check{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:var(--card);cursor:pointer}
+.folder-check:hover{border-color:var(--accent)}
+.folder-check input{width:18px;height:18px;accent-color:var(--accent)}
+.folder-check small{display:block;color:var(--muted);font-size:.75rem}
+.scan-panel{margin-top:14px;padding:14px;border:1px solid var(--border);border-radius:14px;background:rgba(14,19,48,.38)}
+.scan-group{margin-top:14px}
+.scan-group:first-child{margin-top:0}
+.scan-group h3{margin:0 0 8px;font-size:.9rem;color:var(--accent2)}
+.scan-cluster{padding:10px 12px;margin-top:8px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+.scan-word{display:flex;align-items:flex-start;gap:10px;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)}
+.scan-word:last-child{border-bottom:0}
+.scan-word-main{min-width:0;flex:1}
+.scan-empty{margin:0;color:var(--muted);font-size:.88rem}
+.dup-warning{padding:10px 12px;border:1px solid var(--border);border-radius:12px;margin-top:8px;background:var(--card)}
+.dup-warning.strong{border-color:var(--danger);background:rgba(255,107,107,.09)}
+.dup-warning.normal{border-color:var(--warn);background:rgba(255,212,59,.08)}
+.dup-warning.suggestion{border-color:var(--accent);background:rgba(124,156,255,.08)}
 /* ---------- library ---------- */
 .packs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .pack{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
@@ -1059,10 +1080,22 @@ td .sub{color:var(--muted);font-size:.85rem}
   <section id="v-manage" class="hidden">
     <div class="panel">
       <h2 data-i18n="manage_title">Kelola Data</h2>
-      <p class="mut" style="margin-top:-4px" data-i18n="manage_desc">Menampilkan semua kata &amp; kalimat dari folder yang <b>aktif</b>. Untuk membuat, mengedit, atau mengaktifkan folder, buka menu Pustaka.</p>
+      <p class="mut" style="margin-top:-4px" data-i18n="manage_desc">Menampilkan semua kata &amp; kalimat dari seluruh folder beserta lokasinya.</p>
       <div class="chips" id="mgTabs">
         <button class="btn sm active" data-mtab="words" data-i18n="m_words">Kata</button>
         <button class="btn sm" data-mtab="sents" data-i18n="m_sents">Kalimat</button>
+        <button class="btn sm" id="mgScanBtn" data-i18n="scan_words">Scan Kata</button>
+      </div>
+
+      <div id="mgScanPanel" class="scan-panel hidden">
+        <div class="row spread">
+          <div>
+            <b data-i18n="scan_title">Deteksi Kata Sama &amp; Mirip</b>
+            <div class="mut" data-i18n="scan_desc">Memindai semua kata di seluruh folder.</div>
+          </div>
+          <button class="btn sm ghost" id="mgScanClose" data-i18n="scan_close">Tutup</button>
+        </div>
+        <div id="mgScanResults" style="margin-top:12px"></div>
       </div>
 
       <div id="mgWords" style="margin-top:14px">
@@ -1074,7 +1107,7 @@ td .sub{color:var(--muted);font-size:.85rem}
           <div class="field"><label class="lbl" data-i18n="m_en">Arti (EN, ops.)</label><input type="text" id="wfEn"></div>
           <div class="field"><label class="lbl" data-i18n="m_tag">Label</label>
             <input type="text" id="wfTag" list="tagList" data-i18n-ph="m_tag_ph" placeholder="mis. hsk1, makanan"></div>
-          <div class="field"><label class="lbl" data-i18n="m_target">Simpan ke folder</label><select id="wfFolder"></select></div>
+          <div class="field"><label class="lbl" data-i18n="m_target">Simpan ke folder</label><select id="wfFolder" required></select></div>
           <div class="field"><button class="btn primary" id="wfSave" data-i18n="m_save">Simpan</button></div>
         </div>
         <input type="hidden" id="wfId">
@@ -1352,8 +1385,8 @@ f_tag:'Label',f_tag_all:'Semua Label',f_pool:'\u2192 {n} kartu siap dipakai',
 m_tag_ph:'mis. hsk1, makanan, kata kerja',
 m_tag_hint:'Label bebas kamu tulis sendiri. Beda dengan folder: label nempel ke katanya, jadi bisa dipakai buat nyaring kata lintas folder di Belajar, Kuis, Tulis & Game.',
 f_tag_empty:'Tidak ada kartu dengan label ini.',
-manage_desc:'Menampilkan semua kata & kalimat dari folder yang aktif. Untuk membuat, mengedit, atau mengaktifkan folder, buka menu Pustaka.',
-lib_desc:'Kelola kosakata & kalimat dalam folder. Folder yang aktif kartunya otomatis masuk ke data belajar (duplikat dilewati).',
+manage_desc:'Menampilkan semua kata & kalimat dari seluruh folder. Lokasi folder bisa dilihat dan diatur langsung di sini.',
+lib_desc:'Kelola kosakata & kalimat dalam folder. Kata yang sama di beberapa folder aktif dihitung satu kali di data belajar.',
 lib_tab_mine:'Folder Saya',lib_tab_tpl:'Template',
 lib_tpl_desc:'Paket siap pakai. Salin jadi folder baru yang bebas kamu edit — template aslinya tetap utuh dan bisa dipakai lagi kapan pun.',
 lib_new:'+ Folder Baru',lib_import_f:'Import Folder',lib_export_lib:'Export Pustaka',
@@ -1381,9 +1414,17 @@ lib_off:'Folder "{n}" dinonaktifkan — progresnya tetap tersimpan',
 lib_dup_note:'{n} kata di folder ini juga ada di folder lain — progresnya disinkronkan otomatis.',
 lib_dup_tip:'Kata ini juga ada di folder lain — progresnya disinkronkan',
 lib_exists:'Sudah ada di folder ini',lib_reset_prog:'Reset progres kartu',
-lib_move_to:'Pindahkan ke folder',lib_moved:'Dipindahkan ke "{n}"',
+lib_move_to:'Pengaturan Folder',lib_moved:'Folder berhasil diperbarui',
 lib_goto_folder:'Buka folder kartu ini',
-m_folder:'Folder',m_target:'Simpan ke folder',
+m_folder:'Folder',m_target:'Folder awal',
+folder_settings:'Pengaturan Folder',folder_settings_desc:'Centang semua folder tempat item ini harus disimpan.',
+folder_required:'Pilih minimal satu folder sebelum menyimpan.',folder_saved:'Lokasi folder berhasil diperbarui',
+folder_uncategorized:'Tanpa Kategori',folder_uncategorized_desc:'Dibuat otomatis untuk item tanpa folder.',
+scan_words:'Scan Kata',scan_title:'Deteksi Kata Sama & Mirip',scan_desc:'Memindai semua kata di seluruh folder.',scan_close:'Tutup',
+scan_exact:'Hanzi sama persis',scan_similar:'Hanzi mirip',scan_pinyin:'Pinyin sama',scan_none:'Tidak ada kelompok yang terdeteksi.',
+scan_view:'Lihat',scan_delete_all:'Hapus kata ini dari semua folder?',
+dup_title:'Kata serupa sudah ada',dup_exact:'Duplikat persis',dup_same_hanzi:'Hanzi sama, detail berbeda',dup_similar:'Hanzi mirip',
+create_anyway:'Tetap Buat',dup_cancel:'Batal',view_word:'Detail Kata',
 m_export_acc:'👤 Export Akun',m_export_lib:'📚 Export Pustaka',
 m_backup_desc:'Data akun dan data kosakata dipisah — kamu bisa backup atau pindahkan salah satunya tanpa menimpa yang lain.',
 m_backup_note:'Import mendeteksi jenis file otomatis: pustaka (folder + progres), akun, backup penuh, atau export kartu versi lama.',
@@ -1547,8 +1588,8 @@ f_tag:'Label',f_tag_all:'All labels',f_pool:'\u2192 {n} cards ready',
 m_tag_ph:'e.g. hsk1, food, verbs',
 m_tag_hint:'Labels are free text. Unlike folders, a label sticks to the word itself \u2014 use it to filter words across folders in Study, Quiz, Typing & Game.',
 f_tag_empty:'No cards carry this label.',
-manage_desc:'Showing every word & sentence from your active folders. To create, edit or activate folders, open the Library.',
-lib_desc:'Manage your words & sentences in folders. Cards from active folders flow into your study data (duplicates skipped).',
+manage_desc:'Showing every word & sentence from every folder. Folder locations can be viewed and managed here.',
+lib_desc:'Manage words & sentences in folders. The same entry in multiple active folders counts once in study data.',
 lib_tab_mine:'My Folders',lib_tab_tpl:'Templates',
 lib_tpl_desc:'Ready-made packs. Copy one into a new folder you can freely edit — the original template stays intact and reusable.',
 lib_new:'+ New Folder',lib_import_f:'Import Folder',lib_export_lib:'Export Library',
@@ -1576,9 +1617,17 @@ lib_off:'Folder "{n}" deactivated — its progress is kept',
 lib_dup_note:'{n} words here also exist in other folders — their progress is synced automatically.',
 lib_dup_tip:'This word also exists in another folder — progress is synced',
 lib_exists:'Already in this folder',lib_reset_prog:'Reset card progress',
-lib_move_to:'Move to folder',lib_moved:'Moved to "{n}"',
+lib_move_to:'Folder Settings',lib_moved:'Folders updated',
 lib_goto_folder:'Open this card\'s folder',
-m_folder:'Folder',m_target:'Save to folder',
+m_folder:'Folder',m_target:'Initial folder',
+folder_settings:'Folder Settings',folder_settings_desc:'Check every folder where this item should be stored.',
+folder_required:'Select at least one folder before saving.',folder_saved:'Folder locations updated',
+folder_uncategorized:'Uncategorized',folder_uncategorized_desc:'Automatically created for items without a folder.',
+scan_words:'Scan Words',scan_title:'Detect Duplicate & Similar Words',scan_desc:'Scans every word across all folders.',scan_close:'Close',
+scan_exact:'Exact same Hanzi',scan_similar:'Similar Hanzi',scan_pinyin:'Same pinyin',scan_none:'No matching groups detected.',
+scan_view:'View',scan_delete_all:'Delete this word from every folder?',
+dup_title:'A similar word already exists',dup_exact:'Exact duplicate',dup_same_hanzi:'Same Hanzi, different details',dup_similar:'Similar Hanzi',
+create_anyway:'Create Anyway',dup_cancel:'Cancel',view_word:'Word Details',
 m_export_acc:'👤 Export Account',m_export_lib:'📚 Export Library',
 m_backup_desc:'Account data and vocabulary data are separate — back up or move either one without overwriting the other.',
 m_backup_note:'Import auto-detects the file type: library (folders + progress), account, full backup, or a legacy card export.',
@@ -1688,7 +1737,7 @@ function applyI18n(){
 }
 
 // ---------- storage / state ----------
-const K={cards:'mf2_cards',sents:'mf2_sents',acc:'mf2_account',set:'mf2_settings',seed:'mf2_seeded',daily:'mf2_daily',folders:'mf2_folders',goals:'mf2_goals',pick:'mf2_pick',strokes:'mf2_strokes'};
+const K={cards:'mf2_cards',sents:'mf2_sents',acc:'mf2_account',set:'mf2_settings',seed:'mf2_seeded',daily:'mf2_daily',folders:'mf2_folders',goals:'mf2_goals',pick:'mf2_pick',strokes:'mf2_strokes',logical:'mf2_logical_ids_v1'};
 const load=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}};
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){notify('Storage error: '+e.message,'error');}};
 
@@ -1709,13 +1758,13 @@ const saveSettings=()=>save(K.set,settings);
 const FOLDER_ICONS=['📁','📗','📘','📙','📕','⭐','🍜','🍎','🥢','💼','🏫','🏠','✈️','🚗','🛒','💊','⚽','🎵','🎮','☕','🐼','🌸','❤️','🌏','⏰','💬','🔢','🎨','📱','🌦️'];
 const autoSeg=h=>String(h||'').replace(/[。，？！、：；·,.?!\s]/g,'').split('').join(' ');
 const normCard=(c,keepProg)=>({
-  id:uid(),hanzi:String(c.hanzi||'').trim(),trad:c.trad||'',pinyin:String(c.pinyin||'').trim(),
+  id:c.id||uid(),hanzi:String(c.hanzi||'').trim(),trad:c.trad||'',pinyin:String(c.pinyin||'').trim(),
   arti:c.arti||c.meaning||'',en:c.en||'',tag:c.tag||'custom',
   status:keepProg?(c.status||null):null,
   stats:keepProg&&c.stats&&typeof c.stats==='object'?{good:c.stats.good||0,again:c.stats.again||0}:{good:0,again:0},
   lastReview:keepProg?(c.lastReview||null):null,
   nextDue:keepProg?(c.nextDue||null):null});
-const normSent=s=>({id:uid(),hanzi:String(s.hanzi||'').trim(),trad:s.trad||'',pinyin:s.pinyin||'',
+const normSent=s=>({id:s.id||uid(),hanzi:String(s.hanzi||'').trim(),trad:s.trad||'',pinyin:s.pinyin||'',
   seg:s.seg||autoSeg(s.hanzi),arti:s.arti||s.meaning||'',en:s.en||'',tag:s.tag||'custom'});
 const defFolder=o=>Object.assign({id:uid(),name:'Folder Baru',desc:'',icon:'📁',active:true,src:null,
   created:Date.now(),updated:Date.now(),cards:[],sents:[]},o||{});
@@ -1752,26 +1801,60 @@ const ckey=c=>String(c.hanzi||'').trim()+'|'+String(c.pinyin||'').toLowerCase().
 const skey=s=>String(s.hanzi||'').trim();
 const folderById=id=>folders.find(f=>f.id===id)||null;
 const ownerOf=item=>CARD_OWNER.get(item)||null;
+function migrateLogicalIds(){
+  const firstRun=!localStorage.getItem(K.logical);
+  const cardIds=new Map(),sentIds=new Map();
+  folders.forEach(f=>{
+    f.cards=(Array.isArray(f.cards)?f.cards:[]).filter(Boolean);
+    f.sents=(Array.isArray(f.sents)?f.sents:[]).filter(Boolean);
+    f.cards.forEach(c=>{
+      if(firstRun){
+        const k=ckey(c);
+        if(!cardIds.has(k))cardIds.set(k,c.id||uid());
+        c.id=cardIds.get(k);
+      }else if(!c.id)c.id=uid();
+    });
+    f.sents.forEach(s=>{
+      if(firstRun){
+        const k=skey(s);
+        if(!sentIds.has(k))sentIds.set(k,s.id||uid());
+        s.id=sentIds.get(k);
+      }else if(!s.id)s.id=uid();
+    });
+  });
+  if(firstRun){saveFolders();localStorage.setItem(K.logical,'1');}
+}
+migrateLogicalIds();
+const copiesOf=item=>{
+  const prop=item&&Object.prototype.hasOwnProperty.call(item,'seg')?'sents':'cards';
+  const out=[];
+  folders.forEach(f=>f[prop].forEach(x=>{if(x.id===item.id)out.push(x);}));
+  return out;
+};
+const ownersOf=item=>{
+  const prop=item&&Object.prototype.hasOwnProperty.call(item,'seg')?'sents':'cards';
+  return folders.filter(f=>f[prop].some(x=>x.id===item.id));
+};
 function rebuildDeck(){
   CARD_OWNER=new Map();TWINS=new Map();
   folders.forEach(f=>{
     f.cards.forEach(c=>{
       CARD_OWNER.set(c,f);
-      const k=ckey(c);if(!TWINS.has(k))TWINS.set(k,[]);TWINS.get(k).push(c);
+      const k=c.id;if(!TWINS.has(k))TWINS.set(k,[]);TWINS.get(k).push(c);
     });
     f.sents.forEach(s=>CARD_OWNER.set(s,f));
   });
   const cs=[],ss=[],seenC=new Set(),seenS=new Set();
   folders.forEach(f=>{
     if(!f.active)return;
-    f.cards.forEach(c=>{const k=ckey(c);if(seenC.has(k))return;seenC.add(k);cs.push(c);});
-    f.sents.forEach(s=>{const k=skey(s);if(seenS.has(k))return;seenS.add(k);ss.push(s);});
+    f.cards.forEach(c=>{const k=c.id;if(seenC.has(k))return;seenC.add(k);cs.push(c);});
+    f.sents.forEach(s=>{const k=s.id;if(seenS.has(k))return;seenS.add(k);ss.push(s);});
   });
   deck.cards=cs;deck.sents=ss;
 }
 // kata yang sama di beberapa folder: progresnya disamakan supaya tidak ada salinan yang tertinggal
 function syncTwins(c){
-  const list=TWINS.get(ckey(c));
+  const list=TWINS.get(c.id);
   if(!list||list.length<2)return;
   list.forEach(x=>{
     if(x===c)return;
@@ -1780,7 +1863,7 @@ function syncTwins(c){
     x.lastReview=c.lastReview;x.nextDue=c.nextDue;
   });
 }
-const twinCount=c=>{const l=TWINS.get(ckey(c));return l?l.length:1;};
+const twinCount=c=>{const l=TWINS.get(c.id);return l?l.length:1;};
 
 // ---------- label (tag): pengelompokan yang nempel ke KATA, bukan ke folder ----------
 // Folder = wadah. Label = sifat kata itu sendiri, jadi tetap ikut walau katanya dipindah folder.
@@ -1980,7 +2063,11 @@ function openModal(o){
     if(o.onOpen)o.onOpen();
     initTextClearButtons();
     const done=v=>{$('#modal').classList.add('hidden');$('#mOk').onclick=$('#mCancel').onclick=$('#mX').onclick=null;inp.onkeydown=null;res(v);};
-    $('#mOk').onclick=()=>done(o.collect?o.collect():(hasInput?inp.value:true));
+    $('#mOk').onclick=()=>{
+      const value=o.collect?o.collect():(hasInput?inp.value:true);
+      if(o.validate&&!o.validate(value))return;
+      done(value);
+    };
     $('#mCancel').onclick=()=>done(hasInput?null:false);
     $('#mX').onclick=()=>done(hasInput?null:false);
     inp.onkeydown=e=>{if(e.key==='Enter')done(inp.value);};
@@ -2680,6 +2767,7 @@ function addTplToFolder(f,x){
     x.pack.items.forEach(w=>{
       const c=normCard({hanzi:w.h,trad:w.t,pinyin:w.p,arti:w.a,en:w.e,tag:x.pack.tag});
       const k=ckey(c);if(have.has(k)){skip++;return;}
+      const known=uniqueItems('word').find(x=>ckey(x)===k);if(known)c.id=known.id;
       have.add(k);f.cards.push(c);add++;
     });
   }else{
@@ -2687,6 +2775,7 @@ function addTplToFolder(f,x){
     x.pack.items.forEach(s=>{
       const o=normSent({hanzi:s.h,trad:s.t,pinyin:s.p,seg:s.seg,arti:s.a,en:s.e,tag:x.pack.tag});
       const k=skey(o);if(have.has(k)){skip++;return;}
+      const known=uniqueItems('sent').find(x=>skey(x)===k);if(known)o.id=known.id;
       have.add(k);f.sents.push(o);add++;
     });
   }
@@ -2719,6 +2808,105 @@ async function pickFolder(title){
     '</select></div>';
   const v=await openModal({title:title||t('lib_pick_folder'),msg:'',html,cancelText:t('cancel'),collect:()=>$('#mPickF').value});
   return v?folderById(v):null;
+}
+function ensureUncategorized(){
+  let f=folders.find(x=>x.system==='uncategorized');
+  if(!f){
+    f=defFolder({name:t('folder_uncategorized'),desc:t('folder_uncategorized_desc'),icon:'\uD83D\uDCE5',system:'uncategorized'});
+    folders.push(f);saveFolders();
+  }
+  return f;
+}
+function uniqueItems(kind){
+  const prop=kind==='sent'?'sents':'cards',seen=new Set(),out=[];
+  folders.forEach(f=>f[prop].forEach(x=>{if(!seen.has(x.id)){seen.add(x.id);out.push(x);}}));
+  return out;
+}
+function itemKind(item){return item&&Object.prototype.hasOwnProperty.call(item,'seg')?'sent':'word';}
+function cloneLibraryItem(item,kind){
+  const copy=kind==='sent'?normSent(item):normCard(item,true);
+  copy.id=item.id;
+  return copy;
+}
+function folderBadges(item){
+  const list=ownersOf(item);
+  if(!list.length)return '<span class="mut">\u2014</span>';
+  return '<div class="folder-badges">'+list.map(f=>'<span class="folder-badge '+(f.active?'':'off')+'" title="'+esc(f.active?t('lib_active'):t('lib_inactive'))+'">'+esc((f.icon||'\uD83D\uDCC1')+' '+f.name)+'</span>').join('')+'</div>';
+}
+async function folderSettings(item,kind){
+  kind=kind||itemKind(item);
+  if(!folders.length)ensureUncategorized();
+  const current=new Set(ownersOf(item).map(f=>f.id));
+  const html='<p class="mut" style="margin:0">'+esc(t('folder_settings_desc'))+'</p>'+
+    '<div class="folder-checks">'+folders.map(f=>'<label class="folder-check"><input type="checkbox" value="'+esc(f.id)+'"'+(current.has(f.id)?' checked':'')+'><span>'+esc((f.icon||'\uD83D\uDCC1')+' '+f.name)+'<small>'+esc(f.active?t('lib_active'):t('lib_inactive'))+'</small></span></label>').join('')+'</div>'+
+    '<p class="mut hidden" id="mFolderError" style="margin:0;color:var(--danger)">'+esc(t('folder_required'))+'</p>';
+  const selected=await openModal({
+    title:t('folder_settings'),msg:'',html,cancelText:t('cancel'),okText:t('m_save'),
+    collect:()=>$$('#mMsg .folder-check input:checked').map(x=>x.value),
+    validate:value=>{
+      const ok=Array.isArray(value)&&value.length>0;
+      const err=$('#mFolderError');if(err)err.classList.toggle('hidden',ok);
+      if(!ok)notify(t('folder_required'),'warning');
+      return ok;
+    }
+  });
+  if(!selected)return false;
+  const chosen=new Set(selected),prop=kind==='sent'?'sents':'cards';
+  folders.forEach(f=>{
+    const has=f[prop].some(x=>x.id===item.id);
+    if(chosen.has(f.id)&&!has){f[prop].push(cloneLibraryItem(item,kind));f.updated=Date.now();}
+    else if(!chosen.has(f.id)&&has){f[prop]=f[prop].filter(x=>x.id!==item.id);f.updated=Date.now();}
+  });
+  if(!folders.some(f=>f[prop].some(x=>x.id===item.id))){
+    const fallback=ensureUncategorized();
+    fallback[prop].push(cloneLibraryItem(item,kind));fallback.updated=Date.now();
+  }
+  afterFolderChange();notify(t('folder_saved'),'success');
+  if(!$('#mgScanPanel').classList.contains('hidden'))renderScanWords();
+  return true;
+}
+const normText=x=>String(x||'').trim().toLowerCase().replace(/\s+/g,' ');
+const normHanzi=x=>String(x||'').replace(/[\s\u3002\uff0c\u3001\uff1f\uff01,.?!:;\-]/g,'');
+function editDistance(a,b){
+  const x=[...a],y=[...b],row=Array.from({length:y.length+1},(_,i)=>i);
+  for(let i=1;i<=x.length;i++){
+    let prev=row[0];row[0]=i;
+    for(let j=1;j<=y.length;j++){
+      const old=row[j];
+      row[j]=Math.min(row[j]+1,row[j-1]+1,prev+(x[i-1]===y[j-1]?0:1));
+      prev=old;
+    }
+  }
+  return row[y.length];
+}
+function similarHanzi(a,b){
+  a=normHanzi(a);b=normHanzi(b);
+  if(!a||!b||a===b||Math.min([...a].length,[...b].length)<2)return false;
+  const la=[...a].length,lb=[...b].length,max=Math.max(la,lb);
+  if(Math.abs(la-lb)>2)return false;
+  const d=editDistance(a,b);
+  return d<=1||(max>=5&&d<=2&&1-d/max>=.68);
+}
+function wordDuplicateInfo(data,excludeId){
+  const exact=[],same=[],similar=[];
+  uniqueItems('word').forEach(c=>{
+    if(c.id===excludeId)return;
+    if(normHanzi(c.hanzi)===normHanzi(data.hanzi)){
+      const full=normPy(c.pinyin)===normPy(data.pinyin)&&normText(c.arti)===normText(data.arti)&&normText(c.en)===normText(data.en);
+      (full?exact:same).push(c);
+    }else if(similarHanzi(c.hanzi,data.hanzi))similar.push(c);
+  });
+  return {exact,same,similar};
+}
+function dupPreview(title,list,cls){
+  if(!list.length)return '';
+  return '<div class="dup-warning '+cls+'"><b>'+esc(title)+'</b>'+list.slice(0,8).map(c=>'<div style="margin-top:5px"><span class="hz" style="font-size:1.2rem">'+esc(disp(c))+'</span> \u00b7 '+esc(c.pinyin)+' \u00b7 '+esc(mean(c))+'<div style="margin-top:3px">'+folderBadges(c)+'</div></div>').join('')+(list.length>8?'<div class="mut">+'+(list.length-8)+'</div>':'')+'</div>';
+}
+async function confirmWordCreate(data){
+  const d=wordDuplicateInfo(data);
+  if(!d.exact.length&&!d.same.length&&!d.similar.length)return true;
+  const html=dupPreview(t('dup_exact'),d.exact,'strong')+dupPreview(t('dup_same_hanzi'),d.same,'normal')+dupPreview(t('dup_similar'),d.similar,'suggestion');
+  return !!await openModal({title:t('dup_title'),msg:'',html,cancelText:t('dup_cancel'),okText:t('create_anyway')});
 }
 async function pickTpl(){
   const html='<div class="mform"><select id="mPickT">'+
@@ -2883,14 +3071,7 @@ function renderFolderItems(){
           window.scrollTo({top:0,behavior:'smooth'});
         }),
         mk('↺',()=>{c.status=null;c.stats={good:0,again:0};c.lastReview=null;c.nextDue=null;syncTwins(c);afterFolderChange();notify(t('msg_notyet'),'warning');},'',t('lib_reset_prog')),
-        mk('📤',async()=>{
-          const to=await pickFolder(t('lib_move_to'));
-          if(!to||to===f)return;
-          if(to.cards.some(x=>ckey(x)===ckey(c))){notify(t('skipped'),'info');return;}
-          f.cards=f.cards.filter(x=>x!==c);
-          to.cards.push(c);to.updated=f.updated=Date.now();
-          afterFolderChange();notify(fmt(t('lib_moved'),{n:to.name}),'success');
-        },'',t('lib_move_to')),
+        mk('📁',()=>folderSettings(c,'word'),'',t('folder_settings')),
         mk('🗑️',async()=>{
           if(!await mConfirm(t('confirm_del')))return;
           f.cards=f.cards.filter(x=>x!==c);f.updated=Date.now();
@@ -2919,14 +3100,7 @@ function renderFolderItems(){
           $('#fsCancel').classList.remove('hidden');
           window.scrollTo({top:0,behavior:'smooth'});
         }),
-        mk('📤',async()=>{
-          const to=await pickFolder(t('lib_move_to'));
-          if(!to||to===f)return;
-          if(to.sents.some(x=>skey(x)===skey(s))){notify(t('skipped'),'info');return;}
-          f.sents=f.sents.filter(x=>x!==s);
-          to.sents.push(s);to.updated=f.updated=Date.now();
-          afterFolderChange();notify(fmt(t('lib_moved'),{n:to.name}),'success');
-        },'',t('lib_move_to')),
+        mk('📁',()=>folderSettings(s,'sent'),'',t('folder_settings')),
         mk('🗑️',async()=>{
           if(!await mConfirm(t('confirm_del')))return;
           f.sents=f.sents.filter(x=>x!==s);f.updated=Date.now();
@@ -3013,16 +3187,16 @@ $('#fdDel').onclick=async()=>{
   lib.openId=null;
   afterFolderChange();notify(t('lib_folder_deleted'),'info');
 };
-$('#ffSave').onclick=()=>{
+$('#ffSave').onclick=async()=>{
   const f=curFolder();if(!f)return;
   const h=$('#ffHanzi').value.trim(),p=$('#ffPinyin').value.trim(),a=$('#ffArti').value.trim();
   if(!h||!p||!a){notify(settings.lang==='en'?'Hanzi, pinyin & meaning are required':'Hanzi, pinyin & arti wajib diisi','error');return;}
   const id=$('#ffId').value;
   const data={hanzi:h,trad:$('#ffTrad').value.trim(),pinyin:p,arti:a,en:$('#ffEn').value.trim(),tag:$('#ffTag').value.trim()||'custom'};
   if(id){
-    const c=f.cards.find(x=>x.id===id);if(c)Object.assign(c,data);
+    const c=f.cards.find(x=>x.id===id);if(c)copiesOf(c).forEach(x=>Object.assign(x,data));
   }else{
-    if(f.cards.some(x=>ckey(x)===ckey(data))){notify(t('lib_exists'),'warning');return;}
+    if(!await confirmWordCreate(data))return;
     f.cards.push(Object.assign(normCard(data),{id:uid()}));
   }
   f.updated=Date.now();
@@ -3038,7 +3212,7 @@ $('#fsSave').onclick=()=>{
   const data={hanzi:h,trad:$('#fsTrad').value.trim(),pinyin:p,seg:$('#fsSeg').value.trim()||autoSeg(h),
     arti:a,en:$('#fsEn').value.trim(),tag:$('#fsTag').value.trim()||'custom'};
   if(id){
-    const s=f.sents.find(x=>x.id===id);if(s)Object.assign(s,data);
+    const s=f.sents.find(x=>x.id===id);if(s)copiesOf(s).forEach(x=>Object.assign(x,data));
   }else{
     if(f.sents.some(x=>skey(x)===skey(data))){notify(t('lib_exists'),'warning');return;}
     f.sents.push(Object.assign(normSent(data),{id:uid()}));
@@ -5383,6 +5557,8 @@ $('#mgTabs').addEventListener('click',e=>{
   $('#mgSents').classList.toggle('hidden',mgTab!=='sents');
   $('#mgWordTableWrap').classList.toggle('hidden',mgTab!=='words');
   $('#mgSentTableWrap').classList.toggle('hidden',mgTab!=='sents');
+  $('#mgScanBtn').classList.toggle('hidden',mgTab!=='words');
+  if(mgTab!=='words')$('#mgScanPanel').classList.add('hidden');
   renderManage();
 });
 $('#mgSearch').oninput=()=>renderManage();
@@ -5392,123 +5568,179 @@ function fillFolderSelect(sel){
   el.innerHTML=folders.map(x=>'<option value="'+esc(x.id)+'">'+esc((x.icon||'📁')+' '+x.name)+(x.active?'':' · '+t('lib_inactive'))+'</option>').join('');
   if(cur&&folderById(cur))el.value=cur;
 }
-const folderLabel=item=>{const o=ownerOf(item);return o?(o.icon||'📁')+' '+o.name:'—';};
+function clearManageWordForm(){
+  ['wfId','wfHanzi','wfTrad','wfPinyin','wfArti','wfEn','wfTag'].forEach(x=>$('#'+x).value='');
+  $('#wfFolder').disabled=false;
+}
+function clearManageSentForm(){
+  ['sfId','sfHanzi','sfTrad','sfPinyin','sfSeg','sfArti','sfEn','sfTag'].forEach(x=>$('#'+x).value='');
+  $('#sfFolder').disabled=false;
+}
+function editWordInManage(c){
+  setView('v-manage');mgTab='words';
+  $$('#mgTabs [data-mtab]').forEach(x=>x.classList.toggle('active',x.dataset.mtab==='words'));
+  $('#mgWords').classList.remove('hidden');$('#mgSents').classList.add('hidden');
+  $('#mgWordTableWrap').classList.remove('hidden');$('#mgSentTableWrap').classList.add('hidden');$('#mgScanBtn').classList.remove('hidden');
+  $('#wfId').value=c.id;$('#wfHanzi').value=c.hanzi;$('#wfTrad').value=c.trad||'';
+  $('#wfPinyin').value=c.pinyin;$('#wfArti').value=c.arti||'';$('#wfEn').value=c.en||'';$('#wfTag').value=c.tag||'';
+  const own=ownersOf(c)[0];if(own)$('#wfFolder').value=own.id;
+  $('#wfFolder').disabled=true;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function editSentInManage(s){
+  setView('v-manage');mgTab='sents';
+  $$('#mgTabs [data-mtab]').forEach(x=>x.classList.toggle('active',x.dataset.mtab==='sents'));
+  $('#mgWords').classList.add('hidden');$('#mgSents').classList.remove('hidden');
+  $('#mgWordTableWrap').classList.add('hidden');$('#mgSentTableWrap').classList.remove('hidden');$('#mgScanBtn').classList.add('hidden');
+  $('#sfId').value=s.id;$('#sfHanzi').value=s.hanzi;$('#sfTrad').value=s.trad||'';
+  $('#sfPinyin').value=s.pinyin;$('#sfSeg').value=s.seg||'';$('#sfArti').value=s.arti||'';$('#sfEn').value=s.en||'';$('#sfTag').value=s.tag||'';
+  const own=ownersOf(s)[0];if(own)$('#sfFolder').value=own.id;
+  $('#sfFolder').disabled=true;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+async function deleteEveryCopy(item){
+  if(!await mConfirm(itemKind(item)==='word'?t('scan_delete_all'):t('confirm_del')))return;
+  const prop=itemKind(item)==='sent'?'sents':'cards';
+  folders.forEach(f=>{const n=f[prop].length;f[prop]=f[prop].filter(x=>x.id!==item.id);if(f[prop].length!==n)f.updated=Date.now();});
+  afterFolderChange();notify(t('msg_deleted'),'info');
+  if(!$('#mgScanPanel').classList.contains('hidden'))renderScanWords();
+}
+function viewWord(c){
+  const html='<div class="dup-warning"><div class="hz" style="font-size:2rem">'+esc(disp(c))+'</div>'+
+    '<div>'+esc(c.pinyin)+'</div><div style="margin-top:5px">'+esc(c.arti||'')+(c.en?' / '+esc(c.en):'')+'</div>'+
+    '<div class="mut" style="margin-top:5px">'+esc(c.tag||'')+'</div><div style="margin-top:9px">'+folderBadges(c)+'</div></div>';
+  return openModal({title:t('view_word'),msg:'',html});
+}
 function renderManage(){
   if(typeof sdRenderInfo==='function')sdRenderInfo();
   const f=$('#mgSearch').value.trim().toLowerCase();
   fillFolderSelect('#wfFolder');fillFolderSelect('#sfFolder');
   const mk=(txt,fn,cls,title)=>{const b=document.createElement('button');b.className='btn sm '+(cls||'');b.textContent=txt;b.onclick=fn;if(title)b.title=title;return b;};
   if(mgTab==='words'){
-    const list=deck.cards.filter(c=>!f||c.hanzi.includes(f)||(c.trad||'').includes(f)||c.pinyin.toLowerCase().includes(f)||(c.arti||'').toLowerCase().includes(f)||(c.en||'').toLowerCase().includes(f)||(c.tag||'').includes(f));
-    $('#mgCount').textContent=list.length+'/'+deck.cards.length;
+    const all=uniqueItems('word');
+    const list=all.filter(c=>!f||c.hanzi.includes(f)||(c.trad||'').includes(f)||c.pinyin.toLowerCase().includes(f)||(c.arti||'').toLowerCase().includes(f)||(c.en||'').toLowerCase().includes(f)||(c.tag||'').includes(f)||ownersOf(c).some(o=>o.name.toLowerCase().includes(f)));
+    $('#mgCount').textContent=list.length+'/'+all.length;
     const tb=$('#mgWordList');tb.innerHTML='';
     list.forEach(c=>{
       const tr=document.createElement('tr');
       const stTxt=c.status==='good'?'✅':c.status==='again'?'🔁':'—';
       tr.innerHTML='<td><span class="hz">'+esc(disp(c))+'</span></td><td>'+esc(c.pinyin)+'</td><td>'+esc(mean(c))+
-        '</td><td class="mut">'+esc(c.tag||'')+'</td><td>'+stTxt+'</td><td class="mut">'+esc(folderLabel(c))+'</td>';
+        '</td><td class="mut">'+esc(c.tag||'')+'</td><td>'+stTxt+'</td><td>'+folderBadges(c)+'</td>';
       const td=document.createElement('td');
       const act=document.createElement('div');act.className='actions';
       act.append(
         mk('🔊',()=>speak(disp(c))),
-        mk('✏️',()=>{mgTab='words';
-          $('#wfId').value=c.id;$('#wfHanzi').value=c.hanzi;$('#wfTrad').value=c.trad||'';
-          $('#wfPinyin').value=c.pinyin;$('#wfArti').value=c.arti||'';$('#wfEn').value=c.en||'';
-          $('#wfTag').value=c.tag||'';
-          const own=ownerOf(c);if(own)$('#wfFolder').value=own.id;
-          window.scrollTo({top:0,behavior:'smooth'});}),
+        mk('✏️',()=>editWordInManage(c),'',t('m_edit')),
         mk('✍️',()=>wrOpen(c),'',t('wr_title')),
-        mk('📂',()=>{const own=ownerOf(c);if(own){setView('v-lib');openFolder(own.id);}},'',t('lib_goto_folder')),
-        mk('🗑️',async()=>{
-          if(!await mConfirm(t('confirm_del')))return;
-          const own=ownerOf(c);
-          if(own){own.cards=own.cards.filter(x=>x!==c);own.updated=Date.now();}
-          afterFolderChange();notify(t('msg_deleted'),'info');
-        },'bad')
+        mk('📁',()=>folderSettings(c,'word'),'',t('folder_settings')),
+        mk('🗑️',()=>deleteEveryCopy(c),'bad',t('m_del'))
       );
       td.appendChild(act);tr.appendChild(td);tb.appendChild(tr);
     });
   }else{
-    const list=deck.sents.filter(s=>!f||s.hanzi.includes(f)||(s.trad||'').includes(f)||s.pinyin.toLowerCase().includes(f)||(s.arti||'').toLowerCase().includes(f)||(s.en||'').toLowerCase().includes(f));
-    $('#mgCount').textContent=list.length+'/'+deck.sents.length;
+    const all=uniqueItems('sent');
+    const list=all.filter(s=>!f||s.hanzi.includes(f)||(s.trad||'').includes(f)||s.pinyin.toLowerCase().includes(f)||(s.arti||'').toLowerCase().includes(f)||(s.en||'').toLowerCase().includes(f)||ownersOf(s).some(o=>o.name.toLowerCase().includes(f)));
+    $('#mgCount').textContent=list.length+'/'+all.length;
     const tb=$('#mgSentList');tb.innerHTML='';
     list.forEach(s=>{
       const tr=document.createElement('tr');
       tr.innerHTML='<td><span class="hz" style="font-size:1.05rem">'+esc(disp(s))+'</span></td><td class="mut">'+esc(s.pinyin)+
-        '</td><td>'+esc(mean(s))+'</td><td class="mut">'+esc(s.tag||'')+'</td><td class="mut">'+esc(folderLabel(s))+'</td>';
+        '</td><td>'+esc(mean(s))+'</td><td class="mut">'+esc(s.tag||'')+'</td><td>'+folderBadges(s)+'</td>';
       const td=document.createElement('td');
       const act=document.createElement('div');act.className='actions';
       act.append(
         mk('🔊',()=>speak(disp(s))),
         mk('✍️',()=>wrOpen(s),'',t('wr_title')),
-        mk('✏️',()=>{
-          $('#sfId').value=s.id;$('#sfHanzi').value=s.hanzi;$('#sfTrad').value=s.trad||'';
-          $('#sfPinyin').value=s.pinyin;$('#sfSeg').value=s.seg||'';$('#sfArti').value=s.arti||'';$('#sfEn').value=s.en||'';
-          $('#sfTag').value=s.tag||'';
-          const own=ownerOf(s);if(own)$('#sfFolder').value=own.id;
-          window.scrollTo({top:0,behavior:'smooth'});}),
-        mk('📂',()=>{const own=ownerOf(s);if(own){setView('v-lib');openFolder(own.id);}},'',t('lib_goto_folder')),
-        mk('🗑️',async()=>{
-          if(!await mConfirm(t('confirm_del')))return;
-          const own=ownerOf(s);
-          if(own){own.sents=own.sents.filter(x=>x!==s);own.updated=Date.now();}
-          afterFolderChange();notify(t('msg_deleted'),'info');
-        },'bad')
+        mk('✏️',()=>editSentInManage(s),'',t('m_edit')),
+        mk('📁',()=>folderSettings(s,'sent'),'',t('folder_settings')),
+        mk('🗑️',()=>deleteEveryCopy(s),'bad',t('m_del'))
       );
       td.appendChild(act);tr.appendChild(td);tb.appendChild(tr);
     });
   }
 }
-$('#wfSave').onclick=()=>{
+function groupedBy(items,keyFn){
+  const map=new Map();items.forEach(x=>{const k=keyFn(x);if(!k)return;if(!map.has(k))map.set(k,[]);map.get(k).push(x);});
+  return [...map.values()].filter(x=>x.length>1);
+}
+function similarWordGroups(items){
+  const parent=items.map((_,i)=>i);
+  const root=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i];}return i;};
+  const join=(a,b)=>{a=root(a);b=root(b);if(a!==b)parent[b]=a;};
+  for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++)if(similarHanzi(items[i].hanzi,items[j].hanzi))join(i,j);
+  const map=new Map();items.forEach((x,i)=>{const r=root(i);if(!map.has(r))map.set(r,[]);map.get(r).push(x);});
+  return [...map.values()].filter(x=>x.length>1);
+}
+function scanSection(title,groups){
+  const wrap=document.createElement('section');wrap.className='scan-group';
+  wrap.innerHTML='<h3>'+esc(title)+' ('+groups.length+')</h3>';
+  if(!groups.length){const p=document.createElement('p');p.className='scan-empty';p.textContent=t('scan_none');wrap.appendChild(p);return wrap;}
+  groups.forEach(group=>{
+    const cluster=document.createElement('div');cluster.className='scan-cluster';
+    group.forEach(c=>{
+      const row=document.createElement('div');row.className='scan-word';
+      const main=document.createElement('div');main.className='scan-word-main';
+      main.innerHTML='<span class="hz" style="font-size:1.35rem">'+esc(disp(c))+'</span> <span class="mut">'+esc(c.pinyin)+'</span><div>'+esc(mean(c))+'</div><div style="margin-top:4px">'+folderBadges(c)+'</div>';
+      const actions=document.createElement('div');actions.className='actions';
+      const mk=(label,fn,cls)=>{const b=document.createElement('button');b.className='btn sm '+(cls||'');b.textContent=label;b.onclick=fn;return b;};
+      actions.append(
+        mk(t('scan_view'),()=>viewWord(c)),
+        mk(t('m_edit'),()=>editWordInManage(c)),
+        mk(t('folder_settings'),()=>folderSettings(c,'word')),
+        mk(t('m_del'),()=>deleteEveryCopy(c),'bad')
+      );
+      row.append(main,actions);cluster.appendChild(row);
+    });
+    wrap.appendChild(cluster);
+  });
+  return wrap;
+}
+function renderScanWords(){
+  const box=$('#mgScanResults');if(!box)return;
+  const items=uniqueItems('word');
+  const exact=groupedBy(items,x=>normHanzi(x.hanzi));
+  const similar=similarWordGroups(items);
+  const pinyin=groupedBy(items,x=>normPy(x.pinyin));
+  box.innerHTML='';
+  box.append(scanSection(t('scan_exact'),exact),scanSection(t('scan_similar'),similar),scanSection(t('scan_pinyin'),pinyin));
+}
+$('#mgScanBtn').onclick=()=>{$('#mgScanPanel').classList.remove('hidden');renderScanWords();};
+$('#mgScanClose').onclick=()=>$('#mgScanPanel').classList.add('hidden');
+
+$('#wfSave').onclick=async()=>{
   const h=$('#wfHanzi').value.trim(),p=$('#wfPinyin').value.trim(),a=$('#wfArti').value.trim();
   if(!h||!p||!a){notify(settings.lang==='en'?'Hanzi, pinyin & meaning are required':'Hanzi, pinyin & arti wajib diisi','error');return;}
-  const target=folderById($('#wfFolder').value);
-  if(!target){notify(t('lib_no_folder'),'warning');return;}
   const id=$('#wfId').value;
   const data={hanzi:h,trad:$('#wfTrad').value.trim(),pinyin:p,arti:a,en:$('#wfEn').value.trim(),tag:$('#wfTag').value.trim()||'custom'};
   if(id){
-    const c=deck.cards.find(x=>x.id===id);
-    if(c){
-      const own=ownerOf(c);
-      Object.assign(c,data);
-      if(own&&own!==target&&!target.cards.some(x=>ckey(x)===ckey(c))){
-        own.cards=own.cards.filter(x=>x!==c);target.cards.push(c);
-        own.updated=target.updated=Date.now();
-      }
-    }
+    const c=uniqueItems('word').find(x=>x.id===id);
+    if(c)copiesOf(c).forEach(x=>Object.assign(x,data));
   }else{
-    if(target.cards.some(x=>ckey(x)===ckey(data))){notify(t('lib_exists'),'warning');return;}
+    const target=folderById($('#wfFolder').value)||ensureUncategorized();
+    if(!await confirmWordCreate(data))return;
     target.cards.push(Object.assign(normCard(data),{id:uid()}));
     target.updated=Date.now();
   }
-  ['wfId','wfHanzi','wfTrad','wfPinyin','wfArti','wfEn'].forEach(x=>$('#'+x).value='');
+  clearManageWordForm();
   afterFolderChange();notify(t('msg_saved'),'success');
 };
 $('#sfSegAuto').onclick=()=>{$('#sfSeg').value=autoSeg($('#sfHanzi').value.trim());};
 $('#sfSave').onclick=()=>{
   const h=$('#sfHanzi').value.trim(),p=$('#sfPinyin').value.trim(),a=$('#sfArti').value.trim();
   if(!h||!p||!a){notify(settings.lang==='en'?'Sentence, pinyin & meaning are required':'Kalimat, pinyin & arti wajib diisi','error');return;}
-  const target=folderById($('#sfFolder').value);
-  if(!target){notify(t('lib_no_folder'),'warning');return;}
   const id=$('#sfId').value;
   const data={hanzi:h,trad:$('#sfTrad').value.trim(),pinyin:p,seg:$('#sfSeg').value.trim()||autoSeg(h),
     arti:a,en:$('#sfEn').value.trim(),tag:$('#sfTag').value.trim()||'custom'};
   if(id){
-    const s=deck.sents.find(x=>x.id===id);
-    if(s){
-      const own=ownerOf(s);
-      Object.assign(s,data);
-      if(own&&own!==target&&!target.sents.some(x=>skey(x)===skey(s))){
-        own.sents=own.sents.filter(x=>x!==s);target.sents.push(s);
-        own.updated=target.updated=Date.now();
-      }
-    }
+    const s=uniqueItems('sent').find(x=>x.id===id);
+    if(s)copiesOf(s).forEach(x=>Object.assign(x,data));
   }else{
+    const target=folderById($('#sfFolder').value)||ensureUncategorized();
     if(target.sents.some(x=>skey(x)===skey(data))){notify(t('lib_exists'),'warning');return;}
     target.sents.push(Object.assign(normSent(data),{id:uid()}));
     target.updated=Date.now();
   }
-  ['sfId','sfHanzi','sfTrad','sfPinyin','sfSeg','sfArti','sfEn'].forEach(x=>$('#'+x).value='');
+  clearManageSentForm();
   afterFolderChange();notify(t('msg_saved'),'success');
 };
 
@@ -5523,9 +5755,9 @@ function dl(name,obj){
 }
 const today=()=>new Date().toISOString().slice(0,10);
 const slug=s=>String(s||'folder').toLowerCase().replace(/[^a-z0-9一-鿿]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'folder';
-const libPayload=()=>({app:'mandaflip',version:3,type:'library',exported:new Date().toISOString(),folders});
-const accPayload=()=>({app:'mandaflip',version:3,type:'account',exported:new Date().toISOString(),account,settings,goals,daily});
-const fullPayload=()=>({app:'mandaflip',version:3,type:'full',exported:new Date().toISOString(),folders,account,settings,goals,daily});
+const libPayload=()=>({app:'mandaflip',version:4,type:'library',exported:new Date().toISOString(),folders});
+const accPayload=()=>({app:'mandaflip',version:4,type:'account',exported:new Date().toISOString(),account,settings,goals,daily});
+const fullPayload=()=>({app:'mandaflip',version:4,type:'full',exported:new Date().toISOString(),folders,account,settings,goals,daily});
 const exportLib=()=>dl('mandaflip-pustaka-'+today()+'.json',libPayload());
 const exportAcc=()=>dl('mandaflip-akun-'+today()+'.json',accPayload());
 $('#bkExportLib').onclick=exportLib;
@@ -5536,11 +5768,11 @@ $('#acExport').onclick=exportAcc;
 $('#fdExportOne').onclick=()=>{
   const f=curFolder();if(!f)return;
   dl('mandaflip-folder-'+slug(f.name)+'-'+today()+'.json',
-    {app:'mandaflip',version:3,type:'folder',exported:new Date().toISOString(),folder:f});
+    {app:'mandaflip',version:4,type:'folder',exported:new Date().toISOString(),folder:f});
 };
 
 // gabungkan satu folder dari file ke pustaka: nama sama -> digabung, kalau tidak -> folder baru
-function mergeFolderIn(inc){
+function mergeFolderIn(inc,legacyLogical){
   const nm=String(inc.name||'').trim()||uniqName('Import '+today());
   let f=folders.find(x=>x.name===nm),created=false;
   if(!f){
@@ -5552,6 +5784,7 @@ function mergeFolderIn(inc){
   (Array.isArray(inc.cards)?inc.cards:[]).forEach(raw=>{
     if(!raw||!raw.hanzi||!raw.pinyin)return;
     const c=normCard(raw,true),k=ckey(c),ex=haveC.get(k);
+    if(legacyLogical){const known=uniqueItems('word').find(x=>ckey(x)===k);if(known)c.id=known.id;}
     if(ex){ // duplikat: ambil progres yang lebih maju
       const a=(ex.stats.good||0)+(ex.stats.again||0),b=(c.stats.good||0)+(c.stats.again||0);
       if(b>a){ex.status=c.status;ex.stats=c.stats;ex.lastReview=c.lastReview;ex.nextDue=c.nextDue;}
@@ -5563,6 +5796,7 @@ function mergeFolderIn(inc){
   (Array.isArray(inc.sents)?inc.sents:[]).forEach(raw=>{
     if(!raw||!raw.hanzi)return;
     const s=normSent(raw),k=skey(s);
+    if(legacyLogical){const known=uniqueItems('sent').find(x=>skey(x)===k);if(known)s.id=known.id;}
     if(haveS.has(k))return;
     haveS.add(k);f.sents.push(s);as++;
   });
@@ -5571,14 +5805,15 @@ function mergeFolderIn(inc){
 }
 async function importPayload(d){
   let nf=0,w=0,s=0,acc=false;
-  const take=arr=>arr.forEach(inc=>{if(!inc||typeof inc!=='object')return;const r=mergeFolderIn(inc);if(r.created)nf++;w+=r.aw;s+=r.as;});
+  const legacyLogical=Array.isArray(d)||!d.version||d.version<4;
+  const take=arr=>arr.forEach(inc=>{if(!inc||typeof inc!=='object')return;const r=mergeFolderIn(inc,legacyLogical);if(r.created)nf++;w+=r.aw;s+=r.as;});
   if(Array.isArray(d)){
     const cards=[],sents=[];
     d.forEach(x=>{
       if(!x||!x.hanzi)return;
       if(x.seg!==undefined||(x.hanzi.length>4&&/[。？！]/.test(x.hanzi)))sents.push(x);else cards.push(x);
     });
-    const r=mergeFolderIn({name:uniqName('Import '+today()),icon:'📥',cards,sents});
+    const r=mergeFolderIn({name:uniqName('Import '+today()),icon:'📥',cards,sents},true);
     if(r.created)nf++;w+=r.aw;s+=r.as;
   }else if(d&&typeof d==='object'){
     const hasLib=Array.isArray(d.folders)||(d.folder&&typeof d.folder==='object')||Array.isArray(d.cards)||Array.isArray(d.sents);
@@ -5587,7 +5822,7 @@ async function importPayload(d){
     if(Array.isArray(d.folders))take(d.folders);
     else if(d.folder&&typeof d.folder==='object')take([d.folder]);
     else if(Array.isArray(d.cards)||Array.isArray(d.sents)){
-      const r=mergeFolderIn({name:uniqName('Import '+today()),icon:'📥',cards:d.cards||[],sents:d.sents||[]});
+      const r=mergeFolderIn({name:uniqName('Import '+today()),icon:'📥',cards:d.cards||[],sents:d.sents||[]},legacyLogical);
       if(r.created)nf++;w+=r.aw;s+=r.as;
     }
     if(hasAcc&&await mConfirm(t('confirm_import_acc'))){
@@ -5762,7 +5997,7 @@ const goalById=id=>goals.find(g=>g.id===id)||null;
 // kata yang sama bisa nongol di beberapa folder -> hitung sekali saja (sama seperti deck)
 function dedupeCards(list){
   const seen=new Set(),out=[];
-  (list||[]).forEach(c=>{if(!c)return;const k=ckey(c);if(seen.has(k))return;seen.add(k);out.push(c);});
+  (list||[]).forEach(c=>{if(!c)return;const k=c.id;if(seen.has(k))return;seen.add(k);out.push(c);});
   return out;
 }
 const cardsByTag=tag=>{const out=[];folders.forEach(f=>f.cards.forEach(c=>{if(tagOf(c)===tag)out.push(c);}));return dedupeCards(out);};
@@ -6197,13 +6432,13 @@ const GP_LIMIT=400;
 
 function gpFolderList(){
   const m=new Map();
-  deck.cards.forEach(c=>{const f=ownerOf(c);if(f&&!m.has(f.id))m.set(f.id,f);});
+  deck.cards.forEach(c=>ownersOf(c).forEach(f=>{if(!m.has(f.id))m.set(f.id,f);}));
   return [...m.values()];
 }
 function gpCandidates(){
   let list=deck.cards;
   if(gp.scope==='new')list=list.filter(isNewCard);
-  if(gp.folder!=='all'){const f=folderById(gp.folder);list=list.filter(c=>ownerOf(c)===f);}
+  if(gp.folder!=='all')list=list.filter(c=>ownersOf(c).some(f=>f.id===gp.folder));
   list=byTag(list,gp.tag);
   const q=gp.q.trim().toLowerCase();
   if(q){
@@ -6226,10 +6461,9 @@ function gpRenderRows(){
   const rows=gpCandidates();
   const shown=rows.slice(0,GP_LIMIT);
   $('#gpRows').innerHTML=shown.map(c=>{
-    const f=ownerOf(c);
     return '<tr><td><input type="checkbox" data-cid="'+esc(c.id)+'"'+(gp.sel.has(c.id)?' checked':'')+'></td>'
       +'<td>'+esc(disp(c))+'</td><td>'+esc(c.pinyin||'')+'</td><td>'+esc(mean(c)||'')+'</td>'
-      +'<td>'+esc(gpStatus(c))+'</td><td class="mut">'+esc(f?f.icon+' '+f.name:'—')+'</td></tr>';
+      +'<td>'+esc(gpStatus(c))+'</td><td>'+folderBadges(c)+'</td></tr>';
   }).join('')||'<tr><td colspan="6" class="mut">'+esc(t('gl_pick_none'))+'</td></tr>';
   const info=$('#gpInfo');
   if(info)info.textContent=rows.length>GP_LIMIT?fmt(t('gl_pick_limit'),{n:GP_LIMIT}):fmt(t('f_pool'),{n:rows.length});
